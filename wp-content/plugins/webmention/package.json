@@ -1,0 +1,27 @@
+{
+  "name": "wordpress-webmention",
+  "description": "Webmention support for WordPress posts",
+  "main": "webmention.php",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-checktextdomain": "^1.0.1",
+    "grunt-wp-i18n": "^1.0.3",
+    "grunt-wp-readme-to-markdown": "^2.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pfefferle/wordpress-webmention.git"
+  },
+  "keywords": [
+    "webmention",
+    "pingback",
+    "trackback",
+    "linkback"
+  ],
+  "author": "Matthias Pfefferle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pfefferle/wordpress-webmention/issues"
+  },
+  "homepage": "https://github.com/pfefferle/wordpress-webmention"
+}

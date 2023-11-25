@@ -1,0 +1,57 @@
+<?php
+$url = 'https://raw.githubusercontent.com/9967819/free-neurosecurity-quotes/main/freethinking.md';
+$dbkey = 'quotes';
+//$hitcounts = array();
+$redis = new Redis(); 
+$redis->connect('127.0.0.1', 6379); 
+
+//$idx = array_rand($quotes);
+
+// requires php > 8.2 ! 
+//$r = new \Random\Randomizer();
+
+// first try to get the data from redis.
+$data = $redis->get($dbkey);
+
+// the quotes (array)
+$quotes = array();
+
+if ($data === false) {
+	// ok then lets fetch the data manually
+	$data = file($url);
+
+	foreach($data as $line_num => $item){
+		# trim to first 3 bytes
+		# $text = trim($item, "\D.");
+		array_push($quotes, $item);
+	}
+	// set the quote in redis using random generator
+	//$randomQuote = $r->pickArrayKeys($quotes, 1);
+	//$redis->set($dbkey ,$quotes[array_rand($quotes)]);
+	$redis->set($dbkey, $quotes[array_rand($quotes)]);
+} 
+// XXX just use the data in redis for now.
+$randomQuote = $data;
+// get a numbered index for all the quotes available
+// $index = array_values($quotes);
+// TODO when i will get SILENCE: create a mysql table (wp_quotes_hitcounts)
+
+//$randox mQuote = $quotes[$idx];
+
+// XXX increase the hit counter for this key
+
+?>
+
+<div class="site-info">
+<div style="text-align: center">
+    <p>
+    <i class="fa-regular fa-copyright"></i> 2023 Applied Human Neurosecurity Journal. Tous droits réservés.
+    </p> 
+    <p>Site créé avec <a href="https://www.classicpress.net/">ClassicPress</a> (<?php echo $GLOBALS['cp_version']; ?>)</p>
+<div class="quote">
+<?php 
+echo $randomQuote; 
+?>
+</div>
+</div>
+</div>
