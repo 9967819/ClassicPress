@@ -264,7 +264,7 @@ function twentyseventeen_excerpt_more( $link ) {
 	);
 	return $link;
 }
-//add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
 
 /**
  * Handles JavaScript detection.
@@ -285,7 +285,7 @@ function twentyseventeen_javascript_detection() {
 // XXX stay tuned.
 function twentyseventeen_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+		printf( '<link rel="pingback" href="%s">', get_bloginfo( 'pingback_url' ) );
 	}
 }
 add_action( 'wp_head', 'twentyseventeen_pingback_header' );
