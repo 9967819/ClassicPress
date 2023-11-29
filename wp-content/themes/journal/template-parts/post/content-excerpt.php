@@ -13,14 +13,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php
-	if ( is_sticky() && is_home() ) :
-		echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
-	endif;
-	?>
 	<header class="entry-header">
 		<?php
 		$commentCount = get_comments_number( get_the_ID() );
+		#$lastmodified = get_post_modified_time('j f Y', false, null, true);
 		$commentCountLabel = $commentCount > 1 ?  " commentaires" : " commentaire"; 
 		if ( 'post' === get_post_type() ) {
 			echo '<div class="entry-meta">';
@@ -77,8 +73,7 @@
 
 	<?php
 	if ( is_single() ) {
-		ahnjournal_entry_footer();
+		twentyseventeen_entry_footer();
 	}
 	?>
-
 </article><!-- #post-## -->

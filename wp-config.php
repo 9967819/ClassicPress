@@ -80,7 +80,7 @@ $table_prefix  = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-define( 'WP_CACHE', true );
+define( 'WP_CACHE', false );
 
 /* Set this if we are in development mode. (smart) */
 define( 'WP_STAGING', false ); 
@@ -96,7 +96,7 @@ define( 'OPENGRAPH_STRICT_MODE', true );
 define( 'IMPACT_SITE_ID', '121074d9-82d6-4e88-8376-5ae1064ad06d');
 
 # Default locale for wordpress site
-define( 'WPLANG', 'fr_CA' ); 
+define( 'WPLANG', 'fr' ); 
 
 /* That's all, stop editing! Happy blogging. */
 

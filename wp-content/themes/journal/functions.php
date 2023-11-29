@@ -489,6 +489,20 @@ function remove_empty_p($content){
     return preg_replace('#<p></p>#i', '', $content);
 }
 
+function show_last_updated( $content ) {
+  # show last modification date for published posts	
+  $u_time = get_the_time('U');
+  $u_modified_time = get_the_modified_time('U');
+  if ($u_modified_time >= $u_time + 86400) {
+    $updated_date = get_the_modified_time('F jS, Y');
+    $updated_time = get_the_modified_time('h:i a');
+    $lastmodified = '<p class="last-updated-date">Recently updated on '. $updated_date . ' at '. $updated_time .'</p>';
+  	$lastmodified .= $content;
+  }
+  return $lastmodified;
+}
+//add_filter( 'the_content', 'show_last_updated' );
+
 # SECURITY 
 add_filter( 'wp_sitemaps_enabled', true );
 add_filter( 'enable_post_by_email_configuration', false );
