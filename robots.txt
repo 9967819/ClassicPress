@@ -1,0 +1,19 @@
+# if you want to add own robot rules, do it BEFORE the final rule matching *
+
+User-agent: *
+Crawl-delay: 60
+# This has to match script url + cfg.url_prefix_action - it
+# saves lots of search engine load and traffic by disallowing crawlers
+# to request action related URLs.
+#
+# NOTE - in order to make this have any effect, you have to set
+#        url_prefix_action to "action", cf. HelpOnConfiguration
+
+Disallow: /forum/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-json/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /wiki/
+#Disallow: /
