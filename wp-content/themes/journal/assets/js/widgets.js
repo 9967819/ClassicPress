@@ -1,7 +1,7 @@
 const quoteDiv = document.getElementById('quotewidget');
 		
 async function fetchQuote() {
-	await fetch("http://pamela/static/freethinking.md")
+	await fetch("/static/freethinking.md")
 			.then(response=>response.text())
 			.then(text => {
 				let quotes = text.split(/\r?\n/);
