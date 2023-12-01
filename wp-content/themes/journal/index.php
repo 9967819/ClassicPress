@@ -38,12 +38,6 @@ get_header();
 </div><!-- .wrap -->
 </div><!-- #content -->
 </div><!-- .site-content -->
-
-
-
 <?php
 get_footer();
 ?>
-
-<!-- default ui/ux script -->
-<script async src="/wp-content/themes/journal/assets/js/widgets.js"></script>

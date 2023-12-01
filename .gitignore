@@ -1,0 +1,10 @@
+wp-config.php
+tests
+*.*~
+*.bak
+1
+*.mine
+*.swp
+*.local.*
+wp-content/uploads
+static

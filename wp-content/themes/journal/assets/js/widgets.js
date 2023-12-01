@@ -6,7 +6,7 @@ async function fetchQuote() {
 			.then(text => {
 				let quotes = text.split(/\r?\n/);
 				//console.log(quotes);
-				let s =	quotes[Math.floor(Math.random()*quotes.length)];
+				let s =	quotes[Math.floor(Math.random()*quotes.length) - 1];
 				quoteDiv.innerHTML = s;
 			});
 }
