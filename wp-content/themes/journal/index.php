@@ -40,12 +40,10 @@ get_header();
 </div><!-- .site-content -->
 
 
-<!-- default theme bootstrap script -->
-<script src="/wp-includes/js/jquery/jquery.js"></script>
-<script src="/wp-content/themes/journal/assets/js/jquery.scrollTo.js"></script>
-<script src="/wp-content/themes/journal/assets/js/global.js"></script>
-<script src="/wp-content/themes/journal/assets/js/navigation.js"></script>
 
 <?php
 get_footer();
 ?>
+
+<!-- default ui/ux script -->
+<script async src="/wp-content/themes/journal/assets/js/widgets.js"></script>

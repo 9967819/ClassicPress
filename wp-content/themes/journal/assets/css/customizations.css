@@ -367,3 +367,12 @@ h2.page-title {
 .post-thumbnail img {
 	height: auto;
 }
+
+/*
+#quotewidget {
+	animation: fadeIn ease 5s;
+}
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}*/

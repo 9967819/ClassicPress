@@ -263,11 +263,11 @@ add_action( 'wp_head', 'wlwmanifest_link' );
 add_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 add_action( 'wp_head', 'locale_stylesheet' );
 add_action( 'publish_future_post', 'check_and_publish_future_post', 10, 1 );
-add_action( 'wp_head', 'noindex', 1 );
-add_action( 'wp_head', 'print_emoji_detection_script', 7 );
+#add_action( 'wp_head', 'noindex', 1 );
+#add_action( 'wp_head', 'print_emoji_detection_script', 7 );
 add_action( 'wp_head', 'wp_print_styles', 8 );
 add_action( 'wp_head', 'wp_print_head_scripts', 9 );
-add_action( 'wp_head', 'wp_generator' );
+#add_action( 'wp_head', 'wp_generator' );
 add_action( 'wp_head', 'rel_canonical' );
 add_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 add_action( 'wp_head', 'wp_custom_css_cb', 101 );
@@ -278,7 +278,7 @@ add_action( 'wp_print_footer_scripts', '_wp_footer_scripts' );
 add_action( 'init', 'check_theme_switched', 99 );
 add_action( 'after_switch_theme', '_wp_menus_changed' );
 add_action( 'after_switch_theme', '_wp_sidebars_changed' );
-add_action( 'wp_print_styles', 'print_emoji_styles' );
+#add_action( 'wp_print_styles', 'print_emoji_styles' );
 
 if ( isset( $_GET['replytocom'] ) ) {
 	add_action( 'wp_head', 'wp_no_robots' );
@@ -422,7 +422,7 @@ add_action( 'edit_user_created_user', 'wp_send_new_user_notifications', 10, 2 );
 add_action( 'init', 'rest_api_init' );
 add_action( 'rest_api_init', 'rest_api_default_filters', 10, 1 );
 add_action( 'rest_api_init', 'register_initial_settings', 10 );
-add_action( 'rest_api_init', 'create_initial_rest_routes', 99 );
+#add_action( 'rest_api_init', 'create_initial_rest_routes', 99 );
 add_action( 'parse_request', 'rest_api_loaded' );
 
 /**
@@ -512,14 +512,14 @@ add_filter( 'image_send_to_editor', 'image_add_caption', 20, 8 );
 add_filter( 'media_send_to_editor', 'image_media_send_to_editor', 10, 3 );
 
 // Embeds
-add_action( 'rest_api_init', 'wp_oembed_register_route' );
-add_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
+#add_action( 'rest_api_init', 'wp_oembed_register_route' );
+#add_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
 
-add_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-add_action( 'wp_head', 'wp_oembed_add_host_js' );
+#add_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+#add_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 add_action( 'embed_head', 'enqueue_embed_scripts', 1 );
-add_action( 'embed_head', 'print_emoji_detection_script' );
+#add_action( 'embed_head', 'print_emoji_detection_script' );
 add_action( 'embed_head', 'print_embed_styles' );
 add_action( 'embed_head', 'wp_print_head_scripts', 20 );
 add_action( 'embed_head', 'wp_print_styles', 20 );

@@ -22,7 +22,7 @@ function twentyseventeen_setup() {
 	load_theme_textdomain( 'twentyseventeen' );
 
 	// Add default posts and comments RSS feed links to head.
-	// add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'automatic-feed-links' );
 
 	/*
 	 * Let WordPress manage the document title.
@@ -133,7 +133,7 @@ add_action( 'after_setup_theme', 'twentyseventeen_setup' );
  *
  * @global int $content_width
  */
-function twentyseventeen_content_width($width = 740) {
+function twentyseventeen_content_width($width = 768) {
 
 	/**
 	 * Filter Twenty Seventeen content width of the theme.
@@ -331,7 +331,7 @@ add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
-	if ( 740 <= $width ) {
+	if ( 768 <= $width ) {
 		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
 	}
 
@@ -489,38 +489,8 @@ function remove_empty_p($content){
     return preg_replace('#<p></p>#i', '', $content);
 }
 
-function show_last_updated( $content ) {
-  # show last modification date for published posts	
-  $u_time = get_the_time('U');
-  $u_modified_time = get_the_modified_time('U');
-  if ($u_modified_time >= $u_time + 86400) {
-    $updated_date = get_the_modified_time('F jS, Y');
-    $updated_time = get_the_modified_time('h:i a');
-    $lastmodified = '<p class="last-updated-date">Recently updated on '. $updated_date . ' at '. $updated_time .'</p>';
-  	$lastmodified .= $content;
-  }
-  return $lastmodified;
-}
-//add_filter( 'the_content', 'show_last_updated' );
 
 # SECURITY 
-add_filter( 'wp_sitemaps_enabled', true );
-add_filter( 'enable_post_by_email_configuration', false );
+add_filter('wp_sitemaps_enabled', true );
+add_filter('enable_post_by_email_configuration', false );
 add_filter('security_always_trust_embeds', false);
-
-// add boostrap4 css in the head element of our pages (smart) 
-function add_bootstrap4_css() {
-    $css = '<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" crossorigin=\"anonymous\">';
-    return $css;
-}
-
-// Impact site metatag (NEW) 
-function add_impact_site_tag($value) {
-	$html = sprintf("<meta name='impact-site-verification' value='%s'/>", $value);
-	return $html;
-}
-//add_action('wp_head', 'add_impact_site_tag', IMPACT_SITE_ID);
-
-// Bootstrap CSS 
-//add_action('wp_head', 'add_bootstrap4_css');
-

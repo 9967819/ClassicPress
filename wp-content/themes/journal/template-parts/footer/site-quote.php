@@ -22,7 +22,7 @@ $redis->close();
 &copy; 2023 Applied Human Neurosecurity Journal, 2030 rue Fournier suite 203. Saint-Jérôme, Québec (Canada) <br>
 <a href="http://creativecommons.org/licenses/by-nd/4.0/">Contenu sous license CC-BY-ND 4.0</a>
 </p>
-<p class="dynamic-quote-widget">
+<p id="quotewidget" class="dynamic-quote-widget">
 <?php 
 echo( $redis->get('customquote') ); 
 ?>
