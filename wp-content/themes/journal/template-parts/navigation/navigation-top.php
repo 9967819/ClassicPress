@@ -9,10 +9,8 @@
  */
 
 ?>
-<nav id="site-navigation" class="main-navigation" aria-label="Top Menu">
-	<button class="menu-toggle" aria-controls="menu" aria-haspopup="true">
-		Menu
-	</button>
+<nav id="site-navigation" class="main-navigation" aria-label="Top Menu" 
+	aria-controls="menu" aria-haspopup="true">
 
 	<?php
 	wp_nav_menu(
@@ -23,4 +21,4 @@
 		)
 	);
 	?>
-</nav><!-- #site-navigation -->
+</nav><!-- #swslfindfdnefl -->

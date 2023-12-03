@@ -7,7 +7,7 @@ Description: Applied Human Neurosecurity Journal default theme.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: ahnjournal
+Text Domain: twentyseventeen
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 */
@@ -1304,18 +1304,7 @@ a:hover .nav-title,
 	list-style: none;
 	margin: 0;
 	padding: 0 1.5em;
-	text-align: left;
-}
-
-/* Hide the menu on small screens when JavaScript is available.
- * It only works with JavaScript.
- */
-
-.js .main-navigation ul,
-.main-navigation .menu-item-has-children > a > .icon,
-.main-navigation .page_item_has_children > a > .icon,
-.main-navigation ul a > .icon {
-	display: none;
+	text-align: right;
 }
 
 .main-navigation > div > ul {
@@ -1323,7 +1312,7 @@ a:hover .nav-title,
 	padding: 0.75em 1.695em;
 }
 
-.js .main-navigation.toggled-on > div > ul {
+.main-navigation.toggled-on > div > ul {
 	display: block;
 }
 
@@ -1799,12 +1788,13 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .page .panel-content .entry-title,
 .page-title {
 	color: #9289c0;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 18px;
+	font-size: 1.1rem;
 	font-weight: 800;
-	letter-spacing: 0.14em;
+	letter-spacing: 0.15em;
 	text-transform: uppercase;
     padding: 5px 0px;
+	margin-top: 25px;
 }
 
 .entry-header .entry-title {
@@ -3257,7 +3247,7 @@ p > object:only-child {
 		padding-right: 3em;
 	}
 
-	.has-sidebar:not(.error404) #primary {
+	.has-sidebar:not(.error404) #content {
 		float: left;
 		width: 58%;
 	}
@@ -3272,7 +3262,7 @@ p > object:only-child {
 	.site-branding {
 		bottom: 0;
 		left: 50%;
-		top: 100px;
+		top: 150px;
 		position: relative;
 		width: 100%;
 	}
@@ -3358,7 +3348,7 @@ p > object:only-child {
 		margin-left: -1.25em;
 	}
 
-	.site-navigation-fixed.navigation-top {
+	.site-navigation-fixed {
 		top: 0;
 		position: fixed;
 		left: 0;
@@ -3385,6 +3375,8 @@ p > object:only-child {
 		position: fixed;
 		top: 0;
 		opacity: 0.65;
+		z-index: 3;
+		text-align: right;
 	}
 
 	.js .main-navigation ul,

@@ -1,4 +1,4 @@
-</div><!-- #page -->
+</div><!-- #content -->
 <footer class="site-footer overlay">
        <!-- row 2: flexbox footer-1, footer-2, etc... -->
 	   <section class="align-items-center row">

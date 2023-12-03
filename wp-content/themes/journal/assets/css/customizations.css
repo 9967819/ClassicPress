@@ -47,13 +47,14 @@ section.widget {
 
 .site-info {
     display: grid;
-    background-color: #000;
+    background-color: rgba(0,0,0, 0.80);
     margin: 0;
     padding: 10px;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
+
 
 h2.widget-title {
     margin-bottom: 0;
@@ -333,7 +334,11 @@ p.site-description {
 	background: url('/wp-content/uploads/2023/09/bg-header-ahnjournal-default.png') 0.90%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height: 248px;
+	height: 300px;
+}
+
+#content {
+	margin-top: 15px;
 }
 
 /* VISUAL EFFECTS emphasing on contrast */

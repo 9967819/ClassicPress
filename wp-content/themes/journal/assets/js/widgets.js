@@ -16,3 +16,7 @@ async function fetchQuote() {
 quoteDiv.addEventListener('click', (e) => {
 	fetchQuote()
 });
+
+// navigation menu dropdown
+const menu = document.getElementById('top-menu');
+

@@ -15,7 +15,7 @@ wp_head();
 
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 
-	</header><!-- #masthead -->
+	</header><!-- #thismakesnofuckingsense -->
 
 	<?php
 
@@ -29,6 +29,3 @@ wp_head();
 		echo '</div><!-- .single-featured-image-header -->';
 	endif;
 	?>
-
-	<div class="wrap">
-		<div id="content">

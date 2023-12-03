@@ -3,15 +3,14 @@ get_header();
 ?>
 
 <div class="wrap">
-	<div class="site-header">
+<div class="site-header">
 	<?php if ( is_home() && ! is_front_page() ) : ?>
 		<h2 class="page-title"><?php single_post_title(); ?></h2>
 	<?php else : ?>
 		<h2 class="page-title"><?php _e( 'En manchette', 'ahnjournal' ); ?></h2>
 	<?php endif; ?>
-	</div>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+</div>
+<div id="content" class="site-main">
 
 			<?php
 			if ( have_posts() ) :
@@ -33,11 +32,9 @@ get_header();
 			endif;
 			?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
 </div><!-- #content -->
-</div><!-- .site-content -->
 <?php
 get_footer();
 ?>
+
+</div>
