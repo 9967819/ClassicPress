@@ -329,10 +329,11 @@ p.site-description {
 	font-size: 1rem;
 }
 
-.custom-header-media img {
-	height: auto;
+#site-header {
+	background: url('/wp-content/uploads/2023/09/bg-header-ahnjournal-default.png') 0.90%;
 	background-size: cover;
-	width: auto;
+	background-repeat: no-repeat;
+	height: 248px;
 }
 
 /* VISUAL EFFECTS emphasing on contrast */
@@ -366,7 +367,7 @@ h2.page-title {
 	color: #b5d0e8;
 } 
 .colors-dark a:active, .colors-dark a:hover {
-	color: #b5d0e8;
+	color: #9289c0;
 }
 
 .post-thumbnail img {

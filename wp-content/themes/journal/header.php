@@ -9,20 +9,11 @@ wp_head();
 </head>
 
 <body class="home blog hfeed has-header-image has-sidebar colors-dark">
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
-
-	<header id="masthead" class="site-header">
+	<header id="site-header">
 
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
+		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
 
 	</header><!-- #masthead -->
 
@@ -39,5 +30,5 @@ wp_head();
 	endif;
 	?>
 
-	<div class="site-content-contain">
-		<div id="content" class="site-content">
+	<div class="wrap">
+		<div id="content">

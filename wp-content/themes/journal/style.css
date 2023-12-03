@@ -1479,7 +1479,7 @@ body {
 	/* Fallback for when there is no custom background color defined. */
 }
 
-#page {
+#content {
 	position: relative;
 	word-wrap: break-word;
 }
@@ -1590,6 +1590,11 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+.site-branding-text {
+	position: relative;
+	bottom: 20px;
 }
 
 .custom-header {
@@ -3265,28 +3270,16 @@ p > object:only-child {
 	/* Site Branding */
 
 	.site-branding {
-		margin-bottom: 0;
-	}
-
-	.has-header-image.twentyseventeen-front-page .site-branding,
-	.has-header-video.twentyseventeen-front-page .site-branding,
-	.has-header-image.home.blog .site-branding,
-	.has-header-video.home.blog .site-branding {
 		bottom: 0;
-		display: block;
-		left: 0;
-		height: auto;
-		padding-top: 0;
-		position: absolute;
+		left: 50%;
+		top: 100px;
+		position: relative;
 		width: 100%;
 	}
 
-	.has-header-image.twentyseventeen-front-page .custom-header,
-	.has-header-video.twentyseventeen-front-page .custom-header,
-	.has-header-image.home.blog .custom-header,
-	.has-header-video.home.blog .custom-header {
+	.wp-custom-header {
 		display: block;
-		height: auto;
+		height: 165px;
 	}
 
 	.custom-header-media {
@@ -3366,14 +3359,14 @@ p > object:only-child {
 	}
 
 	.site-navigation-fixed.navigation-top {
-		bottom: auto;
+		top: 0;
 		position: fixed;
 		left: 0;
 		right: 0;
-		top: 0;
 		width: 100%;
 		z-index: 7;
 		opacity: 0.85;
+		height: 80px;
 	}
 
 	.admin-bar .site-navigation-fixed.navigation-top {
@@ -3388,7 +3381,10 @@ p > object:only-child {
 	}
 
 	.main-navigation {
-		width: auto;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		opacity: 0.65;
 	}
 
 	.js .main-navigation ul,

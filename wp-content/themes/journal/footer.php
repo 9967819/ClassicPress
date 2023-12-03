@@ -12,10 +12,7 @@
         ?>
 </footer>
 
-<!-- default ui/ux script -->
+<!-- jquery free core ui/ux script -->
 <script src="/wp-content/themes/journal/assets/js/widgets.js"></script>
-<!-- twentyseventeen/classicpress minimal ui scripts -->
-<script src="/static/jquery.js"></script>
-<script src="/wp-content/themes/journal/assets/js/global.js"></script>
 </body>
 </html>

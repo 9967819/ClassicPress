@@ -1,3 +1,5 @@
+/* bootstrap/main.js and webhooks events for ahnjournal php frontend */
+
 const quoteDiv = document.getElementById('quotewidget');
 		
 async function fetchQuote() {
