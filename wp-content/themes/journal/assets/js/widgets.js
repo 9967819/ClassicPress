@@ -17,6 +17,18 @@ quoteDiv.addEventListener('click', (e) => {
 	fetchQuote()
 });
 
-// navigation menu dropdown
-const menu = document.getElementById('top-menu');
+// Responsive navigation menu 
+// Credit: https://dev.to/david_bilsonn/learn-how-to-build-responsive-navigation-bar-with-html-css-javascript-4g5
+let openHam = document.querySelector('#toggle-nav-menu');
+let navigationItems = document.querySelector('#top-menu');
+let menuOpen = false;
 
+openHam.addEventListener('click', () => {
+	if(!menuOpen){
+		navigationItems.classList.toggle("top-menu-visible");
+		menuOpen = true;
+	} else {
+		navigationItems.classList.remove('top-menu-visible');
+		menuOpen = false;
+	}
+})

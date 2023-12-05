@@ -1509,7 +1509,9 @@ body {
 	-webkit-transition: margin-bottom 0.2s;
 	transition: margin-bottom 0.2s;
 	z-index: 3;
+	top: 30px;
 }
+
 
 .site-branding a {
 	text-decoration: none;
@@ -3247,7 +3249,7 @@ p > object:only-child {
 		padding-right: 3em;
 	}
 
-	.has-sidebar:not(.error404) #content {
+	.has-sidebar:not(.error404) #primary {
 		float: left;
 		width: 58%;
 	}
@@ -4019,6 +4021,8 @@ p > object:only-child {
 	.admin-bar .site-navigation-hidden.navigation-top {
 		top: 46px;
 	}
+
+	
 }
 
 /*--------------------------------------------------------------

@@ -13,7 +13,9 @@ div.quote {
 	height: auto;
 	margin-bottom: 5px;
 	color: #9289c0;
-} 
+}
+
+#main {min-height: 420px}
 
 
 section.row { 
@@ -55,6 +57,43 @@ section.widget {
     justify-content: center;
 }
 
+#toggle-nav-menu {
+	display: none;
+}
+
+/* Mobile-specific aka responsive navigation thingy */
+@media screen and (max-width: 48em) {
+	/* nav menu toggle button: position: top-right of the viewport. */
+	#toggle-nav-menu {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 50px;
+	}
+	#top-menu {
+		display: block;
+		visibility:hidden;
+		position: relative;
+		clear: both;
+	}
+	#top-menu.top-menu-visible {
+		display: block;
+		visibility: visible;
+		top: 40px;
+		position: relative;
+		margin-bottom: 5px;
+		clear: both;
+		z-index: 5;
+		opacity: 0.95;
+		border: 1px solid #ddd;
+	}
+	#top-menu.top-menu-visible li ul.sub-menu {
+		display: none;
+	}
+	.site-branding {
+		left: 15%;
+	}
+}
 
 h2.widget-title {
     margin-bottom: 0;
@@ -328,6 +367,9 @@ p.site-description {
 	padding-right: 5px;
 	font-weight: bold;
 	font-size: 1rem;
+	background-color: rgba(0, 0, 0, 0.25);
+	border: 1px solid #9289c0;
+	max-width: 80%;
 }
 
 #site-header {
@@ -368,8 +410,8 @@ h2.page-title {
 }
 
 .colors-dark a {
-	/*color: #9289c0;*/
-	color: #b5d0e8;
+	color: #9289c0;
+	/*color: #b5d0e8;*/
 } 
 .colors-dark a:active, .colors-dark a:hover {
 	color: #9289c0;
@@ -379,11 +421,4 @@ h2.page-title {
 	height: auto;
 }
 
-/*
-#quotewidget {
-	animation: fadeIn ease 5s;
-}
-@keyframes fadeIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}*/
+#site-navigation a {font-weight: 600}

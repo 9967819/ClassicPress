@@ -517,7 +517,7 @@ body.colors-dark,
 
 	.colors-dark .main-navigation li li:hover,
 	.colors-dark .main-navigation li li.focus {
-		background: #9298c0;
+		color: #9298c0;
 	}
 
 	.colors-dark .menu-scroll-down {
@@ -548,7 +548,7 @@ body.colors-dark,
 	.colors-dark .main-navigation li li.current-menu-item a:hover,
 	.colors-dark .main-navigation li li.current_page_item a:focus,
 	.colors-dark .main-navigation li li.current-menu-item a:focus {
-		color: #222;
+		color: #fff;
 	}
 
 }

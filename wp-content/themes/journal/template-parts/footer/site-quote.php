@@ -1,10 +1,13 @@
 <?php
 $url = 'https://open-neurosecurity.org/static/freethinking.md';
+# XXX move this elsewhere please to avoid cretnig a redis connection
+# everytime someone hits a page
 $redis = new Redis(); 
 $redis->connect('127.0.0.1', 6379); 
 $data = file($url);
 $int = random_int(0, count($data));
 $randomQuote = $data[$int - 1];
+
 $redis->set('customquote' , $randomQuote);
 $redis->close();
 ?>
