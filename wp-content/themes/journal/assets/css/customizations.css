@@ -17,6 +17,11 @@ div.quote {
 
 #main {min-height: 420px}
 
+.single-featured-image-header {
+	max-width: 48em;
+	margin: auto;
+	padding: 10px;
+}
 
 section.row { 
     padding: 10px;
@@ -24,12 +29,13 @@ section.row {
 }
 
 section.widget {
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 50, 0.75);
 	border: 2px solid #fff;
 	border-radius: 5px;
 	padding: 10px;
-	margin: 5px;
-	height: 225px;
+	margin: 10px;
+	height: auto;
+	width: 99%;
 }
 
 .align-items-center {
@@ -43,8 +49,10 @@ section.widget {
 .centered {
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	display: grid;
+	width: fit-content;
+	display: flex;
+	gap: 1em;
+	
 }
 
 .site-info {
@@ -100,10 +108,11 @@ h2.widget-title {
 }
 
 div.textwidget {
-    min-width: 350px;
+    /* min-width: 350px; */
     /* width: max-content; */
-    padding: 10px;
+    padding: auto;
 	font-size: 1rem;
+	text-align: justify;
 }
 
 div.textwidget ul {
@@ -409,9 +418,10 @@ h2.page-title {
 	margin-top: 5px;
 }
 
-.colors-dark a {
+.colors-dark a 
+{
 	color: #9289c0;
-	/*color: #b5d0e8;*/
+	text-decoration: none;
 } 
 .colors-dark a:active, .colors-dark a:hover {
 	color: #9289c0;
