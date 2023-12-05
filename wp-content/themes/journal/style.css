@@ -456,7 +456,8 @@ dfn,
 cite,
 em,
 i {
-	font-style: italic;
+	font-style: normal ;
+	font-weight: 600;
 }
 
 blockquote {
@@ -471,6 +472,7 @@ blockquote {
 }
 
 blockquote cite {
+
 	display: block;
 	font-style: normal;
 	font-weight: 600;
@@ -479,6 +481,7 @@ blockquote cite {
 
 address {
 	margin: 0 0 1.5em;
+    font-style: italic small-caps;
 }
 
 pre {
