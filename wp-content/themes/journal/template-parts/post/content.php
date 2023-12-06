@@ -73,6 +73,7 @@
 
 	<?php
 	if ( is_single() ) {
+		echo do_shortcode("[sbe-share-by-email]");
 		twentyseventeen_entry_footer();
 	}
 	?>
