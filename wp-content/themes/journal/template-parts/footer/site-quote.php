@@ -12,7 +12,7 @@ $redis->set('customquote' , $randomQuote);
 $redis->close();
 ?>
 
-<div class="site-info" style="font-size: 12px; text-align: center">
+<div class="site-info">
 <!-- license, private life, etc... -->
 <p>
 <a href="/about/">À propos</a> |

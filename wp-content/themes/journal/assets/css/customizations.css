@@ -63,6 +63,7 @@ section.widget {
     width: 100%;
     align-items: center;
     justify-content: center;
+	text-align: center;
 }
 
 #toggle-nav-menu {
