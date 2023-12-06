@@ -31,7 +31,7 @@ if ( ! isset( $wp_did_header ) ) {
 	// require_once ABSPATH . WPINC . '/template-loader.php';
 	$theme = new CustomThemeInstance();
 	$theme->renderHTML();
-	$html = tidy_parse_string(ob_get_clean(), $config, 'UTF8');
-	$html->cleanRepair();
-	echo $html;
+	//$html = tidy_parse_string(ob_get_clean(), $config, 'UTF8');
+	//$html->cleanRepair();
+	//echo $html;
 }
