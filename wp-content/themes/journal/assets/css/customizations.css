@@ -1,6 +1,7 @@
 /* reset some specific things here */
 body { 
-	font-size: 1rem; /* 18px */
+	font-size: 18px;
+	font-size: 1em; /* 18px */
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
 }
 
@@ -14,6 +15,8 @@ div.quote {
 	margin-bottom: 5px;
 	color: #9289c0;
 }
+
+#quotewidget {text-shadow: 4px 4px #000}
 
 #main {min-height: 420px}
 
@@ -70,6 +73,11 @@ section.widget {
 	display: none;
 }
 
+.site-branding {
+	left: 25%;
+	right: 25%;
+}
+
 /* Mobile-specific aka responsive navigation thingy */
 @media screen and (max-width: 48em) {
 	/* nav menu toggle button: position: top-right of the viewport. */
@@ -100,7 +108,12 @@ section.widget {
 		display: none;
 	}
 	.site-branding {
-		left: 15%;
+		left: 10%;
+		right: 10%;
+		max-width: 299px;
+	}
+	#content {
+		max-width: 300px;
 	}
 }
 
@@ -109,8 +122,6 @@ h2.widget-title {
 }
 
 div.textwidget {
-    /* min-width: 350px; */
-    /* width: max-content; */
     padding: auto;
 	font-size: 1rem;
 	text-align: justify;
@@ -134,38 +145,6 @@ ul.default-list li, ol.default-list li {
 ul.default-list li a, ol.default-list li a {
    color: #ccc;
 }
-
-/* tooltips */
-.tooltip {
-position: relative;
-display: inline-block;
-/* border: 1px solid #ccc; */
-}
-
-.tooltip .tooltiptext {
-visibility: hidden;
-width: 425px;
-background-color: rgba(0, 0, 0, 0.8);
-color: #fff;
-text-align: left;
-border-radius: 10px;
-padding: 10px;
-font-size: 14px;
-/* Position the tooltip */
-position: absolute;
-z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-/* FOOTER */
-
-/* 
- * .footer-widget-1, .footer-widget-2 {
- * } 
- */
 
 /* FORMS */
 
@@ -379,7 +358,7 @@ p.site-description {
 	font-size: 1rem;
 	background-color: rgba(0, 0, 0, 0.25);
 	border: 1px solid #9289c0;
-	max-width: 80%;
+	width: 100%;
 }
 
 #site-header {
@@ -390,7 +369,8 @@ p.site-description {
 }
 
 #content {
-	margin-top: 15px;
+	margin: 5px;
+	padding: 5px;
 }
 
 /* VISUAL EFFECTS emphasing on contrast */

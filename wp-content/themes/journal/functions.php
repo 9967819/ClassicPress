@@ -43,7 +43,7 @@ function twentyseventeen_setup() {
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
 	// Set the default content width.
-	//$GLOBALS['content_width'] = 525;
+	$GLOBALS['content_width'] = 525;
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus(
@@ -133,7 +133,7 @@ add_action( 'after_setup_theme', 'twentyseventeen_setup' );
  *
  * @global int $content_width
  */
-function twentyseventeen_content_width($width = 768) {
+function twentyseventeen_content_width($width = 525) {
 
 	/**
 	 * Filter Twenty Seventeen content width of the theme.
@@ -308,8 +308,8 @@ function twentyseventeen_scripts() {
 	//	wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
 	wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
 
-	wp_register_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '20161020' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+	#wp_register_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '20161020' );
+	#wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -331,7 +331,7 @@ add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
 function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 	$width = $size[0];
 
-	if ( 768 <= $width ) {
+	if ( 525 <= $width ) {
 		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
 	}
 
