@@ -74,8 +74,8 @@ section.widget {
 }
 
 .site-branding {
-	left: 25%;
-	right: 25%;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 /* Mobile-specific aka responsive navigation thingy */
@@ -108,9 +108,6 @@ section.widget {
 		display: none;
 	}
 	.site-branding {
-		left: 10%;
-		right: 10%;
-		max-width: 299px;
 	}
 	#content {
 		max-width: 300px;
