@@ -418,10 +418,10 @@ h2,
 }
 
 h3 {
-	color: #333;
-	font-size: 18px;
-	font-size: 1.125rem;
-	font-weight: 300;
+	font-weight: 600;
+	font-size: 1.4rem;
+	margin-bottom: 15px;
+	margin-top: 10px;
 }
 
 h4 {
@@ -1131,9 +1131,9 @@ a:focus {
 
 a:hover,
 a:active {
-	color: #000;
+	color: #fff;
 	outline: 0;
-	transition: 10ms;
+	transition: 5ms;
 }
 
 /* Hover effects */

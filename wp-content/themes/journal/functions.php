@@ -149,7 +149,7 @@ add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
 /**
  * Register custom fonts.
  */
-function twentyseventeen_fonts_url($fontname = 'Libre Franklin') {
+function twentyseventeen_fonts_url($fontname = 'Roboto') {
 	$fonts_url = '';
 
 	/*
@@ -169,8 +169,7 @@ function twentyseventeen_fonts_url($fontname = 'Libre Franklin') {
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
 
-        //XXX dont hardcode server name here please (smart) 
-        $u = "https://fonts.cdnfonts.com/css/" . str_replace(" ", "-", strtolower($fontname));
+        $u = "https://fonts.googleapis.com" . str_replace(" ", "-", strtolower($fontname));
 		$fonts_url = add_query_arg( $query_args, $u );
 	}
 
@@ -196,7 +195,7 @@ function twentyseventeen_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-//add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'twentyseventeen_resource_hints', 10, 2 );
 
 /**
  * Register widget area.
@@ -300,13 +299,13 @@ function twentyseventeen_scripts() {
 	// Load the default colors scheme.
 	wp_enqueue_style( 'twentyseventeen-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'twentyseventeen-style' ), '1.0' );
 
-    // Extra customizations and enhancements.
-    wp_enqueue_style( 'customizations', get_template_directory_uri() . '/assets/css/customizations.css', false, '1.1', 'all');
+    	// Extra customizations and enhancements.
+    	wp_enqueue_style( 'customizations', get_template_directory_uri() . '/assets/css/customizations.css', false, '1.1', 'all');
 
 	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
 	// if ( is_customize_preview() ) {
 	//	wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
-	wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
+	//wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
 
 	#wp_register_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '20161020' );
 	#wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );

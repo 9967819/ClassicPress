@@ -121,6 +121,14 @@ h2.widget-title {
     margin-bottom: 0;
 }
 
+h2.page-title {
+   text-shadow: 4px 4px #000;
+   letter-spacing: 4px;
+   font-size: 1.65rem;
+   font-weight: 600;
+   font-family: Roboto, Helvetica, serif;
+}
+
 div.textwidget {
     padding: auto;
 	font-size: 1rem;
@@ -405,7 +413,7 @@ h2.page-title {
 	text-decoration: none;
 } 
 .colors-dark a:active, .colors-dark a:hover {
-	color: #9289c0;
+	color: #fff;
 }
 
 .post-thumbnail img {
