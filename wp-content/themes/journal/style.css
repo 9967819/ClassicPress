@@ -3266,10 +3266,17 @@ p > object:only-child {
 
 	.site-branding {
 		bottom: 0;
-		left: 50%;
+		left: 25%;
 		top: 150px;
 		position: relative;
 		width: 100%;
+	}
+
+	/* Wide-screen resolution */
+	@media screen and (min-width:1600px) {
+		.site-branding {
+			left: 50%;
+		}
 	}
 
 	.wp-custom-header {
