@@ -36,9 +36,9 @@ section.widget {
 	border: 2px solid #fff;
 	border-radius: 5px;
 	padding: 10px;
-	margin: 10px;
 	height: auto;
 	width: 99%;
+	margin-bottom: 10px;
 }
 
 .align-items-center {
@@ -73,9 +73,17 @@ section.widget {
 	display: none;
 }
 
+#top-menu li ul.sub-menu {
+	text-align: left;
+}
+
 .site-branding {
 	padding-left: 1em;
 	padding-right: 1em;
+}
+
+@media screen and (min-width: 48em) {
+#content {width: 48%};
 }
 
 /* Mobile-specific aka responsive navigation thingy */
@@ -106,11 +114,6 @@ section.widget {
 	}
 	#top-menu.top-menu-visible li ul.sub-menu {
 		display: none;
-	}
-	.site-branding {
-	}
-	#content {
-		max-width: 300px;
 	}
 }
 
