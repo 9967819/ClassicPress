@@ -1,5 +1,6 @@
 <?php
 #error_reporting(E_ALL|E_STRICT);
+setlocale(LC_ALL, 'fr_CA.utf8');
 
 class CustomThemeInstance 
 {

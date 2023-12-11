@@ -28,7 +28,7 @@ define( 'OPENGRAPH_STRICT_MODE', true );
 #define( 'IMPACT_SITE_ID', '121074d9-82d6-4e88-8376-5ae1064ad06d');
 
 # Default locale for wordpress site
-define( 'WPLANG', 'fr' ); 
+# define( 'WPLANG', 'fr' ); 
 
 /* That's all, stop editing! Happy blogging. */
 
