@@ -384,7 +384,7 @@ p.site-description {
 	height: 300px;
 	background-position: auto auto;
 	position: relative;
-	border-bottom: 5px solid #4a6074;
+	border-bottom: 5px dashed #4a6074;
 }
 
 #content {
