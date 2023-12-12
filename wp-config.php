@@ -25,6 +25,20 @@ define( 'WP_AUTO_UPDATE_CORE', false );
 
 define( 'OPENGRAPH_STRICT_MODE', true );
 
+
+### Redis backend
+define( 'WP_REDIS_ENABLE', true );
+define( 'WP_REDIS_IS_LOCALHOST', true );
+
+if (WP_REDIS_ENABLE==true) {
+	global $redis;
+	$redis = new Redis(); 
+	$redis->connect('127.0.0.1', 6379);
+} else { 
+	$redis = false;
+}
+	
+
 #define( 'IMPACT_SITE_ID', '121074d9-82d6-4e88-8376-5ae1064ad06d');
 
 # Default locale for wordpress site

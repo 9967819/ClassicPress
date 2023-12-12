@@ -1,17 +1,22 @@
 <?php
-#error_reporting(E_ALL|E_STRICT);
-setlocale(LC_ALL, 'fr_CA.utf8');
+error_reporting(E_ALL|E_STRICT);
+#setlocale(LC_ALL, 'fr_CA.utf8');
+require_once dirname(__FILE__) . '/wp-load.php';
+#require_once dirname(__FILE__) . '/wp-config.php';
 
-class CustomThemeInstance 
+class Journal 
 {
-	public $themename = "journal";
+	public $themename = "journal-winter";
+
+	function __construct() {
+		ob_start();
+		wp();
+		require_once dirname(__FILE__) . '/wp-includes/template-loader.php';
+	}
 
 	function renderHTML(){
-		ob_start();
-
-		wp();
-
-		require ABSPATH . WPINC . '/template-loader.php';
+		$html = ob_get_clean();
+		return $html;
     }
 }
 
@@ -19,19 +24,16 @@ if ( ! isset( $wp_did_header ) ) {
 
 	$wp_did_header = true;
 	
-	$enable_tidy = true;
-	$config = array(
-		'indent' 		=> TRUE,
-		'output-xhtml'  => FAlSE,
-		'wrap' 		    => 200);
-
-	// Load the ClassicPress library.
-	require_once dirname( __FILE__ ) . '/wp-load.php';
+	#$enable_tidy = true;
+	#$config = array(
+	#	'indent' 		=> TRUE,
+	#	'output-xhtml'  => FAlSE,
+	#	'wrap' 		    => 200);
 
 	// Load the theme template.
 	// require_once ABSPATH . WPINC . '/template-loader.php';
-	$theme = new CustomThemeInstance();
-	$theme->renderHTML();
+	$journal = new Journal();
+	echo $journal->renderHTML();
 	//$html = tidy_parse_string(ob_get_clean(), $config, 'UTF8');
 	//$html->cleanRepair();
 	//echo $html;
