@@ -12,6 +12,17 @@ a.homepage {
 	font-size: 12px;
 }
 
+article.post {
+	background-color: #fff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1.5rem;
+	border: 1px solid #888;
+	border-radius: 10px;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+
 div.quote {
 	height: auto;
 	margin-bottom: 5px;
@@ -84,9 +95,9 @@ section.widget {
 }
 
 .site-branding {
-	padding-left: 1em;
-	padding-right: 1em;
-	padding-bottom: 1em;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -306,8 +317,7 @@ footer {
 	background-position: auto auto;
 }
 
-.site-info p { color: #ddd }
-.site-info a { text-decoration: none }
+
 
 div.overlay1 {
 	background-color: #fff;
@@ -397,7 +407,7 @@ h2.page-title {
 	margin-bottom: 15px;
 }
 
-a.more-link { color: #108df8; font-weight: bold; text-decoration: none }
+a.more-link { float: right; color: #108df8; font-weight: bold; text-decoration: none }
 
 .entry-content h3, h3.comment-reply-title {
 	color: #108df8;
@@ -424,6 +434,9 @@ a.more-link { color: #108df8; font-weight: bold; text-decoration: none }
 .colors-light a:hover {
 	color: #108df8;
 }
+
+.site-info p { color: #ddd }
+.site-info a { text-decoration: none; color: #fff }
 
 .post-thumbnail img {
 	height: auto;
