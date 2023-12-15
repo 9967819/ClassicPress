@@ -2923,8 +2923,6 @@ p > object:only-child {
 	.home.blog .entry-title,
 	.page .panel-content .recent-posts .entry-title {
 		font-size: 1.65rem;
-		color: #fff;
-		padding: 15px;
 	}
 
 	h3 {

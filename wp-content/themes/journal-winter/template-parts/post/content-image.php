@@ -50,7 +50,7 @@
 	<?php endif; ?>
 
 	<div class="entry-content">
-
+		hello world
 		<?php
 		if ( is_single() || '' === get_the_post_thumbnail() ) {
 
