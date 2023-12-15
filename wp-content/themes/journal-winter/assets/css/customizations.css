@@ -1,8 +1,8 @@
 /* reset some specific things here */
 body { 
-	font-size: 1.15rem; /* wider fonts */
+	font-size: 1.1em; /* wider fonts */
 	font-family: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
-	background-color: #c3d6e7;
+	background-color: #ddd;
 	margin: 0;
 	padding: 0;
 }
@@ -12,15 +12,30 @@ a.homepage {
 	font-size: 12px;
 }
 
-article.post {
+article {
 	background-color: #fff;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	padding-top: 1.5rem;
-	border: 1px solid #888;
+	padding: 1em;
+	height: 100%;
+	border-radius: 5px;
+}
+
+article.post {
+	display: flex;
+	flex-direction: column;
+	color: #000;
+	border: 3px solid #ccc;
 	border-radius: 10px;
-	margin-bottom: 1rem;
-	margin-top: 1rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	padding: 1em;
+	height: 100%;
+
+}
+
+.attachment-post-thumbnail {
+	background-color: rgba(0, 0, 0, 1.0);
+	background-blend-mode: luminosity;
+	opacity: 0.80;
 }
 
 div.quote {
@@ -31,7 +46,12 @@ div.quote {
 
 #quotewidget {text-shadow: 4px 4px #000; color: #fff}
 
-#main {min-height: 420px}
+#main {
+	min-height: 420px; 
+	background-color: #fff;
+	padding: 1em;
+	border: 1px solid #888;
+}
 
 .single-featured-image-header {
 	max-width: 48em;
@@ -101,7 +121,6 @@ section.widget {
 }
 
 @media screen and (min-width: 48em) {
-#content {width: 48em}
 #site-header {width: 48em}
 }
 
@@ -158,16 +177,15 @@ div.textwidget ul {
     list-style: none;
 }
 
-ul.default-list, ol.default-list {
-    list-style-type: square; 
+ul.default-list li, ol.default-list li {
+    list-style-type: none; 
     padding-left: 2em;
-    margin-bottom: 2em;
 	font-weight: bold;
-} 
-ul.default-list li, ol.default-list li { 
-   padding-bottom: 5px;
-   padding-left: 5px;
-   line-height: 1.5em;
+    padding: 10px;
+    line-height: 1.5em;
+	font-size: 0.95rem;
+    background-color: #888;
+	margin-bottom: 10px;
 }
 
 /* FORMS */
@@ -230,6 +248,20 @@ input[type=button].btn-large:hover {
     height: auto;
 }
 
+#likeBtn {
+	background: #444040;
+	color: #fff;
+	border: 1px solid #ccc;
+	width: 90px;
+	border-radius 2px;
+	padding: 10px 10px;
+}
+
+#likeBtn.active { 
+	color: red;
+	transition: 5ms;
+}
+
 /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
 @media (max-width: 800px) {
   .form-inline input {
@@ -281,7 +313,8 @@ blockquote {
     position: relative;
     color: #383838;
     border-radius: 5px;
-    background-color: #fff;
+	border: 1px outset #888;
+    background-color: #ddd;
 }
 
 blockquote:before {
@@ -317,10 +350,15 @@ footer {
 	background-position: auto auto;
 }
 
+.grayscale {
+	background-color: rgba(0, 0, 35, 0.75);
+	background-blend-mode: multiply;
+}
+
 
 
 div.overlay1 {
-	background-color: #fff;
+	background-color: #ddd;
 	font-size: 1.10rem;
 	text-align: center;
 	padding: 1em;
@@ -399,7 +437,6 @@ p.site-description {
 
 #content {
 	margin: 0;
-	background: #c3d6e7;
 }
 
 /* VISUAL EFFECTS emphasing on contrast */
@@ -417,10 +454,25 @@ a.more-link { float: right; color: #108df8; font-weight: bold; text-decoration: 
 	text-align: left;
 }
 
+.entry-title {
+	padding: 20px 10px;
+}
+
+.entry-footer {
+	text-align: right;
+}
+
+.entry-excerpt {
+	padding: 0px 10px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
 
 
 .entry-content p {
 	word-spacing: 0px;
+	color: #000;
 }
 
 .entry-info {
@@ -429,10 +481,10 @@ a.more-link { float: right; color: #108df8; font-weight: bold; text-decoration: 
 	margin-top: 5px;
 }
 
-.colors-light a,
-.colors-light a:active, 
-.colors-light a:hover {
-	color: #108df8;
+.colors-light .entry-title a,
+.colors-light .entry-title a:active, 
+.colors-light .entry-title a:hover {
+	color: #fff;
 }
 
 .site-info p { color: #ddd }

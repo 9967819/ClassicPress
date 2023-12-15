@@ -1,7 +1,11 @@
 /* bootstrap/main.js and webhooks events for ahnjournal php frontend */
 
 const quoteDiv = document.getElementById('quotewidget');
-		
+
+// Like Button 
+const likeBtn = document.querySelector('#likeBtn');
+const article = document.querySelector('article');
+
 async function fetchQuote() {
 	await fetch("/static/freethinking.md")
 			.then(response=>response.text())
@@ -11,6 +15,11 @@ async function fetchQuote() {
 				let s =	quotes[Math.floor(Math.random()*quotes.length) - 1];
 				quoteDiv.innerHTML = s;
 			});
+}
+
+async function addVoteToPost(url) {
+	const response = await fetch(url, {method: "POST", credentials: "same-origin"});
+	return response.json();
 }
 
 quoteDiv.addEventListener('click', (e) => {
@@ -32,3 +41,22 @@ openHam.addEventListener('click', () => {
 		menuOpen = false;
 	}
 })
+
+
+// webhook. (experimental)
+likeBtn.addEventListener('click', () => {
+	const u = '/webhooks.php?id=' + article.id;
+	const result = addVoteToPost(u);
+	if (result.code == 200) {
+		likeBtn.classList.toggle('active');
+		likeBtn.disabled = 'true';
+	} else {
+		//alert("thank you for voting!");
+		alert('Error: Voting limit reached for this post!');
+	}
+});
+
+
+// frontpage : make sure the backgrounds for each posts has a proper css/style
+// using flexbox 
+

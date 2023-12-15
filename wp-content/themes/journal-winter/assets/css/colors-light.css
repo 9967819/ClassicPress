@@ -142,7 +142,7 @@ body.colors-light,
 .colors-light .format-quote blockquote,
 .colors-light .nav-title,
 .colors-light .comment-body {
-	color: #333;
+	color: #000;
 }
 
 /* Placeholder text color -- selectors need to be separate to work. */
@@ -390,22 +390,22 @@ body.colors-light,
 .colors-light textarea,
 .colors-light select,
 .colors-light fieldset {
-	background: #fff;
+	background: #ddd;
+	border: 1px solid #888;
 }
 
 .colors-light .navigation-top,
 .colors-light .main-navigation > div > ul,
 .colors-light .pagination,
 .colors-light .comment-navigation,
-.colors-light .entry-footer,
-.colors-light .site-footer {
+.colors-light .entry-footer {
 	border-top-color: #333;
+	background: #cdcdcd;
 }
 
 .colors-light .single-featured-image-header,
 .colors-light .navigation-top,
 .colors-light .main-navigation li,
-.colors-light .entry-footer,
 .colors-light #comments {
 	border-bottom-color: #333;
 }
