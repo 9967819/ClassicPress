@@ -1,11 +1,10 @@
-</div><!-- #content -->
+</div>
 <footer class="site-footer overlay">
 	   <section class="align-items-center row">
 		<?php
 			get_template_part( 'template-parts/footer/footer', 'widgets' );
          ?>
        </section>
-       <!-- copyright, etc... -->
        <?php
 	   		get_template_part( 'template-parts/footer/site', 'quote' );
         ?>
@@ -19,7 +18,7 @@ gtag('js', new Date());
 
 gtag('config', 'G-QZJECS14WM');
 </script>
-<!-- jquery free core ui/ux script -->
-<script src="/wp-content/themes/journal/assets/js/widgets.js"></script>
+<!-- Jquery free core ui/ux script -->
+<script async src="/wp-content/themes/journal-winter/assets/js/widgets.js"></script>
 </body>
 </html>

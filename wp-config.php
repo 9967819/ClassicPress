@@ -17,7 +17,7 @@ define('NONCE_SALT',       'srMd?CU2ha#)1Sm;oSJE#Q[gq5DIeyP!26GaM[#Oy}AB+G<ryA%t
 $table_prefix  = 'wp_';
 
 define( 'WP_DEBUG', false );
-define( 'WP_CACHE', true );
+define( 'WP_CACHE', false );
 define( 'WP_STAGING', false ); 
 define( 'WP_ALLOW_REPAIR', false );
 # Enable core updates for minor releases (default):
@@ -28,16 +28,18 @@ define( 'OPENGRAPH_STRICT_MODE', true );
 
 ### Redis backend
 define( 'WP_REDIS_ENABLE', true );
-define( 'WP_REDIS_IS_LOCALHOST', true );
+define( 'WP_REDIS_IS_LOCALHOST', WP_REDIS_ENABLE );
 
-if (WP_REDIS_ENABLE==true) {
-	global $redis;
+if (WP_REDIS_IS_LOCALHOST === true) {
+	//global $redis;
 	$redis = new Redis(); 
 	$redis->connect('127.0.0.1', 6379);
 } else { 
 	$redis = false;
 }
-	
+
+define('REDIS_CLIENT', $redis);
+
 
 #define( 'IMPACT_SITE_ID', '121074d9-82d6-4e88-8376-5ae1064ad06d');
 

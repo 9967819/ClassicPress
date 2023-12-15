@@ -6,6 +6,9 @@
 <?php 
 wp_head(); 
 ?>
+<link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/fontawesome.min.css">
+<link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/brands.css">
+<link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/solid.css">
 
 </head>
 <body class="home blog hfeed has-header-image has-sidebar colors-light">

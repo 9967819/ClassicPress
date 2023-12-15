@@ -310,6 +310,11 @@ function twentyseventeen_scripts() {
 	#wp_register_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '20161020' );
 	#wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
+	# fontawesome-free webfonts
+
+	#wp_register_script( 'fontawesome6', get_theme_file_uri( '/assets/fontawesome/css/fontawesome.min.css'));
+	#wp_register_script( 'fontawesome6-brands', get_theme_file_uri( '/assets/fontawesome/css/brands.css'));
+	#wp_register_script( 'fontawesome6-solid', get_theme_file_uri( '/assets/fontawesome/css/solid.css'));
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

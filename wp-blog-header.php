@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL|E_STRICT);
 #setlocale(LC_ALL, 'fr_CA.utf8');
-require_once dirname(__FILE__) . '/wp-load.php';
+
 #require_once dirname(__FILE__) . '/wp-config.php';
 
 class Journal 
@@ -10,6 +10,9 @@ class Journal
 
 	function __construct() {
 		ob_start();
+
+		# Wordpress/Classicpress
+		require_once dirname(__FILE__) . '/wp-load.php';
 		wp();
 		require_once dirname(__FILE__) . '/wp-includes/template-loader.php';
 	}

@@ -242,15 +242,15 @@ add_action( 'transition_comment_status', '_clear_modified_cache_on_transition_co
 add_filter( 'http_request_host_is_external', 'allowed_http_request_hosts', 10, 2 );
 
 // REST API filters.
-add_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
-add_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
-add_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
-add_action( 'auth_cookie_malformed', 'rest_cookie_collect_status' );
-add_action( 'auth_cookie_expired', 'rest_cookie_collect_status' );
-add_action( 'auth_cookie_bad_username', 'rest_cookie_collect_status' );
-add_action( 'auth_cookie_bad_hash', 'rest_cookie_collect_status' );
-add_action( 'auth_cookie_valid', 'rest_cookie_collect_status' );
-add_filter( 'rest_authentication_errors', 'rest_cookie_check_errors', 100 );
+//add_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+//add_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
+//add_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+//add_action( 'auth_cookie_malformed', 'rest_cookie_collect_status' );
+//add_action( 'auth_cookie_expired', 'rest_cookie_collect_status' );
+//add_action( 'auth_cookie_bad_username', 'rest_cookie_collect_status' );
+//add_action( 'auth_cookie_bad_hash', 'rest_cookie_collect_status' );
+//add_action( 'auth_cookie_valid', 'rest_cookie_collect_status' );
+//add_filter( 'rest_authentication_errors', 'rest_cookie_check_errors', 100 );
 
 // Actions
 add_action( 'wp_head', '_wp_render_title_tag', 1 );
@@ -258,8 +258,8 @@ add_action( 'wp_head', 'wp_enqueue_scripts', 1 );
 add_action( 'wp_head', 'wp_resource_hints', 2 );
 add_action( 'wp_head', 'feed_links', 2 );
 add_action( 'wp_head', 'feed_links_extra', 3 );
-add_action( 'wp_head', 'rsd_link' );
-add_action( 'wp_head', 'wlwmanifest_link' );
+//add_action( 'wp_head', 'rsd_link' );
+//add_action( 'wp_head', 'wlwmanifest_link' );
 add_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 add_action( 'wp_head', 'locale_stylesheet' );
 add_action( 'publish_future_post', 'check_and_publish_future_post', 10, 1 );
@@ -387,7 +387,7 @@ add_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 add_filter( 'default_option_link_manager_enabled', '__return_true' );
 
 // This option no longer exists; tell plugins we always support auto-embedding.
-add_filter( 'pre_option_embed_autourls', '__return_true' );
+// add_filter( 'pre_option_embed_autourls', '__return_true' );
 
 // Default settings for heartbeat
 add_filter( 'heartbeat_settings', 'wp_heartbeat_settings' );
@@ -515,7 +515,7 @@ add_filter( 'media_send_to_editor', 'image_media_send_to_editor', 10, 3 );
 #add_action( 'rest_api_init', 'wp_oembed_register_route' );
 #add_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
 
-#add_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+add_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 #add_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 add_action( 'embed_head', 'enqueue_embed_scripts', 1 );
@@ -540,6 +540,7 @@ add_filter( 'the_excerpt_embed', 'convert_chars' );
 add_filter( 'the_excerpt_embed', 'wpautop' );
 add_filter( 'the_excerpt_embed', 'shortcode_unautop' );
 add_filter( 'the_excerpt_embed', 'wp_embed_excerpt_attachment' );
+
 
 add_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10, 3 );
 add_filter( 'oembed_response_data', 'get_oembed_response_data_rich', 10, 4 );
