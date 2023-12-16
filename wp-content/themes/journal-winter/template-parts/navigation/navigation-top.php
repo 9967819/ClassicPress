@@ -18,7 +18,7 @@
 
 
 	<a href="#" class="icon" id="toggle-nav-menu" alt="menu">
-		<i class="fa fa-bars">[+]</i>
+		<i class="fa fa-bars"></i>
 	</a>
 	
 	<?php

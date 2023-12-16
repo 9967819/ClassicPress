@@ -272,8 +272,8 @@ body.colors-light,
 .colors-light .site-description {
 	color: #fff;
 	font-weight: bold;
-	font-variant: small-caps;
 	letter-spacing: 5px;
+	text-align: center;
 }
 
 .colors-light button:hover,
@@ -408,13 +408,6 @@ body.colors-light,
 .colors-light .main-navigation li,
 .colors-light #comments {
 	border-bottom-color: #333;
-}
-
-.colors-light .site-header,
-.colors-light .single-featured-image-header {
-	/*background-color: rgba(0, 0, 0, 0.45);*/
-	/*border: 1px solid #666;
-	/*border-radius: 2px;*/
 }
 
 .colors-light button,
