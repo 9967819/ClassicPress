@@ -3062,13 +3062,6 @@ p > object:only-child {
 		padding-top: 0;
 	}
 
-	/* Wide-screen resolution */
-	@media screen and (min-width:1600px) {
-		.site-branding {
-			left: 49%;
-		}
-	}
-
 	.wp-custom-header {
 		display: block;
 		height: 165px;
@@ -3781,6 +3774,12 @@ p > object:only-child {
 	}
 
 	
+}
+
+@media screen and (min-width: 1600px) {
+	.site-branding {
+		left: 49%;
+	}
 }
 
 /*--------------------------------------------------------------
