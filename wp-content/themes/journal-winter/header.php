@@ -11,11 +11,9 @@ wp_head();
 <link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/solid.css">
 
 </head>
-<body class="home blog hfeed has-header-image has-sidebar colors-light">
+<body>
 	<header id="site-header">
 
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
 		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-
-</header><!-- #thismakesnofuckingsense222 -->
+		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+	</header>

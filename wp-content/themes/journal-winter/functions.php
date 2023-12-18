@@ -297,10 +297,10 @@ function twentyseventeen_scripts() {
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 
 	// Load the default colors scheme.
-	wp_enqueue_style( 'twentyseventeen-colors-light', get_theme_file_uri( '/assets/css/colors-light.css' ), array( 'twentyseventeen-style' ), '1.0' );
+	// wp_enqueue_style( 'twentyseventeen-colors-light', get_theme_file_uri( '/assets/css/colors-light.css' ), array( 'twentyseventeen-style' ), '1.0' );
 
    	// Extra customizations and enhancements.
-   	wp_enqueue_style( 'customizations', get_template_directory_uri() . '/assets/css/customizations.css', false, '1.1', 'all');
+   	// wp_enqueue_style( 'customizations', get_template_directory_uri() . '/assets/css/customizations.css', false, '1.1', 'all');
 
 	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
 	// if ( is_customize_preview() ) {

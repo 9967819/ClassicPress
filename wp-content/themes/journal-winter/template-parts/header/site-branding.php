@@ -1,4 +1,4 @@
-<div class="site-branding centered">
+<div class="site-branding">
 <h1 class="site-title">
 	<a href="/"><?php bloginfo( 'name' ); ?></a>
 </h1>
