@@ -1009,7 +1009,6 @@ display:block
 }
 
 .main-navigation ul {
-background:transparent;
 padding:0
 }
 
@@ -1867,7 +1866,6 @@ width:48em
 display:block;
 position:absolute;
 top:-10px;
-left:383px;
 color: #000;
 visibility: visible;
 }
