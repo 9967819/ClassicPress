@@ -1756,7 +1756,8 @@ border-radius:10px;
 margin:1em;
 padding:1em;
 min-height:300px;
-width:90%
+width:90%;
+box-shadow: 5px 5px 3px #555;
 }
 
 .attachment-post-thumbnail {
