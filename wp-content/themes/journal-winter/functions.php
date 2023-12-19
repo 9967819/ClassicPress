@@ -1,9 +1,5 @@
 <?php
-
-if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
-}
+//error_reporting(E_ALL);
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -341,7 +337,7 @@ function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
 
 	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
 		if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
-			$sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
+			$sizes = '(max-width: 768px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
 		}
 	}
 
@@ -456,14 +452,16 @@ function render_logo_image($image_id) {
 }
 
 # Remove useless empty p elements
-add_filter('the_content', 'remove_empty_p', 11);
-function remove_empty_p($content){
-    $content = force_balance_tags($content);
-    return preg_replace('#<p></p>#i', '', $content);
-}
+#add_filter('the_content', 'sanitize_text_field', 11);
+#function remove_empty_p($content){
+#    $content = force_balance_tags($content);
+#    return preg_replace('#<p></p>#i', '', $content);
+#}
 
 
 # SECURITY 
 add_filter('wp_sitemaps_enabled', true );
 add_filter('enable_post_by_email_configuration', false );
 add_filter('security_always_trust_embeds', false);
+
+#add_filter('the_posts_pagination_args', array());

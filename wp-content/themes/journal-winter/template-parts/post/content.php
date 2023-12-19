@@ -1,5 +1,5 @@
 <?php
-$content = get_the_content();
+$content = nl2br(get_the_content());
 $title = get_the_title();
 $author = get_the_author();
 $email = get_the_author_meta('user_email');
