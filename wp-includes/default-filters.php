@@ -105,11 +105,13 @@ foreach ( array( 'content_save_pre', 'excerpt_save_pre', 'comment_save_pre', 'pr
 }
 
 // Format strings for display.
-foreach ( array( 'comment_author', 'term_name', 'link_name', 'link_description', 'link_notes', 'bloginfo', 'wp_title', 'widget_title' ) as $filter ) {
+foreach ( array( 'comment_author', 'term_name', 'link_name', 'link_description', 'link_notes', 'bloginfo', 'wp_title', 'widget_title') as $filter ) {
 	add_filter( $filter, 'wptexturize' );
 	add_filter( $filter, 'convert_chars' );
 	add_filter( $filter, 'esc_html' );
+
 }
+
 
 // Format ClassicPress
 foreach ( array( 'the_content', 'the_title', 'wp_title' ) as $filter ) {
@@ -149,6 +151,7 @@ add_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'shortcode_unautop' );
 add_filter( 'the_content', 'prepend_attachment' );
 add_filter( 'the_content', 'wp_filter_content_tags' );
+add_filter( 'the_content', 'sanitize_post' );
 
 add_filter( 'the_excerpt', 'wptexturize' );
 add_filter( 'the_excerpt', 'convert_smilies' );
@@ -548,5 +551,7 @@ add_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10, 3 );
 
 // Capabilities
 add_filter( 'user_has_cap', 'wp_maybe_grant_install_languages_cap', 1 );
+
+
 
 unset( $filter, $action );

@@ -2,7 +2,7 @@
 
 
 <nav id="site-navigation" class="main-navigation" aria-label="Top Menu" 
-	aria-controls="top-menu" aria-haspopup="true">
+	aria-controls="top-menu" aria-haspopup="true" role="menubar">
 
 
 

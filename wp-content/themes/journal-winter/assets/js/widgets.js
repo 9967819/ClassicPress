@@ -25,6 +25,7 @@ let menuOpen = false;
 openHam.addEventListener('click', () => {
 	if(!menuOpen){
 		navigationItems.classList.toggle("top-menu-visible");
+		navigationItems.toggleAttribute("aria-activedescendant", true);
 		menuOpen = true;
 	} else {
 		navigationItems.classList.remove('top-menu-visible');

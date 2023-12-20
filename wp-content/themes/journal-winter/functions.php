@@ -409,9 +409,9 @@ function twentyseventeen_front_page_template( $template ) {
  * @return array The filtered arguments for tag cloud widget.
  */
 function twentyseventeen_widget_tag_cloud_args( $args ) {
-	$args['largest']  = 1;
-	$args['smallest'] = 1;
-	$args['unit']     = 'em';
+	$args['largest']  = 18;
+	$args['smallest'] = 16;
+	$args['unit']     = 'pt';
 	$args['format']   = 'list';
 
 	return $args;
