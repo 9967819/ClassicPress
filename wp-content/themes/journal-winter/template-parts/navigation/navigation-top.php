@@ -5,6 +5,9 @@
 	aria-controls="top-menu" aria-haspopup="true" role="menubar">
 
 
+<a href="#" class="icon" id="toggle-nav-menu" alt="menu">
+<i class="fa fa-bars"></i>
+</a>
 
 
 	<?php
@@ -18,8 +21,6 @@
 	);
 	?>
 
-<a href="#" class="icon" id="toggle-nav-menu" alt="menu">
-<i class="fa fa-bars"></i>
-</a>
+
 
 </nav><!-- #swslfindfdnefl -->

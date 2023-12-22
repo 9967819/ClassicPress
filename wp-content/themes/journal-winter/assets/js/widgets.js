@@ -18,17 +18,16 @@ quoteDiv.addEventListener('click', (e) => {
 
 // Responsive navigation menu 
 // Credit: https://dev.to/david_bilsonn/learn-how-to-build-responsive-navigation-bar-with-html-css-javascript-4g5
-let openHam = document.querySelector('#toggle-nav-menu');
-let navigationItems = document.querySelector('#top-menu');
-let menuOpen = false;
+const openHam = document.querySelector('#toggle-nav-menu');
+const navigationItems = document.querySelector('#top-menu');
+const menuOpen = false;
 
 openHam.addEventListener('click', () => {
 	if(!menuOpen){
-		navigationItems.classList.toggle("top-menu-visible");
-		navigationItems.toggleAttribute("aria-activedescendant", true);
+		navigationItems.classList.toggle("visible");
+		//navigationItems.toggleAttribute("aria-activedescendant", true);
 		menuOpen = true;
 	} else {
-		navigationItems.classList.remove('top-menu-visible');
 		menuOpen = false;
 	}
 });
