@@ -19,6 +19,7 @@ $html = <<<HTML
 	</button>
 	</div>
 </article>
+<script cross-origin="anonymous" async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
 HTML;
 echo $html;
 
