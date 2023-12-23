@@ -11,6 +11,7 @@ article,aside,footer,header,nav,section {
 display:block
 }
 
+
 h1 {
 font-size:2em;
 margin:.67em 0
@@ -266,7 +267,7 @@ clear:both
 }
 
 body,button,input,select,textarea {
-font-family:"Helvetica Neue",helvetica,arial,sans-serif;
+font-family:"Lato","Helvetica Neue",arial,sans-serif;
 font-size:15px;
 font-size:.9375rem;
 font-weight:400;
@@ -395,11 +396,11 @@ font-weight:700
 }
 
 html[lang^="zh-"] body,html[lang^="zh-"] button,html[lang^="zh-"] input,html[lang^="zh-"] select,html[lang^="zh-"] textarea {
-font-family:"PingFang TC","Helvetica Neue",Helvetica,STHeitiTC-Light,Arial,sans-serif
+font-family:"PingFang TC","Lato",Helvetica,STHeitiTC-Light,Arial,sans-serif
 }
 
 html[lang="zh-CN"] body,html[lang="zh-CN"] button,html[lang="zh-CN"] input,html[lang="zh-CN"] select,html[lang="zh-CN"] textarea {
-font-family:"PingFang SC","Helvetica Neue",Helvetica,STHeitiSC-Light,Arial,sans-serif
+font-family:"PingFang SC","Lato",Helvetica,STHeitiSC-Light,Arial,sans-serif
 }
 
 html[lang^="zh-"] h1,html[lang^="zh-"] h2,html[lang^="zh-"] h3,html[lang^="zh-"] h4,html[lang^="zh-"] h5,html[lang^="zh-"] h6 {
@@ -407,7 +408,7 @@ font-weight:700
 }
 
 html[lang="bg-BG"] body,html[lang="bg-BG"] button,html[lang="bg-BG"] input,html[lang="bg-BG"] select,html[lang="bg-BG"] textarea,html[lang="ru-RU"] body,html[lang="ru-RU"] button,html[lang="ru-RU"] input,html[lang="ru-RU"] select,html[lang="ru-RU"] textarea,html[lang="uk"] body,html[lang="uk"] button,html[lang="uk"] input,html[lang="uk"] select,html[lang="uk"] textarea {
-font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,sans-serif
+font-family:"Lato",Helvetica,"Segoe UI",Arial,sans-serif
 }
 
 html[lang="bg-BG"] h1,html[lang="bg-BG"] h2,html[lang="bg-BG"] h3,html[lang="bg-BG"] h4,html[lang="bg-BG"] h5,html[lang="bg-BG"] h6,html[lang="ru-RU"] h1,html[lang="ru-RU"] h2,html[lang="ru-RU"] h3,html[lang="ru-RU"] h4,html[lang="ru-RU"] h5,html[lang="ru-RU"] h6,html[lang="uk"] h1,html[lang="uk"] h2,html[lang="uk"] h3,html[lang="uk"] h4,html[lang="uk"] h5,html[lang="uk"] h6 {
@@ -424,7 +425,7 @@ font-weight:700
 }
 
 html[lang="el"] body,html[lang="el"] button,html[lang="el"] input,html[lang="el"] select,html[lang="el"] textarea {
-font-family:"Helvetica Neue",Helvetica,Arial,sans-serif
+font-family:"Lato",Helvetica,Arial,sans-serif
 }
 
 html[lang="el"] h1,html[lang="el"] h2,html[lang="el"] h3,html[lang="el"] h4,html[lang="el"] h5,html[lang="el"] h6 {
@@ -466,12 +467,12 @@ font-weight:600
 
 html[lang="th"] h1,html[lang="th"] h2,html[lang="th"] h3,html[lang="th"] h4,html[lang="th"] h5,html[lang="th"] h6 {
 line-height:1.65;
-font-family:"Sukhumvit Set","Helvetica Neue",Helvetica,Arial,sans-serif
+font-family:"Sukhumvit Set","Lato",Helvetica,Arial,sans-serif
 }
 
 html[lang="th"] body,html[lang="th"] button,html[lang="th"] input,html[lang="th"] select,html[lang="th"] textarea {
 line-height:1.8;
-font-family:"Sukhumvit Set","Helvetica Neue",Helvetica,Arial,sans-serif
+font-family:"Sukhumvit Set","Lato",Helvetica,Arial,sans-serif
 }
 
 html[lang="ar"] *,html[lang="ary"] *,html[lang="azb"] *,html[lang="haz"] *,html[lang="ps"] *,html[lang^="zh-"] *,html[lang="bg-BG"] *,html[lang="ru-RU"] *,html[lang="uk"] *,html[lang="bn-BD"] *,html[lang="hi-IN"] *,html[lang="mr-IN"] *,html[lang="el"] *,html[lang="gu-IN"] *,html[lang="he-IL"] *,html[lang="ja"] *,html[lang="ko-KR"] *,html[lang="th"] * {
@@ -560,23 +561,23 @@ background:#bbb
 
 ::-webkit-input-placeholder {
 color:#333;
-font-family:"Helvetica Neue",helvetica,arial,sans-serif
+font-family:"Lato","Helvetica Neue",arial,sans-serif
 }
 
 :-moz-placeholder {
 color:#333;
-font-family:"Helvetica Neue",helvetica,arial,sans-serif
+font-family:"Lato","Helvetica Neue",arial,sans-serif
 }
 
 ::-moz-placeholder {
 color:#333;
-font-family:"Helvetica Neue",helvetica,arial,sans-serif;
+font-family:"Lato","Helvetica Neue",arial,sans-serif;
 opacity:1
 }
 
 :-ms-input-placeholder {
 color:#333;
-font-family:"Helvetica Neue",helvetica,arial,sans-serif
+font-family:"Lato","Helvetica Neue",arial,sans-serif
 }
 
 hr {
@@ -1701,7 +1702,7 @@ color:#fff
 
 body {
 font-size:1.1em;
-font-family:"Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+font-family:"Lato",Helvetica,Arial,Verdana,sans-serif;
 background-color:#ddd;
 margin:0;
 padding:0
@@ -1713,7 +1714,7 @@ font-size:12px
 }
 
 article {
-background-color:#fff;
+color: #fff;
 padding:1em;
 height:100%;
 border-radius:5px
@@ -1731,6 +1732,24 @@ padding: 1rem;
 margin: 1rem;
 box-shadow: 5px 5px 3px #555;
 }
+
+iframe {
+aspect-ratio: 16/9;
+width: 100%;
+}
+
+article.video {
+background-color: #000;
+padding: 1rem;
+margin: 1rem;
+font-weight: 600;
+font-size: 1.4rem;
+box-shadow: 5px 5px 3px #555;
+width: 80%;
+}
+
+
+article.video i.red {color: red}
 
 .attachment-post-thumbnail {
 background-color:#000f;
@@ -2118,7 +2137,7 @@ font-size:12px
 
 h1.site-title {
 font-size:2rem;
-font-family:"Helvetica Neue",helvetica,sans-serif;
+font-family:"Lato","Helvetica Neue",sans-serif;
 text-shadow:3px 3px 5px #ccc;
 text-overflow:wrap;
 color:#4a6074

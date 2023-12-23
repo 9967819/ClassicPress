@@ -9,6 +9,9 @@ wp_head();
 <link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/fontawesome.min.css">
 <link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/brands.css">
 <link type="text/css" rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/solid.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 </head>
 <body>
