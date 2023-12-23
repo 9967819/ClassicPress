@@ -1521,10 +1521,14 @@ list-style:none
 }
 
 ul.default-list li,ol.default-list li {
-list-style-type:none;
-padding:10px;
-line-height:1.5em;
-margin-bottom:10px
+list-style-type: square;
+padding-left:5px;
+line-height:1em;
+}
+
+ul.default-list li a {
+color: #888;
+font-size: normal;
 }
 
 .form-inline {
