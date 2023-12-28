@@ -7,12 +7,16 @@ async function addVoteToPost(url) {
 		  credentials: "same-origin"})
 		.then((response) => response.json())
 		.then((data) => {
+			//console.log(data);
 			if (data.code == 200) {
 				likeBtn.classList.add('active');
 				likeBtn.disabled = true;
-				count.textContent = parseInt(data.count) + 1;
+				//count.textContent = parseInt(data.count) + 1;
 			} else {
-				console.log('internal error');
+				likeBtn.classList.add('aquablue');
+				count.classList.add('aquablue');
+				count.innerHTML = "";
+				count.textContent = 'Voting limiting reached!';
 			}
 		});
 }

@@ -43,9 +43,16 @@ function add_vote_to_post($post_id, $redis, $debug = false) {
 	#$has_voted = false;
 
 	# Make sure i can debug the sql part in dev mode
-	$redis->flushAll();
+	if ($debug == true) {
+		$redis->sRem('clients', $remoteip);
+	}
+	# current post is a set
+	$post_key = sprintf("post_%d", $post_id);
 	
-	if (! $redis->sIsMember('clients', $remoteip)  ){
+
+
+	if (! $redis->sIsMember('clients', $remoteip) && 
+  	    ! $redis->sIsMember($post_key, $remoteip)){
 
 		$count = intval($post->likes_count) + 1; # n+1
 		update_post(array('id' => $post_id, 'likes_count' => $count)); 	
@@ -55,8 +62,7 @@ function add_vote_to_post($post_id, $redis, $debug = false) {
 			"code"   => 200,
 			'remote_addr' => $remoteip);
 
-		# $_SESSION['user_has_voted'] = true;
-		
+		$redis->sAdd($post_key, $remoteip);	
 		$redis->sAdd('clients', $remoteip);
 	} else {
 		# Client has already voted for this post
@@ -70,7 +76,8 @@ function add_vote_to_post($post_id, $redis, $debug = false) {
 		}
 	}
 
-	$redis->save(); #Close redis connection. 
+	$redis->save(); #Save transaction and close redis connection. 
+	$redis->close();
 	}//REQUEST_METHOD IS POST
 	return $data;
 
@@ -79,22 +86,22 @@ function add_vote_to_post($post_id, $redis, $debug = false) {
 global $debug;
 $debug = true;
 
-if ($_SERVER['X_REAL_IP'] == '192.168.0.193'){
-	$debug = true;
-}	
+#if ($_SERVER['X_REAL_IP'] == '192.168.0.193'){
+#	$debug = true;
+#}	
 
 if (! empty($_GET['id']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 	$post_id = intval($_GET['id']);
 
-
 	$json = add_vote_to_post($post_id, REDIS_CLIENT, $debug);
-
-	header('Content-Type: application/json; charset=utf-8');
-	http_response_code($json['code']);
-	echo json_encode($json);
-} else {
-	# Maximum 1 like per post allowed for each real IP addresses.
-	http_response_code(400);
-	echo json_encode(array("code" => "Off-limit!!"));
+	if ($json['code'] == 200){
+		header('Content-Type: application/json; charset=utf-8');
+		http_response_code(200);
+		echo json_encode($json);
+	} else {
+		# Maximum 1 like per post allowed for each real IP addresses.
+		http_response_code(403);
+		echo json_encode(array("code" => 403));
+	}	
 }	
 exit;

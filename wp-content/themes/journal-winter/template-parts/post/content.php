@@ -20,9 +20,10 @@ $html = <<<HTML
 	<button class="button" id="likeBtn" data-article-id="{$articleid}">
 		<i class="fa-solid fa-heart"></i>
 	</button>
-	<p><span id="likes-count">{$likes_count}</span> {$people} ont aimé ce post.</p>
+	<p id="likes-count" class="">{$likes_count} {$people} ont aimé ce post.</p>
 	</div>
 </article>
+<script async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
 HTML;
 echo $html;
 
