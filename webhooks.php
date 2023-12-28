@@ -1,5 +1,7 @@
 <?php
-error_reporting(E_ALL);
+#session_start();
+
+#error_reporting(E_ALL);
 require_once dirname(__FILE__) . '/wp-load.php';
 require_once dirname(__FILE__) . '/wp-includes/post.php';
 
@@ -21,54 +23,78 @@ function update_post($data = array(), $options = array())
 		$stmt->execute($data);
 	} catch (PDOException $e) {
 		echo "Fatal error updating record: " . $e->getMessage();
-		return true;
+		return false;
 	}
-	return false;
+	return true;
 
 }
 
 
-function add_vote_to_post($post_id, $redis) {
-	#global $redis;
-	#$redis->connect('127.0.0.1', 6379);
-	$json = json_encode(array('code' => '201'));
-	if ($_SERVER['REQUEST_METHOD'] == 'POST' 
-		&& isset($_SERVER['X_REAL_IP'])) {
-	$remoteip = $_SERVER['X_REAL_IP'];
-	$voted = false;
-	if (! $redis->sIsMember('clients', $remoteip)){
-		$post = get_post($post_id);
-		$count = intval($post['likes_count']) + 1; # n+1
+function add_vote_to_post($post_id, $redis, $debug = false) {
+	$data = array(
+			'code'  => 201, 
+			'voted' => false, 
+			'debug' => $debug);
+	if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+		
+	$remoteip = $_SERVER['X_REAL_IP'] ? $_SERVER['REMOTE_ADDR'] : '127.0.0.1';
+	
+	$post = get_post($post_id);
+	#$has_voted = false;
+
+	# Make sure i can debug the sql part in dev mode
+	$redis->flushAll();
+	
+	if (! $redis->sIsMember('clients', $remoteip)  ){
+
+		$count = intval($post->likes_count) + 1; # n+1
 		update_post(array('id' => $post_id, 'likes_count' => $count)); 	
-		$voted = true;
-		$json = json_encode(array("result" => $post['likes_count'], 
-			"success" => true, "code" => 200));
+		$data = array(
+			"count"  => $post->likes_count, 
+			"voted"  => true, 
+			"code"   => 200,
+			'remote_addr' => $remoteip);
+
+		# $_SESSION['user_has_voted'] = true;
+		
 		$redis->sAdd('clients', $remoteip);
 	} else {
-		$json = json_encode(array("success" => false, "code" => 403));
+		# Client has already voted for this post
+		$data = array(
+			"voted"       => false, 
+			"code"        => 403,
+			"message" 	  => "denied",
+			"client_addr" => $remoteip);
+		if ($debug == true) {
+			$data["count"] = intval($post->likes_count);
+		}
 	}
-	$redis->close(); #Close redis connection. 
-	}
-	return $json;
+
+	$redis->save(); #Close redis connection. 
+	}//REQUEST_METHOD IS POST
+	return $data;
+
 }
 
+global $debug;
+$debug = true;
+
+if ($_SERVER['X_REAL_IP'] == '192.168.0.193'){
+	$debug = true;
+}	
+
+if (! empty($_GET['id']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+	$post_id = intval($_GET['id']);
 
 
-if (! empty($_GET['id'])) {
-	$post_id = strval($_GET['id']);
-	$json = add_vote_to_post($post_id, REDIS_CLIENT);
-	if (isset($json['code']) && intval($json['code']) == 201) {
-		header('Content-Type: application/json; charset=utf-8');
-		http_response_code(200);
-		echo $json;
-	} else {
-		header('Content-Type: text/html; charset=utf-8');
-		http_response_code(500);
-		echo "<p>Internal server error</p>";
-	}
+	$json = add_vote_to_post($post_id, REDIS_CLIENT, $debug);
+
+	header('Content-Type: application/json; charset=utf-8');
+	http_response_code($json['code']);
+	echo json_encode($json);
 } else {
-	# return error response 400
+	# Maximum 1 like per post allowed for each real IP addresses.
 	http_response_code(400);
-	echo "<p>Bad request: Missing required <strong>id</strong> param.</p>";
-}
+	echo json_encode(array("code" => "Off-limit!!"));
+}	
 exit;

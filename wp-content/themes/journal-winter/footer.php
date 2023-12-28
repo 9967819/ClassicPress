@@ -18,7 +18,10 @@ gtag('js', new Date());
 
 gtag('config', 'G-QZJECS14WM');
 </script>
-<!-- Jquery free core ui/ux script -->
+<!-- quote randomizer -->
 <script async src="/wp-content/themes/journal-winter/assets/js/widgets.js"></script>
+<!-- async like button -->
+<script async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
+
 </body>
 </html>

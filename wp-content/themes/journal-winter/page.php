@@ -18,11 +18,11 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div><!-- .wrap -->
-</div><!-- .site-content -->
-</div><!-- .site-content-contain -->
-</div><!-- #page -->
+		</main>
+	</div>
+</div>
+</div>
+</div>
+</div>
 <?php
 get_footer();
