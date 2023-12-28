@@ -3,7 +3,7 @@ $content = nl2br(get_the_content());
 $title = get_the_title();
 $post = get_post();
 $likes_count = $post->likes_count;
-$people = $likes_count > 1  ? "personnes" : "personne";
+$people = $likes_count > 1  ? "personnes aiment" : "personne aime";
 $author = get_the_author();
 $email = get_the_author_meta('user_email');
 $articleid = get_the_ID();
@@ -20,7 +20,7 @@ $html = <<<HTML
 	<button class="button" id="likeBtn" data-article-id="{$articleid}">
 		<i class="fa-solid fa-heart"></i>
 	</button>
-	<p id="likes-count" class="">{$likes_count} {$people} ont aimé ce post.</p>
+	<p id="likes-count" class=""><span id="count">{$likes_count}</span> {$people} ce post.</p>
 	</div>
 </article>
 <script async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
