@@ -1307,7 +1307,7 @@ color:#fff
 }
 
 body {
-font-size:1.1em;
+font-size:1rem;
 font-family:"Lato",Helvetica,Arial,Verdana,sans-serif;
 background-color:#999;
 margin:0;
@@ -1412,7 +1412,6 @@ display:grid;
 background-color:rgba(0,0,0, 0.50);
 margin:0;
 padding:1em 0 0 1em;
-width:98%;
 align-items:center;
 justify-content:center;
 text-align:center;
@@ -1522,8 +1521,9 @@ list-style:none
 
 ul.default-list li,ol.default-list li {
 list-style-type: square;
-padding-left:5px;
+padding-left:0.5em;
 line-height:1em;
+margin-left:1em
 }
 
 ul.default-list li a {
@@ -1696,12 +1696,12 @@ background-blend-mode:multiply
 
 div.overlay1 {
 background-color:#fff;
-font-size:1.25rem;
+font-size:1.1rem;
 text-align:center;
 padding:1em;
 margin-top:1em;
 border-radius:10px;
-font-weight:600
+font-weight:400;
 border: 1px solid #888
 }
 
