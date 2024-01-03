@@ -22,7 +22,7 @@ if (isset($redis)) {
 <a href="/sitemap.xml">Plan du site</a> |
 <a href="/feed/">RSS</a> 
 <br>
-&copy; 2023 Applied Human Neurosecurity Journal, 2030 rue Fournier bureau 203. Saint-Jérôme, Québec (Canada)<br>
+&copy; 2024 Applied Human Neurosecurity Journal, 2030 rue Fournier bureau 203. Saint-Jérôme, Québec (Canada)<br>
 <a href="http://creativecommons.org/licenses/by-nd/4.0/">Contenu sous license CC-BY-ND 4.0</a>
 </p>
 <p id="quotewidget" class="dynamic-quote-widget">
