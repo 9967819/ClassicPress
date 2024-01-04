@@ -1,12 +1,12 @@
 {
-    "name": "classicpress/classicpress",
-    "description": "The CMS for Creators. Stable. Lightweight. Instantly Familiar. Also known as the WordPress fork.",
+    "name": "ahnjournal/journal-winter",
+    "description": "Official theme of AHNJournal, based on TwentySevenTeen.",
     "keywords": [
         "classicpress"
     ],
     "type": "wordpress-core",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.classicpress.net/",
+    "homepage": "https://open-neurosecurity.org/",
     "authors": [
         {
             "name": "ClassicPress Community",
@@ -17,6 +17,11 @@
         "issues": "https://github.com/ClassicPress/ClassicPress/issues"
     },
     "require": {
-        "johnpbloch/wordpress-core-installer": "2.0.0"
+		"smarty/smarty": "3.1.11"
+    },
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": false
+        }
     }
 }

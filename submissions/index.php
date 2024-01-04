@@ -8,6 +8,7 @@ get_header();
 <div class="wrap">
 	<main class="site-main" id="content">
 		<h2 class="page-title">Directives aux auteurs</h2>
+		
 		<form method="POST" action=".">
 		<label for="first_name">Entrez votre prénom: </label>
 		<input type="text" name="first_name" id="first_name" required />
