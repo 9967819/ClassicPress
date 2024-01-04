@@ -1443,7 +1443,7 @@ list-style:none
 ul.default-list li,ol.default-list li {
 list-style-type: square;
 padding-left:0.5em;
-line-height:1em;
+line-height:1.5em;
 margin-left:1em
 }
 
