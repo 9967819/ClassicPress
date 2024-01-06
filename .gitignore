@@ -8,3 +8,4 @@ tests
 *.local.*
 wp-content/uploads
 static
+sitemap.xml

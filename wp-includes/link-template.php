@@ -2613,8 +2613,8 @@ function get_the_posts_navigation( $args = array() ) {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'prev_text'          => __( 'Older posts' ),
-				'next_text'          => __( 'Newer posts' ),
+				'prev_text'          => __( 'Articles précédents' ),
+				'next_text'          => __( 'Articles suivants' ),
 				'screen_reader_text' => __( 'Posts navigation' ),
 			)
 		);

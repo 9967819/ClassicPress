@@ -1760,7 +1760,8 @@ font-weight:600
 }
 
 .post-thumbnail img {
-height:auto
+height:100%;
+width:100%;
 }
 
 #site-navigation a {
