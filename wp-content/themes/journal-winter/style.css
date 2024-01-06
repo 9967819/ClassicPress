@@ -1443,12 +1443,11 @@ list-style:none
 ul.default-list li,ol.default-list li {
 list-style-type: square;
 padding-left:0.5em;
-line-height:1.5em;
-margin-left:1em
+line-height:1.55em;
+margin-left:1.2em
 }
 
 ul.default-list li a {
-color: #888;
 font-size: normal;
 }
 
@@ -1622,8 +1621,10 @@ background-blend-mode:multiply
 div.overlay1 {
 background-color:#fff;
 text-align:left;
-border-radius:10px;
+border-radius:5px;
 font-weight:400;
+padding: 1.5em;
+box-shadow: 5px 5px #ccc;
 }
 
 a.button {

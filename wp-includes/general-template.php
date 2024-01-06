@@ -1465,22 +1465,22 @@ function the_archive_title( $before = '', $after = '' ) {
 function get_the_archive_title() {
 	if ( is_category() ) {
 		/* translators: Category archive title. 1: Category name */
-		$title = sprintf( __( 'Category: %s' ), single_cat_title( '', false ) );
+		$title = sprintf( __( '%s' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
 		/* translators: Tag archive title. 1: Tag name */
 		$title = sprintf( __( 'Tag: %s' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
 		/* translators: Author archive title. 1: Author name */
-		$title = sprintf( __( 'Author: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Auteur: %s' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
 		/* translators: Yearly archive title. 1: Year */
-		$title = sprintf( __( 'Year: %s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
+		$title = sprintf( __( 'Année: %s' ), get_the_date( _x( 'Y', 'yearly archives date format' ) ) );
 	} elseif ( is_month() ) {
 		/* translators: Monthly archive title. 1: Month name and year */
-		$title = sprintf( __( 'Month: %s' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
+		$title = sprintf( __( 'Mois: %s' ), get_the_date( _x( 'F Y', 'monthly archives date format' ) ) );
 	} elseif ( is_day() ) {
 		/* translators: Daily archive title. 1: Date */
-		$title = sprintf( __( 'Day: %s' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
+		$title = sprintf( __( 'Jour: %s' ), get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
 			$title = _x( 'Asides', 'post format archive title' );

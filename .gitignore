@@ -9,3 +9,4 @@ tests
 wp-content/uploads
 static
 sitemap.xml
+*.lock
