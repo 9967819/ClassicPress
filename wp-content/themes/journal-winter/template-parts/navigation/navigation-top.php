@@ -1,14 +1,11 @@
 
 
+<button class="icon" id="toggle-nav-menu" alt="menu">
+<i class="fa fa-bars"></i>
+</button>
 
 <nav id="site-navigation" class="main-navigation" aria-label="Top Menu" 
 	aria-controls="top-menu" aria-haspopup="true" role="menubar">
-
-
-<a href="#" class="icon" id="toggle-nav-menu" alt="menu">
-<i class="fa fa-bars"></i>
-</a>
-
 
 	<?php
 	wp_nav_menu(

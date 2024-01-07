@@ -20,7 +20,8 @@ quoteDiv.addEventListener('click', (e) => {
 // Credit: https://dev.to/david_bilsonn/learn-how-to-build-responsive-navigation-bar-with-html-css-javascript-4g5
 const openHam = document.querySelector('#toggle-nav-menu');
 const navigationItems = document.querySelector('#top-menu');
-const menuOpen = false;
+let menuOpen = false;
+
 
 openHam.addEventListener('click', () => {
 	if(!menuOpen){
@@ -28,6 +29,7 @@ openHam.addEventListener('click', () => {
 		//navigationItems.toggleAttribute("aria-activedescendant", true);
 		menuOpen = true;
 	} else {
+		navigationItems.classList.remove('visible');
 		menuOpen = false;
 	}
 });

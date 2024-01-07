@@ -87,7 +87,9 @@ height:0
 }
 
 img {
-border-style:none
+border-style:none;
+height: 100%;
+width: 100%;
 }
 
 svg:not(:root) {
@@ -539,6 +541,12 @@ transition:color .2s
 color:#767676
 }
 
+@media screen and (max-width: 430px) {
+.main-navigation {
+visibility: hidden;
+}
+}
+
 @media screen and (min-width: 48em) {
 .main-navigation {
 clear:both;
@@ -560,7 +568,7 @@ border-top:1px solid #eee;
 padding:.75em 1.695em
 }
 
-.main-navigation.toggled-on > div > ul {
+ul#top-menu.visible > div > ul {
 display:block
 }
 
@@ -568,7 +576,7 @@ display:block
 padding:0 0 0 1.5em
 }
 
-.main-navigation ul ul.toggled-on {
+.main-navigation ul ul.visible {
 display:block
 }
 
@@ -596,88 +604,6 @@ text-decoration:none
 
 .main-navigation a:hover {
 color:#767676
-}
-
-.menu-toggle {
-background-color:transparent;
-border:0;
--webkit-box-shadow:none;
-box-shadow:none;
-color:#222;
-display:none;
-font-size:14px;
-font-size:.875rem;
-font-weight:800;
-line-height:1.5;
-margin:1px auto 2px;
-padding:1em;
-text-shadow:none
-}
-
-.js .menu-toggle {
-display:block
-}
-
-.main-navigation.toggled-on ul.nav-menu {
-display:block
-}
-
-.menu-toggle:hover,.menu-toggle:focus {
-background-color:transparent;
--webkit-box-shadow:none;
-box-shadow:none
-}
-
-.menu-toggle:focus {
-outline:thin solid
-}
-
-.menu-toggle .icon {
-margin-right:.5em;
-top:-2px
-}
-
-.toggled-on .menu-toggle .icon-bars,.menu-toggle .icon-close {
-display:none
-}
-
-.toggled-on .menu-toggle .icon-close {
-display:inline-block
-}
-
-.dropdown-toggle {
-background-color:transparent;
-border:0;
--webkit-box-shadow:none;
-box-shadow:none;
-color:#222;
-display:block;
-font-size:16px;
-right:-.5em;
-line-height:1.5;
-margin:0 auto;
-padding:.5em;
-position:absolute;
-text-shadow:none;
-top:0
-}
-
-.dropdown-toggle:hover,.dropdown-toggle:focus {
-background:transparent
-}
-
-.dropdown-toggle:focus {
-outline:thin dotted
-}
-
-.dropdown-toggle.toggled-on .icon {
--ms-transform:rotate(-180deg);
--webkit-transform:rotate(-180deg);
-transform:rotate(-180deg)
-}
-
-.site-header .menu-scroll-down {
-display:none
 }
 
 html {
@@ -1190,41 +1116,6 @@ box-shadow:0 0 0 8px #222
 color:#000
 }
 
-.colors-light .menu-toggle,.colors-light .menu-toggle:hover,.colors-light .menu-toggle:focus,.colors-light .dropdown-toggle,.colors-light .dropdown-toggle:hover,.colors-light .dropdown-toggle:focus,.colors-light .menu-scroll-down,.colors-light .menu-scroll-down:hover,.colors-light .menu-scroll-down:focus {
-background-color:transparent
-}
-
-
-@media screen and (min-width: 48em) {
-.colors-light .nav-links .nav-previous .nav-title .icon,.colors-light .nav-links .nav-next .nav-title .icon {
-color:#eee
-}
-
-.colors-light .main-navigation li li:hover,.colors-light .main-navigation li li.focus {
-color:#9298c0
-}
-
-.colors-light .menu-scroll-down {
-color:#999
-}
-
-.colors-light .main-navigation ul ul {
-border:1px #9298c0;
-background:#000
-}
-
-.colors-light .main-navigation ul li.menu-item-has-children:before,.colors-light .main-navigation ul li.page_item_has_children:before {
-border-bottom-color:#ccc
-}
-
-.main-navigation ul li.menu-item-has-children:after,.main-navigation ul li.page_item_has_children:after {
-border-bottom-color:#222
-}
-
-.colors-light .main-navigation li li.focus > a,.colors-light .main-navigation li li:focus > a,.colors-light .main-navigation li li:hover > a,.colors-light .main-navigation li li a:hover,.colors-light .main-navigation li li a:focus,.colors-light .main-navigation li li.current_page_item a:hover,.colors-light .main-navigation li li.current-menu-item a:hover,.colors-light .main-navigation li li.current_page_item a:focus,.colors-light .main-navigation li li.current-menu-item a:focus {
-color:#fff
-}
-}
 
 body {
 font-size:1rem;
@@ -1393,14 +1284,10 @@ height: 40px;
 #toggle-nav-menu {
 display:block;
 position:absolute;
-top:-10px;
 color:#888;
+margin: 5px 5px;
 visibility:visible;
-}
-
-#toggle-nav-menu:hover {
 background-color: #ddd;
-color: #fff;
 }
 
 #top-menu {
@@ -1410,8 +1297,7 @@ position:relative;
 clear:both;
 z-index:3;
 opacity:1;
-border-bottom:1px dotted #888;
-top:2em;
+top:3em;
 }
 
 #top-menu.visible {
@@ -1562,8 +1448,8 @@ font-weight: 400;
 
 .gallery figure img {
 object-fit: cover;
-width: 200px;
-height: 200px;
+width: 250px;
+height: 250px;
 vertical-align: middle;
 }
 
