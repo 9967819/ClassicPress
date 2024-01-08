@@ -6,7 +6,14 @@ $page_title = get_the_archive_title('<h2 class=\"page-title\">', '</h2>');
 $links = array();
 while (have_posts()){
 	the_post();
-	$posts = get_posts();
+	// Grab the first cat in the list.
+	$categories = get_the_category();
+	$cat = $categories[0]->term_id;
+	$posts = get_posts(array(
+		'category_name'=>strtolower(get_the_archive_title()), 
+		#'tag_id'=>$cat
+		)
+	);
 	foreach($posts as $post){
 		$id = $post->ID;
 		$links[$id] = array('permalink' => get_permalink($id),
