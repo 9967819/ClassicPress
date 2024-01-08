@@ -697,9 +697,9 @@ function wp_list_categories( $args = '' ) {
  */
 function wp_tag_cloud( $args = '' ) {
 	$defaults = array(
-		'smallest'   => 0.75,
-		'largest'    => 2.5,
-		'unit'       => 'em',
+		'smallest'   => 1,
+		'largest'    => 3,
+		'unit'       => 'rem',
 		'number'     => 45,
 		'format'     => 'flat',
 		'separator'  => "\n",

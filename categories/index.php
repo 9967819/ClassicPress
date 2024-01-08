@@ -1,8 +1,8 @@
 <?php
-//error_reporting(E_ALL);
+error_reporting(E_ALL);
 define('WP_USE_THEMES', true);
-require_once(dirname(__FILE__) . '/wp-load.php');
-require_once(dirname(__FILE__) . '/wp-includes/category.php');
+require_once(dirname(__FILE__) . '/../wp-load.php');
+require_once(dirname(__FILE__) . '/../wp-includes/category.php');
 get_header();
 ?>
 <div class="wrap">
