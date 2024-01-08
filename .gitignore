@@ -10,3 +10,4 @@ wp-content/uploads
 static
 sitemap.xml
 *.lock
+package-lock.json

@@ -1,0 +1,7 @@
+#!/bin/sh
+cd /home/www/frontend
+git pull upstream ahnjournal-devel
+wp option set home http://pamela
+wp option set siteurl http://pamela
+wp cache flush
+
