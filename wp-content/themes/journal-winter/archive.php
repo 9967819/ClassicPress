@@ -10,7 +10,8 @@ while (have_posts()){
 	$categories = get_the_category();
 	$cat = $categories[0]->term_id;
 	$posts = get_posts(array(
-		'category_name'=>strtolower(get_the_archive_title()), 
+		#'category_name'=>strtolower(get_the_archive_title()), 
+		'cat'=>$cat,
 		#'tag_id'=>$cat
 		)
 	);
