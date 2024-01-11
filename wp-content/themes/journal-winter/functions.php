@@ -259,7 +259,7 @@ function twentyseventeen_excerpt_more( $link ) {
 	);
 	return $link;
 }
-add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+//add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
 
 /**
  * Handles JavaScript detection.

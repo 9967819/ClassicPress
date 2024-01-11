@@ -499,6 +499,14 @@ text-decoration:none
 font-weight: 600
 }
 
+.entry-content {
+	display: flex;
+	min-height: inherit;
+	color: #fff;
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
 .entry-title a {
 color:#fff
 }
@@ -1130,13 +1138,28 @@ margin-left:3px;
 font-size:12px
 }
 
+button.menu-label {
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 3px;
+	color: #108df8;
+	min-width: 100px;
+	box-shadow: 2px outset #108df8;
+}
+
+button.menu-label:hover {
+	background-color: rgba(255, 255, 255, 0.25);
+	transition: 0.5ms;
+	border: 1px solid #108df8;
+
+}	
+
 
 
 article.post, article.video {
 display:flex;
 flex-direction:column;
 color:#000;
-min-height:300px;
+min-height:12vh;
 width:80%;
 padding: 1rem;
 margin: 1rem;
