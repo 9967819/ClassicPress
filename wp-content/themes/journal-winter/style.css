@@ -499,7 +499,7 @@ text-decoration:none
 font-weight: 600
 }
 
-.entry-content {
+article.post .entry-content {
 	display: flex;
 	min-height: inherit;
 	color: #fff;
