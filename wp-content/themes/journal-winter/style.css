@@ -576,16 +576,14 @@ border-top:1px solid #eee;
 padding:.75em 1.695em
 }
 
+@media screen and (min-width: 48em) {
 ul#top-menu.visible > div > ul {
 display:block
+}
 }
 
 .main-navigation ul ul {
 padding:0 0 0 1.5em
-}
-
-.main-navigation ul ul.visible {
-display:block
 }
 
 .main-navigation ul ul a {
@@ -1260,6 +1258,13 @@ display:none
 
 #top-menu li ul.sub-menu {
 text-align:left
+}
+
+@media screen and (max-width: 430px) {
+#top-menu.visible li ul.sub-menu {
+	display: none;
+	visibility: hidden;
+}
 }
 
 /* min-width: 768px */

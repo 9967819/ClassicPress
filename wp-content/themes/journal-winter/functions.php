@@ -461,7 +461,7 @@ function render_logo_image($image_id) {
 
 # SECURITY 
 add_filter('wp_sitemaps_enabled', true );
-add_filter('enable_post_by_email_configuration', false );
+#add_filter('enable_post_by_email_configuration', true );
 add_filter('security_always_trust_embeds', false);
 
 #add_filter('the_posts_pagination_args', array());
