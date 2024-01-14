@@ -11,13 +11,14 @@ $pubdate = get_the_date();
 $html = <<<HTML
 <article>
 	<h2 class="entry-title">{$title}</h2>
-	<hr>
 	<div class="entry-meta">
 	<p>Publié le {$pubdate} par {$name}.</p>
+	<hr>
 	</div>
 	<div class="entry-content">
 		{$content}
 	</div>
+	<hr>
 	<div class="entry-footer">
 	<button class="button" id="likeBtn" data-article-id="{$articleid}">
 		<i class="fa-solid fa-heart"></i>
@@ -28,5 +29,4 @@ $html = <<<HTML
 <script async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
 HTML;
 echo $html;
-
 

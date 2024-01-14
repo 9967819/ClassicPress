@@ -12,17 +12,22 @@ font-size:2em;
 margin:.67em 0
 }
 
-.form-submit {
-	text-align: right
+hr {
+-webkit-box-sizing:content-box;
+-moz-box-sizing:content-box;
+box-sizing:content-box;
+height:0;
+overflow:visible
 }
 
 pre {
-font-family:monospace;
+font-family:monospace,monospace;
 font-size:1em
 }
 
 a {
 background-color:transparent;
+-webkit-text-decoration-skip:objects
 }
 
 a:active,a:hover {
@@ -136,6 +141,91 @@ padding:0;
 white-space:normal
 }
 
+progress {
+display:inline-block;
+vertical-align:baseline
+}
+
+textarea {
+overflow:auto
+}
+
+[type="checkbox"],[type="radio"] {
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+padding:0
+}
+
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button {
+height:auto
+}
+
+[type="search"] {
+-webkit-appearance:textfield;
+outline-offset:-2px
+}
+
+[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+
+::-webkit-file-upload-button {
+-webkit-appearance:button;
+font:inherit
+}
+
+details,menu {
+display:block
+}
+
+summary {
+display:list-item
+}
+
+canvas {
+display:inline-block
+}
+
+template {
+display:none
+}
+
+[hidden] {
+display:none
+}
+
+.screen-reader-text {
+clip:rect(1px,1px,1px,1px);
+height:1px;
+overflow:hidden;
+position:absolute!important;
+width:1px;
+word-wrap:normal!important
+}
+
+.screen-reader-text:focus {
+background-color:#f1f1f1;
+-webkit-border-radius:3px;
+border-radius:3px;
+-webkit-box-shadow:0 0 2px 2px #0009;
+box-shadow:0 0 2px 2px #0009;
+clip:auto!important;
+color:#21759b;
+display:block;
+font-size:14px;
+font-size:.875rem;
+font-weight:700;
+height:auto;
+left:5px;
+line-height:normal;
+padding:15px 23px 14px;
+text-decoration:none;
+top:5px;
+width:auto;
+z-index:100000
+}
+
 .alignleft {
 display:inline;
 float:left;
@@ -155,16 +245,6 @@ margin-left:auto;
 margin-right:auto
 }
 
-.clear:before,.clear:after,.entry-content:before,.entry-content:after,.entry-footer:before,.entry-footer:after,.comment-content:before,.comment-content:after,.site-header:before,.site-header:after,.site-content:before,.site-content:after,.site-footer:before,.site-footer:after,.nav-links:before,.nav-links:after,.pagination:before,.pagination:after,.comment-author:before,.comment-author:after,.widget-area:before,.widget-area:after,.widget:before,.widget:after,.comment-meta:before,.comment-meta:after {
-content:"";
-display:table;
-table-layout:fixed
-}
-
-.clear:after,.entry-content:after,.entry-footer:after,.comment-content:after,.site-header:after,.site-content:after,.site-footer:after,.nav-links:after,.pagination:after,.comment-author:after,.widget-area:after,.widget:after,.comment-meta:after {
-clear:both
-}
-
 body,button,input,select,textarea {
 font-family:"Lato","Helvetica Neue",arial,sans-serif;
 font-size:15px;
@@ -176,10 +256,7 @@ line-height:1.66
 h1,h2,h3,h4
 h5,h6 {
 clear:both;
-}
-
-h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child,h6:first-child {
-padding-top:0
+line-height:1.4;
 }
 
 h1 {
@@ -189,7 +266,11 @@ font-weight:300
 
 h2.entry-title {
 font-size:1.5rem;
-font-weight:600
+font-weight:400
+}
+
+article.post h2.entry-title {
+font-weight: 600;
 }
 
 h3, h4 {
@@ -294,10 +375,13 @@ margin-bottom:1em
 
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="range"],input[type="date"],input[type="month"],input[type="week"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="color"],textarea {
 color:#666;
-background:#fff;
+background:#ccc;
+background-image:-webkit-linear-gradient(#fff0,#fff0);
 border:1px solid #888;
+-webkit-border-radius:3px;
 border-radius:3px;
-width: 100%;
+display:block;
+padding:.7em;
 }
 
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="number"]:focus,input[type="tel"]:focus,input[type="range"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="color"]:focus,textarea:focus {
@@ -307,6 +391,7 @@ border-color:#333
 
 select {
 border:1px solid #bbb;
+-webkit-border-radius:3px;
 border-radius:3px;
 height:3em;
 max-width:100%
@@ -329,9 +414,10 @@ background:#767676
 }
 
 hr {
-background-color:#333;
+background-color:#bbb;
 border:0;
 height:1px;
+margin-bottom:1.5em
 }
 
 ul,ol {
@@ -407,10 +493,6 @@ article.post .entry-content {
 	color: #fff;
 	font-size: 1.1rem;
 	font-weight: 600;
-}
-
-article div.entry-footer {
-	padding: 0.3em;
 }
 
 .entry-title a {
@@ -769,7 +851,7 @@ margin-top:0
 
 .entry-footer {
 display:table;
-width:100%;
+width:100%
 }
 
 .entry-footer .cat-tags-links {
@@ -893,60 +975,8 @@ margin-top: 10px;
 background-color:#fff
 }
 
-.colors-light a:hover,.colors-light a:active,.colors-light .entry-content a:focus,.colors-light .entry-content a:hover,.colors-light .entry-summary a:focus,.colors-light .entry-summary a:hover,.colors-light .comment-content a:focus,.colors-light .comment-content a:hover,.colors-light .widget a:focus,.colors-light .widget a:hover,.colors-light .site-footer .widget-area a:focus,.colors-light .site-footer .widget-area a:hover,.colors-light .posts-navigation a:focus,.colors-light .posts-navigation a:hover,.colors-light .comment-metadata a:focus,.colors-light .comment-metadata a:hover,.colors-light .comment-metadata a.comment-edit-link:focus,.colors-light .comment-metadata a.comment-edit-link:hover,.colors-light .comment-reply-link:focus,.colors-light .comment-reply-link:hover,.colors-light .widget_authors a:focus strong,.colors-light .widget_authors a:hover strong,.colors-light .entry-title a:focus,.colors-light .entry-title a:hover,.colors-light .entry-meta a:focus,.colors-light .entry-meta a:hover,.colors-light.blog .entry-meta a.post-edit-link:focus,.colors-light.blog .entry-meta a.post-edit-link:hover,.colors-light.archive .entry-meta a.post-edit-link:focus,.colors-light.archive .entry-meta a.post-edit-link:hover,.colors-light.search .entry-meta a.post-edit-link:focus,.colors-light.search .entry-meta a.post-edit-link:hover,.colors-light .page-links a:focus .page-number,.colors-light .page-links a:hover .page-number,.colors-light .entry-footer .cat-links a:focus,.colors-light .entry-footer .cat-links a:hover,.colors-light .entry-footer .tags-links a:focus,.colors-light .entry-footer .tags-links a:hover,.colors-light .post-navigation a:focus,.colors-light .post-navigation a:hover,.colors-light .pagination a:not(.prev):not(.next):focus,.colors-light .pagination a:not(.prev):not(.next):hover,.colors-light .comments-pagination a:not(.prev):not(.next):focus,.colors-light .comments-pagination a:not(.prev):not(.next):hover,.colors-light .logged-in-as a:focus,.colors-light .logged-in-as a:hover,.colors-light a:focus .nav-title,.colors-light a:hover .nav-title,.colors-light .edit-link a:focus,.colors-light .edit-link a:hover,.colors-light .site-info a:focus,.colors-light .site-info a:hover,.colors-light .widget .widget-title a:focus,.colors-light .widget .widget-title a:hover,.colors-light .widget ul li a:focus,.colors-light .widget ul li a:hover {
-color:#9289c0
-}
-
-.colors-light .entry-summary a:focus,.colors-light .entry-summary a:hover,.colors-light .comment-content a:focus,.colors-light .comment-content a:hover,.colors-light .widget a:focus,.colors-light .widget a:hover,.colors-light .site-footer .widget-area a:focus,.colors-light .site-footer .widget-area a:hover,.colors-light .posts-navigation a:focus,.colors-light .posts-navigation a:hover,.colors-light .comment-metadata a:focus,.colors-light .comment-metadata a:hover,.colors-light .comment-metadata a.comment-edit-link:focus,.colors-light .comment-metadata a.comment-edit-link:hover,.colors-light .comment-reply-link:focus,.colors-light .comment-reply-link:hover,.colors-light .widget_authors a:focus strong,.colors-light .widget_authors a:hover strong,.colors-light .entry-meta a:focus,.colors-light .entry-meta a:hover,.colors-light.blog .entry-meta a.post-edit-link:focus,.colors-light.blog .entry-meta a.post-edit-link:hover,.colors-light.archive .entry-meta a.post-edit-link:focus,.colors-light.archive .entry-meta a.post-edit-link:hover,.colors-light.search .entry-meta a.post-edit-link:focus,.colors-light.search .entry-meta a.post-edit-link:hover,.colors-light .page-links a:focus .page-number,.colors-light .page-links a:hover .page-number,.colors-light .entry-footer .cat-links a:focus,.colors-light .entry-footer .cat-links a:hover,.colors-light .entry-footer .tags-links a:focus,.colors-light .entry-footer .tags-links a:hover,.colors-light .post-navigation a:focus,.colors-light .post-navigation a:hover,.colors-light .pagination a:not(.prev):not(.next):focus,.colors-light .pagination a:not(.prev):not(.next):hover,.colors-light .comments-pagination a:not(.prev):not(.next):focus,.colors-light .comments-pagination a:not(.prev):not(.next):hover,.colors-light .logged-in-as a:focus,.colors-light .logged-in-as a:hover,.colors-light a:focus .nav-title,.colors-light a:hover .nav-title,.colors-light .edit-link a:focus,.colors-light .edit-link a:hover,.colors-light .site-info a:focus,.colors-light .site-info a:hover,.colors-light .widget .widget-title a:focus,.colors-light .widget .widget-title a:hover,.colors-light .widget ul li a:focus,.colors-light .widget ul li a:hover {
--webkit-box-shadow:inset 0 0 0 #fff0 0 3px 0 #ffff;
-box-shadow:inset 0 0 0 #fff0 0 3px 0 #ffff
-}
-
-.colors-light .entry-summary a,.colors-light .comment-content a,.colors-light .widget a,.colors-light .site-footer .widget-area a,.colors-light .posts-navigation a,.colors-light .widget_authors a strong {
--webkit-box-shadow:inset 0 -1px 0 #f0f0f0ff;
-box-shadow:inset 0 -1px 0 #f0f0f0ff
-}
-
-body.colors-light,.colors-light button,.colors-light input,.colors-light select,.colors-light textarea,.colors-light h4,.colors-light h6,.colors-light label,.colors-light.twentyseventeen-front-page .panel-content .recent-posts article,.colors-light .entry-footer .cat-links a,.colors-light .entry-footer .tags-links a,.colors-light .format-quote blockquote,.colors-light .nav-title,.colors-light .comment-body {
-color:#000
-}
-
-.colors-light ::-webkit-input-placeholder {
-color:#9289c0
-}
-
-.colors-light :-moz-placeholder {
-color:#9289c0
-}
-
-.colors-light ::-moz-placeholder {
-color:#9289c0
-}
-
-.colors-light :-ms-input-placeholder {
-color:#9289c0
-}
-
-.colors-light input[type="text"]:focus,.colors-light input[type="email"]:focus,.colors-light input[type="url"]:focus,.colors-light input[type="password"]:focus,.colors-light input[type="search"]:focus,.colors-light input[type="number"]:focus,.colors-light input[type="tel"]:focus,.colors-light input[type="range"]:focus,.colors-light input[type="date"]:focus,.colors-light input[type="month"]:focus,.colors-light input[type="week"]:focus,.colors-light input[type="time"]:focus,.colors-light input[type="datetime"]:focus,.colors-light input[type="datetime-local"]:focus,.colors-light input[type="color"]:focus,.colors-light textarea:focus,.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
-border-color:#9289c0
-}
-
-.colors-light input[type="text"]:focus,.colors-light input[type="email"]:focus,.colors-light input[type="url"]:focus,.colors-light input[type="password"]:focus,.colors-light input[type="search"]:focus,.colors-light input[type="number"]:focus,.colors-light input[type="tel"]:focus,.colors-light input[type="range"]:focus,.colors-light input[type="date"]:focus,.colors-light input[type="month"]:focus,.colors-light input[type="week"]:focus,.colors-light input[type="time"]:focus,.colors-light input[type="datetime"]:focus,.colors-light input[type="datetime-local"]:focus,.colors-light input[type="color"]:focus,.colors-light textarea:focus,.colors-light button.secondary,.colors-light input[type="reset"],.colors-light input[type="button"].secondary,.colors-light input[type="reset"].secondary,.colors-light input[type="submit"].secondary,.colors-light .navigation-top a,.colors-light .dropdown-toggle,.colors-light .menu-toggle,.colors-light .page .panel-content .entry-title,.colors-light .page-links a .page-number,.colors-light .comment-metadata a.comment-edit-link,.colors-light .comment-reply-link .icon,.colors-light .widget-title,.colors-light .post-navigation a:focus .icon,.colors-light .post-navigation a:hover .icon,.colors-light.blog .entry-meta a.post-edit-link,.colors-light.archive .entry-meta a.post-edit-link,.colors-light.search .entry-meta a.post-edit-link,.colors-custom .twentyseventeen-panel .recent-posts .edit-link {
-color:#4a6074
-}
-
-.colors-light blockquote,.colors-light input[type="text"],.colors-light input[type="email"],.colors-light input[type="url"],.colors-light input[type="password"],.colors-light input[type="search"],.colors-light input[type="number"],.colors-light input[type="tel"],.colors-light input[type="range"],.colors-light input[type="date"],.colors-light input[type="month"],.colors-light input[type="week"],.colors-light input[type="time"],.colors-light input[type="datetime"],.colors-light input[type="datetime-local"],.colors-light input[type="color"],.colors-light textarea,.colors-light .navigation-top .current-menu-item > a,.colors-light .navigation-top .current_page_item > a,.colors-light .entry-content blockquote.alignleft,.colors-light .entry-content blockquote.alignright,.colors-light .taxonomy-description,.colors-light .site-info a,.colors-light .wp-caption {
-font-weight:600
-}
-
 .colors-light abbr,.colors-light acronym {
 border-bottom-color:#ccc
-}
-
-.colors-light h5,.colors-light h4,.main-navigation a:hover,.colors-light .entry-meta,.colors-light .entry-meta a,.colors-light .entry-meta a:hover,.colors-light .nav-subtitle,.colors-light .comment-metadata,.colors-light .comment-metadata a,.colors-light .no-comments,.colors-light .comment-awaiting-moderation,.colors-light .page-numbers.current,.colors-light .page-links .page-number {
-color:#000;
-text-decoration:none;
-font-weight:600
 }
 
 .colors-light .site-description {
@@ -956,74 +986,9 @@ text-align:left;
 border-radius:5px
 }
 
-.colors-light button:hover,.colors-light button:focus,.colors-light input[type="button"]:hover,.colors-light input[type="button"]:focus,.colors-light input[type="submit"]:hover,.colors-light input[type="submit"]:focus,.colors-light .prev.page-numbers:focus,.colors-light .prev.page-numbers:hover,.colors-light .next.page-numbers:focus,.colors-light .next.page-numbers:hover,.colors-light .entry-footer .edit-link a.post-edit-link:focus,.colors-light .entry-footer .edit-link a.post-edit-link:hover {
-background:#bbb
-}
-
-.colors-light .social-navigation a:hover,.colors-light .social-navigation a:focus {
-background:#999;
-color:#222
-}
-
-.colors-light .entry-footer .cat-links .icon,.colors-light .entry-footer .tags-links .icon {
-color:#666
-}
-
-.colors-light button.secondary:hover,.colors-light button.secondary:focus,.colors-light input[type="reset"]:hover,.colors-light input[type="reset"]:focus,.colors-light input[type="button"].secondary:hover,.colors-light input[type="button"].secondary:focus,.colors-light input[type="reset"].secondary:hover,.colors-light input[type="reset"].secondary:focus,.colors-light input[type="submit"].secondary:hover,.colors-light input[type="submit"].secondary:focus,.colors-light .social-navigation a,.colors-light hr {
-background:#555
-}
-
-.colors-light input[type="text"],.colors-light input[type="email"],.colors-light input[type="url"],.colors-light input[type="password"],.colors-light input[type="search"],.colors-light input[type="number"],.colors-light input[type="tel"],.colors-light input[type="range"],.colors-light input[type="date"],.colors-light input[type="month"],.colors-light input[type="week"],.colors-light input[type="time"],.colors-light input[type="datetime"],.colors-light input[type="datetime-local"],.colors-light input[type="color"],.colors-light textarea,.colors-light select,.colors-light fieldset,.colors-light .widget .tagcloud a:hover,.colors-light .widget .tagcloud a:focus,.colors-light .widget.widget_tag_cloud a:hover,.colors-light .widget.widget_tag_cloud a:focus,.colors-light .wp_widget_tag_cloud a:hover,.colors-light .wp_widget_tag_cloud a:focus {
-border-color:#555
-}
-
-.colors-light button.secondary,.colors-light input[type="reset"],.colors-light input[type="button"].secondary,.colors-light input[type="reset"].secondary,.colors-light input[type="submit"].secondary,.colors-light .prev.page-numbers,.colors-light .next.page-numbers {
-background-color:#444
-}
-
-.colors-light .widget .tagcloud a,.colors-light .widget.widget_tag_cloud a,.colors-light .wp_widget_tag_cloud a {
-border-color:#444
-}
-
-.colors-light.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),.colors-light .widget ul li {
-border-top-color:#444
-}
-
-.colors-light .widget ul li {
-border-bottom-color:#444
-}
-
-.colors-light pre,.colors-light mark,.colors-light ins,.colors-light input[type="text"],.colors-light input[type="email"],.colors-light input[type="url"],.colors-light input[type="password"],.colors-light input[type="search"],.colors-light input[type="number"],.colors-light input[type="tel"],.colors-light input[type="range"],.colors-light input[type="date"],.colors-light input[type="month"],.colors-light input[type="week"],.colors-light input[type="time"],.colors-light input[type="datetime"],.colors-light input[type="datetime-local"],.colors-light input[type="color"],.colors-light textarea,.colors-light select,.colors-light fieldset {
-background:#ddd;
-border:1px solid #888
-}
-
-.colors-light .navigation-top,.colors-light .main-navigation > div > ul,.colors-light .pagination,.colors-light .comment-navigation,.colors-light .entry-footer {
-border-top-color:#333;
-background:#cdcdcd
-}
-
-.colors-light .single-featured-image-header,.colors-light .navigation-top,.colors-light .main-navigation li,.colors-light #comments {
-border-bottom-color:#333
-}
-
-.colors-light button,.colors-light input[type="button"],.colors-light input[type="submit"],.colors-light .prev.page-numbers:focus,.colors-light .prev.page-numbers:hover,.colors-light .next.page-numbers:focus,.colors-light .next.page-numbers:hover {
-color:#222
-}
-
 .colors-light .navigation-top,.colors-light .main-navigation ul {
 background:#fff
 }
-
-.colors-light .entry-content a img,.colors-light .comment-content a img,.colors-light .widget a img {
--webkit-box-shadow:0 0 0 8px #222;
-box-shadow:0 0 0 8px #222
-}
-
-.colors-light .entry-footer .edit-link a.post-edit-link {
-color:#000
-}
-
 
 body {
 font-size:1rem;
@@ -1052,8 +1017,6 @@ button.menu-label:hover {
 	border: 1px solid #108df8;
 
 }	
-
-
 
 article.post, article.video {
 display:flex;
@@ -1114,10 +1077,6 @@ margin-top:1em;
 color: #000;
 border: 4px solid #888;
 border-radius: 5px;
-}
-
-div#comments {
-	padding: 1em;
 }
 
 section.row {
@@ -1537,11 +1496,9 @@ text-align:left
 }
 
 .entry-meta {
+font-size:1rem;
 color:#000;
-}
 
-.entry-title {
-padding:5px 0
 }
 
 .entry-footer {

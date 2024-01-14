@@ -71,5 +71,3 @@ if ( post_password_required() ) { ?>
 
 	<?php endif; ?>
 <?php endif; ?>
-
-<?php comment_form(); ?>

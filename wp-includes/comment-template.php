@@ -1752,7 +1752,7 @@ function get_post_reply_link( $args = array(), $post = null ) {
 	$defaults = array(
 		'add_below'  => 'post',
 		'respond_id' => 'respond',
-		'reply_text' => __( 'Leave a Comment' ),
+		'reply_text' => __( 'Add a Comment' ),
 		'login_text' => __( 'Log in to leave a Comment' ),
 		'before'     => '',
 		'after'      => '',
@@ -1921,12 +1921,12 @@ function comment_form_title( $no_reply_text = false, $reply_text = false, $link_
 	global $comment;
 
 	if ( false === $no_reply_text ) {
-		$no_reply_text = __( 'Leave a Reply' );
+		$no_reply_text = __( 'Add comment' );
 	}
 
 	if ( false === $reply_text ) {
 		/* translators: %s: Author of the comment being replied to. */
-		$reply_text = __( 'Leave a Reply to %s' );
+		$reply_text = __( 'Add a comment to %s' );
 	}
 
 	$reply_to_id = isset( $_GET['replytocom'] ) ? (int) $_GET['replytocom'] : 0;
@@ -2176,71 +2176,8 @@ function wp_list_comments( $args = array(), $comments = null ) {
 	}
 }
 
-/**
- * Outputs a complete commenting form for use within a template.
- *
- * Most strings and form fields may be controlled through the $args array passed
- * into the function, while you may also choose to use the {@see 'comment_form_default_fields'}
- * filter to modify the array of default fields if you'd just like to add a new
- * one or remove a single field. All fields are also individually passed through
- * a filter of the {@see 'comment_form_field_$name'} where $name is the key used
- * in the array of fields.
- *
- * @since WP-3.0.0
- * @since WP-4.1.0 Introduced the 'class_submit' argument.
- * @since WP-4.2.0 Introduced the 'submit_button' and 'submit_fields' arguments.
- * @since WP-4.4.0 Introduced the 'class_form', 'title_reply_before', 'title_reply_after',
- *              'cancel_reply_before', and 'cancel_reply_after' arguments.
- * @since WP-4.5.0 The 'author', 'email', and 'url' form fields are limited to 245, 100,
- *              and 200 characters, respectively.
- * @since WP-4.6.0 Introduced the 'action' argument.
- * @since WP-4.9.6 Introduced the 'cookies' default comment field.
- *
- * @param array       $args {
- *     Optional. Default arguments and form fields to override.
- *
- *     @type array $fields {
- *         Default comment fields, filterable by default via the {@see 'comment_form_default_fields'} hook.
- *
- *         @type string $author  Comment author field HTML.
- *         @type string $email   Comment author email field HTML.
- *         @type string $url     Comment author URL field HTML.
- *         @type string $cookies Comment cookie opt-in field HTML.
- *     }
- *     @type string $comment_field        The comment textarea field HTML.
- *     @type string $must_log_in          HTML element for a 'must be logged in to comment' message.
- *     @type string $logged_in_as         HTML element for a 'logged in as [user]' message.
- *     @type string $comment_notes_before HTML element for a message displayed before the comment fields
- *                                        if the user is not logged in.
- *                                        Default 'Your email address will not be published.'.
- *     @type string $comment_notes_after  HTML element for a message displayed after the textarea field.
- *     @type string $action               The comment form element action attribute. Default '/wp-comments-post.php'.
- *     @type string $id_form              The comment form element id attribute. Default 'commentform'.
- *     @type string $id_submit            The comment submit element id attribute. Default 'submit'.
- *     @type string $class_form           The comment form element class attribute. Default 'comment-form'.
- *     @type string $class_submit         The comment submit element class attribute. Default 'submit'.
- *     @type string $name_submit          The comment submit element name attribute. Default 'submit'.
- *     @type string $title_reply          The translatable 'reply' button label. Default 'Leave a Reply'.
- *     @type string $title_reply_to       The translatable 'reply-to' button label. Default 'Leave a Reply to %s',
- *                                        where %s is the author of the comment being replied to.
- *     @type string $title_reply_before   HTML displayed before the comment form title.
- *                                        Default: '<h3 id="reply-title" class="comment-reply-title">'.
- *     @type string $title_reply_after    HTML displayed after the comment form title.
- *                                        Default: '</h3>'.
- *     @type string $cancel_reply_before  HTML displayed before the cancel reply link.
- *     @type string $cancel_reply_after   HTML displayed after the cancel reply link.
- *     @type string $cancel_reply_link    The translatable 'cancel reply' button label. Default 'Cancel reply'.
- *     @type string $label_submit         The translatable 'submit' button label. Default 'Post a comment'.
- *     @type string $submit_button        HTML format for the Submit button.
- *                                        Default: '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />'.
- *     @type string $submit_field         HTML format for the markup surrounding the Submit button and comment hidden
- *                                        fields. Default: '<p class="form-submit">%1$s %2$s</p>', where %1$s is the
- *                                        submit button markup and %2$s is the comment hidden fields.
- *     @type string $format               The comment form format. Default 'xhtml'. Accepts 'xhtml', 'html5'.
- * }
- * @param int|WP_Post $post_id Post ID or WP_Post object to generate the form for. Default current post.
- */
 function comment_form( $args = array(), $post_id = null ) {
+	# WOOO ANOTHER FUCKING LAME COMMENT FORM
 	if ( null === $post_id ) {
 		$post_id = get_the_ID();
 	}
@@ -2301,7 +2238,7 @@ function comment_form( $args = array(), $post_id = null ) {
 	$fields   = apply_filters( 'comment_form_default_fields', $fields );
 	$defaults = array(
 		'fields'               => $fields,
-		'comment_field'        => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>',
+		'comment_field'        => '<textarea id="comment" cols="45" rows="8" maxlength="65525" required></textarea>',
 		/** This filter is documented in wp-includes/link-template.php */
 		'must_log_in'          => '<p class="must-log-in">' . sprintf(
 									  /* translators: %s: login URL */
@@ -2326,8 +2263,8 @@ function comment_form( $args = array(), $post_id = null ) {
 		'class_form'           => 'comment-form',
 		'class_submit'         => 'submit',
 		'name_submit'          => 'submit',
-		'title_reply'          => __( 'Leave a Reply' ),
-		'title_reply_to'       => __( 'Leave a Reply to %s' ),
+		'title_reply'          => __( 'Post a Reply' ),
+		'title_reply_to'       => __( 'Post a Reply to %s' ),
 		'title_reply_before'   => '<h3 id="reply-title" class="comment-reply-title">',
 		'title_reply_after'    => '</h3>',
 		'cancel_reply_before'  => ' <small>',
@@ -2336,7 +2273,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		'label_submit'         => __( 'Post Comment' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
-		'format'               => 'xhtml',
+		'format'               => 'html5',
 	);
 
 	/**
@@ -2405,7 +2342,7 @@ function comment_form( $args = array(), $post_id = null ) {
 					 * @param string $user_identity  If the commenter is a registered user,
 					 *                               the display name, blank otherwise.
 					 */
-					echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity );
+					#echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity );
 
 					/**
 					 * Fires after the is_user_logged_in() check in the comment form.
