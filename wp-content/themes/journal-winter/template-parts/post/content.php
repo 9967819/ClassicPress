@@ -4,14 +4,16 @@ $title = get_the_title();
 $post = get_post();
 $likes_count = $post->likes_count;
 $people = $likes_count > 1  ? "personnes aiment" : "personne aime";
-$author = get_the_author();
-$email = get_the_author_meta('user_email');
+$author = $post->post_author;
+$name = get_the_author_meta('display_name', $author);
 $articleid = get_the_ID();
+$pubdate = get_the_date();
 $html = <<<HTML
 <article>
-	<h4 class="entry-title">{$title}</h4>
+	<h2 class="entry-title">{$title}</h2>
+	<hr>
 	<div class="entry-meta">
-		<p><a href="mailto:{$email}">{$author}</a></p>
+	<p>Publié le {$pubdate} par {$name}.</p>
 	</div>
 	<div class="entry-content">
 		{$content}
