@@ -9,7 +9,7 @@ Crawl-delay: 60
 # NOTE - in order to make this have any effect, you have to set
 #        url_prefix_action to "action", cf. HelpOnConfiguration
 
-Disallow: /forum/
+#Disallow: /forum/
 Disallow: /wp-admin/
 Disallow: /wp-content/
 Disallow: /wp-json/
