@@ -15,7 +15,7 @@ function twentyseventeen_setup() {
 	 * If you're building a theme based on Twenty Seventeen, use a find and replace
 	 * to change 'twentyseventeen' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'twentyseventeen' );
+	load_default_textdomain( 'fr-CA' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,22 +47,6 @@ function twentyseventeen_setup() {
 			'top'    => __( 'Top Menu', 'twentyseventeen' ),
             #'social' => __( 'Social Links Menu', 'twentyseventeen' ),
             'search' => __( 'Top Search Menu', 'twentyseventeen')
-		)
-	);
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support(
-		'html5', array(
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'script',
-			'style',
-			'navigation-widgets'
 		)
 	);
 
