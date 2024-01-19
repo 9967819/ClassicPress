@@ -83,6 +83,8 @@ height:0
 
 img {
 border-style:none;
+/*height: 100%;
+width: 100%; */
 }
 
 svg:not(:root) {
@@ -199,7 +201,7 @@ font-weight:600
 }
 
 p {
-margin:0;
+margin:0.5em 0 0 0;
 padding:0
 }
 
@@ -348,6 +350,14 @@ list-style:decimal
 li > ul,li > ol {
 margin-bottom:0;
 margin-left:1.5em
+}
+
+dt {
+font-weight:700
+}
+
+dd {
+margin:0 1.5em 1.5em
 }
 
 table {
@@ -1082,13 +1092,11 @@ margin-bottom:5px;
 color:#9289c0
 }
 
-#quotewidget 
-{
-padding: 0.5em;
+#quotewidget {
 text-shadow:4px 4px #000;
 color:#fff;
-font-size:0.85rem;
-width:auto;
+font-size:0.9rem;
+width: auto;
 }
 
 main,article {
@@ -1110,17 +1118,13 @@ width:100%
 }
 
 section.widget {
-background-color: rgba(255,255,255, 0.45);
+background-color: #fff;
 border:2px solid #888;
 border-radius:5px;
 padding:10px;
 height:auto;
 margin-bottom:10px;
 text-align: center;
-}
-
-section.widget h2 {
-font-variant: small-caps;
 }
 
 .wrap {
@@ -1241,6 +1245,7 @@ color:#4a6074;
 }
 
 div.textwidget {
+padding:auto;
 font-size:1rem;
 }
 
@@ -1355,25 +1360,24 @@ align-items:stretch
 display: flex;
 flex-wrap:wrap;
 flex-direction: row;
-align-items: stretch;
-justify-content: center;
-gap: 1em;
+justify-content:center;
 }
 
+.gallery > figure {
+flex-basis: 10px;
+}
 
-.gallery .gallery-caption {
+.gallery figcaption {
+display: block;
 font-size: 0.8em;
 font-weight: 400;
-margin-left: 0;
-display: block; /* XXX fixme -jb */
-max-width: 200px;
 }
 
-.gallery img {
+.gallery figure img {
 object-fit: cover;
-width: 215px;
-height: 215px;
-border-radius: 5px;
+width: 250px;
+height: 250px;
+vertical-align: middle;
 }
 
 .gallery p {
