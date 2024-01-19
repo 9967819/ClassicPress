@@ -352,14 +352,6 @@ margin-bottom:0;
 margin-left:1.5em
 }
 
-dt {
-font-weight:700
-}
-
-dd {
-margin:0 1.5em 1.5em
-}
-
 table {
 border-collapse:collapse;
 margin:0 0 1.5em;
@@ -1365,24 +1357,25 @@ align-items:stretch
 display: flex;
 flex-wrap:wrap;
 flex-direction: row;
-justify-content:center;
+align-items: stretch;
+justify-content: center;
+gap: 1em;
 }
 
-.gallery > figure {
-flex-basis: 10px;
-}
 
-.gallery figcaption {
-display: block;
+.gallery .gallery-caption {
 font-size: 0.8em;
 font-weight: 400;
+margin-left: 0;
+display: block; /* XXX fixme -jb */
+max-width: 200px;
 }
 
-.gallery figure img {
+.gallery img {
 object-fit: cover;
-width: 250px;
-height: 250px;
-vertical-align: middle;
+width: 215px;
+height: 215px;
+border-radius: 5px;
 }
 
 .gallery p {
