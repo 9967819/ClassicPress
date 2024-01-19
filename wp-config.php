@@ -23,7 +23,7 @@ define( 'WP_ALLOW_REPAIR', false );
 # Enable core updates for minor releases (default):
 define( 'WP_AUTO_UPDATE_CORE', false );
 
-define( 'OPENGRAPH_STRICT_MODE', true );
+#define( 'OPENGRAPH_STRICT_MODE', true );
 
 
 ### Redis backend
