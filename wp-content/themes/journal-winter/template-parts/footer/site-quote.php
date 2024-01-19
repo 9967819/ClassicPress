@@ -1,15 +1,16 @@
 <?php
+$redis = new Redis();
+$redis->connect('127.0.0.1', 6379);
+
+$randomizer = new Random\Randomizer();
 $scheme = isset($_SERVER['HTTPS']) == true ? 'https://' : 'http://';
 $url = $scheme . $_SERVER['SERVER_NAME'] . '/static/freethinking.md';
- 
+
 $data = file($url);
-$int = random_int(0, count($data) - 1);
+$int = $randomizer->getInt(0, count($data) - 1);
 $q = $data[$int];
 
-if (isset($redis)) {
-	$redis->set('customquote' , $q);
-	$redis->close();
-}
+$redis->set('customquote' , $q);
 
 ?>
 
@@ -27,7 +28,7 @@ if (isset($redis)) {
 </p>
 <p id="quotewidget" class="dynamic-quote-widget">
 <?php 
-echo( $q ); 
+echo $redis->get( 'customquote' ); 
 ?>
 </p>
 </div>

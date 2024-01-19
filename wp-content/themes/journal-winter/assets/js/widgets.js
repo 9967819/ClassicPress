@@ -6,9 +6,8 @@ async function fetchQuote() {
 			.then(response=>response.text())
 			.then(text => {
 				let quotes = text.split(/\r?\n/);
-				//console.log(quotes);
 				let s =	quotes[Math.floor(Math.random()*quotes.length) - 1];
-				quoteDiv.innerHTML = s;
+				quoteDiv.textContent = s;
 			});
 }
 
@@ -21,7 +20,6 @@ quoteDiv.addEventListener('click', (e) => {
 const openHam = document.querySelector('#toggle-nav-menu');
 const navigationItems = document.querySelector('#top-menu');
 let menuOpen = false;
-
 
 openHam.addEventListener('click', () => {
 	if(!menuOpen){
