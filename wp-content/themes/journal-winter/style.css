@@ -1119,6 +1119,11 @@ margin-bottom:10px;
 text-align: center;
 }
 
+section.widget img {
+width: 100%;
+height: 100%;
+}
+
 section.widget h2 {
 font-variant: small-caps;
 }
