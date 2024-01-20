@@ -436,10 +436,10 @@ add_action( 'delete_attachment', '_delete_attachment_theme_mod' );
 add_action( 'transition_post_status', '_wp_keep_alive_customize_changeset_dependent_auto_drafts', 20, 3 );
 
 // Calendar widget cache
-#add_action( 'save_post', 'delete_get_calendar_cache' );
-#add_action( 'delete_post', 'delete_get_calendar_cache' );
-#add_action( 'update_option_start_of_week', 'delete_get_calendar_cache' );
-#add_action( 'update_option_gmt_offset', 'delete_get_calendar_cache' );
+add_action( 'save_post', 'delete_get_calendar_cache' );
+add_action( 'delete_post', 'delete_get_calendar_cache' );
+add_action( 'update_option_start_of_week', 'delete_get_calendar_cache' );
+add_action( 'update_option_gmt_offset', 'delete_get_calendar_cache' );
 
 // Author
 add_action( 'transition_post_status', '__clear_multi_author_cache' );
@@ -459,16 +459,16 @@ add_filter( 'get_terms', '_post_format_get_terms', 10, 3 );
 add_filter( 'wp_get_object_terms', '_post_format_wp_get_object_terms' );
 
 // KSES
-#add_action( 'init', 'kses_init' );
-#add_action( 'set_current_user', 'kses_init' );
+add_action( 'init', 'kses_init' );
+add_action( 'set_current_user', 'kses_init' );
 
 // Script Loader
 add_action( 'wp_default_scripts', 'wp_default_scripts' );
-#add_action( 'wp_enqueue_scripts', 'wp_localize_jquery_ui_datepicker', 1000 );
+add_action( 'wp_enqueue_scripts', 'wp_localize_jquery_ui_datepicker', 1000 );
 add_action( 'admin_enqueue_scripts', 'wp_localize_jquery_ui_datepicker', 1000 );
-#add_filter( 'wp_print_scripts', 'wp_just_in_time_script_localization' );
-#add_filter( 'print_scripts_array', 'wp_prototype_before_jquery' );
-#add_filter( 'customize_controls_print_styles', 'wp_resource_hints', 1 );
+add_filter( 'wp_print_scripts', 'wp_just_in_time_script_localization' );
+add_filter( 'print_scripts_array', 'wp_prototype_before_jquery' );
+add_filter( 'customize_controls_print_styles', 'wp_resource_hints', 1 );
 
 add_action( 'wp_default_styles', 'wp_default_styles' );
 add_filter( 'style_loader_src', 'wp_style_loader_src', 10, 2 );
@@ -493,7 +493,7 @@ add_filter( 'plupload_default_settings', 'wp_show_heic_upload_error' );
 add_filter( 'nav_menu_item_id', '_nav_menu_item_id_use_once', 10, 2 );
 
 // Widgets
-#add_action( 'init', 'wp_widgets_init', 1 );
+add_action( 'init', 'wp_widgets_init', 1 );
 
 // Admin Bar
 // Don't remove. Wrong way to disable.
@@ -505,9 +505,9 @@ add_action( 'wp_footer', 'wp_admin_bar_render', 1000 );
 add_action( 'in_admin_header', 'wp_admin_bar_render', 0 );
 
 // Former admin filters that can also be hooked on the front end
-#add_action( 'media_buttons', 'media_buttons' );
-#add_filter( 'image_send_to_editor', 'image_add_caption', 20, 8 );
-#add_filter( 'media_send_to_editor', 'image_media_send_to_editor', 10, 3 );
+add_action( 'media_buttons', 'media_buttons' );
+add_filter( 'image_send_to_editor', 'image_add_caption', 20, 8 );
+add_filter( 'media_send_to_editor', 'image_media_send_to_editor', 10, 3 );
 
 // Embeds
 #add_action( 'rest_api_init', 'wp_oembed_register_route' );
@@ -529,7 +529,7 @@ add_action( 'embed_head', 'rel_canonical' );
 
 #add_action( 'embed_footer', 'print_embed_sharing_dialog' );
 #add_action( 'embed_footer', 'print_embed_scripts' );
-#add_action( 'embed_footer', 'wp_print_footer_scripts', 20 );
+add_action( 'embed_footer', 'wp_print_footer_scripts', 20 );
 #add_filter( 'excerpt_more', 'wp_embed_excerpt_more', 20 );
 add_filter( 'the_excerpt_embed', 'wptexturize' );
 add_filter( 'the_excerpt_embed', 'convert_chars' );
