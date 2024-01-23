@@ -16,14 +16,13 @@ font-family:monospace;
 font-size:1em
 }
 
-abbr[title] {
-border-bottom:1px #767676 dotted;
-text-decoration:none
+abbr {
+color: #6f1b45;
+font-weight: 600;
 }
 
 b,strong {
-font-weight:inherit;
-font-weight:700
+font-weight:600
 }
 
 code,kbd,samp {
@@ -187,7 +186,7 @@ font-weight:600
 
 p {
 margin:0;
-padding:0
+padding: 0.5em 0 0.5em 0;
 }
 
 dfn,cite,em,i {
@@ -236,10 +235,6 @@ font-size:15px;
 font-size:.9375rem
 }
 
-abbr,acronym {
-border-bottom:1px dotted #666;
-cursor:help
-}
 
 mark,ins {
 background:#eee;
@@ -332,10 +327,10 @@ ol {
 list-style:decimal
 }
 
-li > ul,li > ol {
-margin-bottom:0;
-margin-left:1.5em
-}
+ol li {
+margin-left: 1em;
+} 
+
 
 table {
 border-collapse:collapse;
@@ -1111,7 +1106,9 @@ ul.default-list li,ol.default-list li {
 list-style-type: square;
 padding-left:0.5em;
 line-height:1.55em;
-margin-left:1.2em
+margin-left:1.2em;
+font-size: 0.95rem;
+text-decoration: underline solid #888;
 }
 
 ul.default-list li a {
@@ -1385,7 +1382,7 @@ text-align:left
 
 .entry-content a {
 color: #6f1b45;
-text-decoration:underline dotted #dd5498;
+font-size: 1.05em;
 }
 
 .entry-title {
