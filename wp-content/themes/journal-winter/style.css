@@ -1378,13 +1378,14 @@ text-decoration:none
 
 .entry-content h3,h3.comment-reply-title {
 color:#ff068c;
-font-size:1.25rem;
-font-weight:400;
+font-size:1.5rem;
+font-weight:600;
 text-align:left
 }
 
 .entry-content a {
-color: #ff068c;
+color: #6f1b45;
+text-decoration:underline dotted #dd5498;
 }
 
 .entry-title {
