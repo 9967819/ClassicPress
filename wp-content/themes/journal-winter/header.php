@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr" prefix="og: https://ogp.me/ns#">
-<head>
+<head profile="http://dublincore.org/specifications/dublin-core/dc-html/2008-08-04/">
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php 
 wp_head(); 
 ?>
+<meta name="DC.title" content="<? echo wp_title(); ?>">
 <meta name="description" content="La neurosécurité libre et ouverte pour tous.">
 <meta name="keywords" content="neurosecurity, neurosécurité, cyberdépendance, applied human neurosecurity journal, applied neurosecurity, free neurosecurity">
 <meta property="og:author" content="Applied Human Neurosecurity Journal">
@@ -17,7 +19,7 @@ wp_head();
 	"@type":"Periodical",
 	"@id":"https://open-neurosecurity.org",
 	"name":"Applied Human Neurosecurity Journal",
-	"datePublished":"1753-01-01",
+	"datePublished":"1981-03-14",
 	"url":"https://open-neurosecurity.org",
 	"inLanguage":"fr",
 	"copyrightHolder":"Robillard, Etienne",
@@ -27,6 +29,9 @@ wp_head();
 	"siteName":"AHNJournal",
 	"siteNameTitle":"Applied Human Neurosecurity Journal"}
 </script>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="/wp-content/themes/journal-winter/assets/fontawesome/css/fontawesome.min.css">
