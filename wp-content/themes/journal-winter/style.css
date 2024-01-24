@@ -873,7 +873,10 @@ button.menu-label {
 	border-radius: 3px;
 	color: #108df8;
 	min-width: 100px;
-	box-shadow: 2px outset #108df8;
+	-webkit-box-shadow: 2px outset #108df8;
+	-moz-box-shadow: 2px outset #108df8;
+    height: 45px;
+	margin-top: 0.5rem
 }
 
 button.menu-label:hover {

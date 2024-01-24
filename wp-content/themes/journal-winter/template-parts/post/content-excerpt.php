@@ -27,12 +27,19 @@ $body = "<div class=\"entry-content\">" . get_the_excerpt() . "</div>";
 
 $footer= <<<HTML
 <div class="entry-footer">
+
+
+<button type="button" class="menu-label">
 <a href="{$url}">
-  <button type="button" class="menu-label">Lire la suite</button>
+Lire la suite
 </a>&nbsp;
+</button>
+
+<button type="button" class="menu-label">
 <a href="{$category_url}">
- <button type="button" class="menu-label">$category_button</button>
+$category_button
 </a>
+</button>
 </div>
 </article>
 HTML;
