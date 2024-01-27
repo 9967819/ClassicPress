@@ -9,11 +9,10 @@ Crawl-delay: 60
 # NOTE - in order to make this have any effect, you have to set
 #        url_prefix_action to "action", cf. HelpOnConfiguration
 
-Disallow: /forum/
 Disallow: /wp-admin/
 Disallow: /wp-content/
 Disallow: /wp-json/
 Disallow: /wp-includes/
 Disallow: /wp-login.php
-Disallow: /wiki/
-#Disallow: /
+Sitemap: https://open-neurosecurity.org/sitemap.xml
+Sitemap: https://open-neurosecurity.org/wiki/sitemap-index-FNRP.xml

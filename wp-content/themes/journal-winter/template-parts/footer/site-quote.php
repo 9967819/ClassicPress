@@ -20,7 +20,7 @@ $redis->close();
 <a href="/about/" title="À propos de nous">À propos</a> |
 <a href="/terms-of-use/">Conditions d'utilisation</a> | 
 <a href="/privacy/">Politique de confidentialité</a> |
-<a href="/relations-medias/">Relations médias</a> |
+<a href="/contact/">Contactez-nous</a> |
 <a href="/sitemap.xml">Plan du site</a> |
 <a href="/feed/">RSS</a> 
 <br>
