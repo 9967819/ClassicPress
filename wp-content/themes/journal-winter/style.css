@@ -369,7 +369,6 @@ padding-right:0
 a {
 color:#4a6074;
 text-decoration:none;
-font-weight: bold;
 }
 
 article.post .entry-content {
@@ -857,15 +856,10 @@ color:#000
 
 body {
 font-size:1rem;
-font-family:"Lato",Helvetica,Arial,Verdana,sans-serif;
+font-family:"Lato",Helvetica,Verdana,sans-serif;
 background-color:#999;
 margin:0;
 padding:0
-}
-
-a.homepage {
-margin-left:3px;
-font-size:12px
 }
 
 button.menu-label {
@@ -1026,7 +1020,7 @@ text-align:left
 
 @media screen and (min-width: 48em) {
 	.footer-widget-1 {
-		width: 38%;
+		width: 35%;
 	}
 }
 
@@ -1277,6 +1271,8 @@ background-repeat:no-repeat;
 background-blend-mode:luminosity;
 background-color:#c3d6e7;
 background-size: cover;
+padding-top: 1em;
+border-top: 2px solid #888;
 }
 
 .grayscale {
@@ -1381,11 +1377,6 @@ font-weight:600;
 text-align:left
 }
 
-.entry-content a {
-color: #6f1b45;
-font-size: 1.05em;
-}
-
 .entry-title {
 padding:5px 0
 }
@@ -1405,28 +1396,31 @@ font-weight:700
 }
 
 .entry-content p {
-word-spacing:0;
-color:#000
+word-spacing:0.05rem;
+color:#222;
 }
 
 .entry-info {
 font-size:12px;
-font-weight:600;
 margin-top:5px
+}
+
+.entry-content a {
+color: #ff068c;
 }
 
 .colors-light .entry-title a,.colors-light .entry-title a:active,.colors-light .entry-title a:hover {
 color:#fff
 }
 
-.site-info p {
-color:#ddd
-}
-
 .site-info a {
 text-decoration:none;
 color:#fff;
-font-weight:600
+font-weight:500
+}
+
+.site-info p {
+color: #fff;
 }
 
 .post-thumbnail img {
