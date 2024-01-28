@@ -26,11 +26,12 @@ $dbh = new PDO($dsn, $user, $password) or die("snsfeoinwefe asdhns dsoawnd!!!\n"
 #KEEP THIS
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
 
+#get or create
 function create_new_booking($data = array(), $options = array())
 {
 	global $dbh;
 	$table = 'bookings_event_contact';
-	$sql = "INSERT INTO $table (id, name, email, comment) VALUES (?,?,?,?)";
+	$sql = "INSERT INTO $table (id, name, email, comment, event_id) VALUES (?,?,?,?,?,?)";
 	try {
 		# create a new booking contact
 		$stmt = $dbh->prepare($sql);
@@ -54,12 +55,12 @@ function get_event_by_date($date, $table = 'bookings_event'){
 	}	
 }
 
-function confirm_booking($contact, $table = 'bookings_event_reservations'){
+function confirm_booking($data, $table = 'bookings_event_reservations'){
 	global $dbh;
 	$sql = "INSERT INTO $table (booking_event_id, booking_contact_id) VALUES (?,?)"; 
 	try {
 		$stmt = $dbh->prepare($sql);
-		$stmt->execute($contact);
+		$stmt->execute($data);
 		return true
 	} catch (PDOException $e){
 		throw PDOException("error: " . $e->getMessage());
@@ -67,6 +68,11 @@ function confirm_booking($contact, $table = 'bookings_event_reservations'){
 	return false
 }
 
+function get_booking_by_id($pk, $table = 'bookings_event_reservations') {
+	global $dbh;
+	$stmt = $dbh->query("select * from $table where id=$pk");
+	return $stmt->fetch();
+}
 function render_booking_form($event_data, $redis, $debug = false) {
 	# XXX ideally i want to use templates and smarty here bro
 	$html = <<<HTML
@@ -102,7 +108,7 @@ if (! empty($_GET['date']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
 	echo render_booking_form($event, REDIS_CLIENT);
 } elseif (! empty($_GET['date']) && $_SERVER['REQUEST_METHOD'] == 'POST'){
 	# Process POST data here...
-	foreach(array('event_date', 'event_title') as $key){
+	foreach(array('event_date', 'event_title', 'password') as $key){
 		unset($_POST[$key]);
 	}
 	# the contact
@@ -111,7 +117,7 @@ if (! empty($_GET['date']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
 		# new contact saved.
 		# update the booking_event_reservations table
 		# and send confirmation mail to user and smart
-		$booking = confirm_booking();
+		$booking = confirm_booking(array('booking_event_id'=>);
 		if ($booking === true) {
 			$msg = "New booking saved. See you soon!";
 			echo $msg;
