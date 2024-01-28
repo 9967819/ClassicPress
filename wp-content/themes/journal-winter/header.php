@@ -7,7 +7,6 @@
 <?php 
 wp_head(); 
 ?>
-<meta name="DC.title" content="<? echo wp_title(); ?>">
 <meta name="description" content="La neurosécurité libre et ouverte pour tous.">
 <meta name="keywords" content="neurosecurity, neurosécurité, cyberdépendance, applied human neurosecurity journal, applied neurosecurity, free neurosecurity">
 <meta property="og:author" content="Applied Human Neurosecurity Journal">
