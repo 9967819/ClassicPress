@@ -1,29 +1,28 @@
 </div>
 <footer class="site-footer overlay" id="footer-snowflakes">
-	   <section class="align-items-center row">
-		<?php
-			get_template_part( 'template-parts/footer/footer', 'widgets' );
+   <section class="align-items-center row">
+	<?php
+	get_template_part( 'template-parts/footer/footer', 'widgets' );
          ?>
-       </section>
+   </section>
        <?php
-	   		get_template_part( 'template-parts/footer/site', 'quote' );
+	get_template_part( 'template-parts/footer/site', 'quote' );
         ?>
 </footer>
-<!-- Google tag (gtag.js) -->
+<!-- GA4 -->
 <script async cross-origin="anonymous" src="https://www.googletagmanager.com/gtag/js?id=G-QZJECS14WM"></script>
-			<script>
-
+<script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-QZJECS14WM');
 </script>
 <!-- Random quote widget -->
-<script async src="/wp-content/themes/journal-winter/assets/js/widgets.js"></script>
+<script async src="/static/assets/journal/widgets.js"></script>
 <!-- Google Wallet client -->
-<script src="/assets/js/google.js"></script>
-
+<script src="/static/assets/google/google.js"></script>
+<!-- Google Wallet async/desktop api -->
+<script async src="https://pay.google.com/gp/p/js/pay.js"></script>
 <!-- Snowflakes -->
 <script src="/static/snowflakes.js"></script>
 <script>
@@ -40,7 +39,10 @@ speed: 2, // The property affects the speed of falling. Default: 1
 wind: false, // Without wind. Default: true
 zIndex: 100, // Default: 9999,
 autoResize: false // Default: true
-});
+	});
+</script>
+<script>
+const paymentsClient = new google.payments.api.PaymentsClient({environment: 'TEST_STRIPE_DEBUG'});
 </script>
 </body>
 </html>

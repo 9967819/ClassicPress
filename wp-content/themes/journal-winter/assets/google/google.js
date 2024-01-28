@@ -31,3 +31,18 @@ const tokenizationSpecification = {
     'gatewayMerchantId': 'pk_live_51Npx1HIv4lKWSs5Cpv6Tuob0DoEpgLLicd7CN4l49TNGyIKUKTZKUe7ZggpOcFANLDq2sPMyrrZy1utKRgpJPGL700wDyoHrsa'
   }
 };
+
+const allowedCardNetworks = ["INTERAC", "MASTERCARD", "VISA", "AMEX"];
+const allowedCardAuthMethods = ["PAN_ONLY",] // "CRYPTOGRAM_3DS"
+const baseCardPaymentMethod = {
+  type: 'CARD',
+  parameters: {
+    allowedAuthMethods: allowedCardAuthMethods,
+    allowedCardNetworks: allowedCardNetworks
+  }
+};
+const cardPaymentMethod = Object.assign(
+  {tokenizationSpecification: tokenizationSpecification},
+  baseCardPaymentMethod
+);
+
