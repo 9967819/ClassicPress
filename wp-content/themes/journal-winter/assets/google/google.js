@@ -46,3 +46,5 @@ const cardPaymentMethod = Object.assign(
   baseCardPaymentMethod
 );
 
+const isReadyToPayRequest = Object.assign({}, baseRequest);
+isReadyToPayRequest.allowedPaymentMethods = [baseCardPaymentMethod];

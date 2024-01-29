@@ -19,10 +19,6 @@ gtag('config', 'G-QZJECS14WM');
 </script>
 <!-- Random quote widget -->
 <script async src="/static/assets/journal/widgets.js"></script>
-<!-- Google Wallet client -->
-<script src="/static/assets/google/google.js"></script>
-<!-- Google Wallet async/desktop api -->
-<script async src="https://pay.google.com/gp/p/js/pay.js"></script>
 <!-- Snowflakes -->
 <script src="/static/snowflakes.js"></script>
 <script>
@@ -39,10 +35,7 @@ speed: 2, // The property affects the speed of falling. Default: 1
 wind: false, // Without wind. Default: true
 zIndex: 100, // Default: 9999,
 autoResize: false // Default: true
-	});
-</script>
-<script>
-const paymentsClient = new google.payments.api.PaymentsClient({environment: 'TEST_STRIPE_DEBUG'});
+});
 </script>
 </body>
 </html>
