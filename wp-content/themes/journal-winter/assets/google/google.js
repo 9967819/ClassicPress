@@ -28,7 +28,8 @@ const tokenizationSpecification = {
   type: 'PAYMENT_GATEWAY',
   parameters: {
     'gateway': 'stripe',
-    'gatewayMerchantId': 'pk_live_51Npx1HIv4lKWSs5Cpv6Tuob0DoEpgLLicd7CN4l49TNGyIKUKTZKUe7ZggpOcFANLDq2sPMyrrZy1utKRgpJPGL700wDyoHrsa'
+    'stripe:version': '2018-10-31',
+    'stripe:publishableKey': 'pk_live_51Npx1HIv4lKWSs5Cpv6Tuob0DoEpgLLicd7CN4l49TNGyIKUKTZKUe7ZggpOcFANLDq2sPMyrrZy1utKRgpJPGL700wDyoHrsa'
   }
 };
 
@@ -48,3 +49,19 @@ const cardPaymentMethod = Object.assign(
 
 const isReadyToPayRequest = Object.assign({}, baseRequest);
 isReadyToPayRequest.allowedPaymentMethods = [baseCardPaymentMethod];
+
+const paymentDataRequest = Object.assign({}, baseRequest);
+paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
+
+
+// TEST
+paymentDataRequest.transactionInfo = {
+  totalPriceStatus: 'FINAL',
+  totalPrice: '20',
+  currencyCode: 'CAD',
+  countryCode: 'CA'
+};
+paymentDataRequest.merchantInfo = {
+  merchantName: 'Applied Human Neurosecurity Journal',
+  merchantId: 'BCR2DN4TVGP73CRV'
+};

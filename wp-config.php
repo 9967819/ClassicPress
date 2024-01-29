@@ -17,8 +17,9 @@ define('NONCE_SALT',       'srMd?CU2ha#)1Sm;oSJE#Q[gq5DIeyP!26GaM[#Oy}AB+G<ryA%t
 $table_prefix  = 'wp_';
 
 define( 'WP_DEBUG', false );
-define( 'WP_CACHE', true );
+define( 'WP_CACHE', false );
 define( 'WP_STAGING', false ); 
+define( 'WP_CRON', false); #disable cron
 define( 'WP_ALLOW_REPAIR', false );
 # Enable core updates for minor releases (default):
 define( 'WP_AUTO_UPDATE_CORE', false );
