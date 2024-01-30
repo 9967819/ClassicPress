@@ -25,7 +25,7 @@ $html = <<<HTML
 	<p id="likes-count" class=""><span id="count">{$likes_count}</span> {$people} ce post.</p>
 	</div>
 </article>
-<script async src="/wp-content/themes/journal-winter/assets/js/web.js"></script>
+<script src="/static/assets/journal/web.js"></script>
 HTML;
 echo $html;
 

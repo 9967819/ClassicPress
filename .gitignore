@@ -1,13 +1,15 @@
+dumb.rdb
 wp-config.php
 tests
 *.*~
 *.bak
+*~
+*.orig
 1
 *.mine
 *.swp
 *.local.*
 wp-content/uploads
 static
-sitemap.xml
 *.lock
 package-lock.json

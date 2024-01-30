@@ -3,7 +3,7 @@ define('WP_USE_THEMES', true);
 require_once(dirname(__FILE__) . '/../wp-load.php');
 require_once(dirname(__FILE__) . '/../wp-includes/class-simplepie.php');
 get_header();
-$ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
+#$ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 ?>
 <div class="wrap">
 <div id="primary" class="content-area">
@@ -11,7 +11,9 @@ $ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 <h2>Faire un don à Applied Human Neurosecurity Journal</h2>
 <div id="checkout-console" class="overlay1">
 <label>Choisir un mode de paiement :</label>
-<div id="checkout-google"></div>
+<div id="checkout-google"><noscript>Google Pay</noscript></div>
+<button id="checkout-paypal" type="button" class="button" value="PayPal">
+<noscript><a href="https://paypal.me/EtienneRobillard">Paypal</a></noscript></button>
 <p>Merci d'encourager Applied Human Neurosecurity Journal.</p>
 </div>
 </main>
@@ -21,6 +23,10 @@ $ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 <script async defer src="https://pay.google.com/gp/p/js/pay.js"></script>
 <script src="/static/assets/google/google.js"></script>
 <script>
+const ppBtn = document.getElementById('checkout-paypal');
+ppBtn.addEventListener("click", (event) => {
+  window.location = "https://paypal.me/EtienneRobillard";
+});
 window.addEventListener("load", (event) => {
 
     if(isReadyToPayRequest){
