@@ -65,3 +65,9 @@ paymentDataRequest.merchantInfo = {
   merchantName: 'Applied Human Neurosecurity Journal',
   merchantId: 'BCR2DN4TVGP73CRV'
 };
+
+//const paymentOptions = Object.assign({}, BaseRequest);
+//paymentOptions.paymentDataCallBacks = {
+  //onPaymentDataChanged: onPaymentDataChanged,
+  //onPaymentAuthorized: onPaymentAuthorized
+//}
