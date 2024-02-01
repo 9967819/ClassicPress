@@ -869,23 +869,40 @@ padding:0
 }
 
 button.menu-label {
-	background-color: rgba(0, 0, 0, 0.75);
+	background: rgba(50, 50, 50, 0.55);
 	border-radius: 3px;
-	color: #108df8;
+	color: #fff;
 	min-width: 100px;
 	-webkit-box-shadow: 2px outset #108df8;
 	-moz-box-shadow: 2px outset #108df8;
     height: 45px;
-	margin-top: 0.5rem
+	margin-top: 0.5rem;
+    text-decoration: none;
+    margin-right: 0.5em;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
+article button.menu-label a {
+  color: #fff;
+}
+
+article.video button.menu-label {
+  background: rgba(150, 150, 150, 0.75);
+  box-shadow: 2px outset #108df8;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 5px;
+}
+article.video button.menu-label a {
+  text-decoration: none;
+  color: #fff;
+}
 button.menu-label:hover {
 	background-color: rgba(255, 255, 255, 0.25);
 	transition: 0.5ms;
-	border: 1px solid #108df8;
-
+	border: 2px solid #108df8;
 }	
-
 
 
 article.post, article.video {
@@ -992,13 +1009,13 @@ gap:.6em
 
 .site-info {
 display:grid;
-background-color:rgba(0,0,0, 0.50);
+background:rgba(0,0,0, 0.50);
 margin:0;
 padding:1em 0 0 1em;
 align-items:center;
 justify-content:center;
 text-align:center;
-font-size: 0.9rem
+font-size: 0.9rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -1108,11 +1125,11 @@ list-style-type: square;
 padding-left:0.5em;
 line-height:1.55em;
 margin-left:1.2em;
-font-size: normal;
+font-weight: 600;
 }
 
 ul.default-list li a,ol.default-list li a {
-font-size: normal;
+font-weight: 600;
 text-decoration: 2px underline #888;
 }
 
@@ -1423,7 +1440,7 @@ text-decoration: 2px underline #fff;
 .site-info a {
 text-decoration:none;
 color:#fff;
-font-weight:500
+font-weight:600
 }
 
 .site-info p {
