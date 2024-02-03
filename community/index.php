@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/../wp-load.php');
 require_once(dirname(__FILE__) . '/../wp-includes/class-simplepie.php');
 get_header();
 # fetch the remote rss
-$rss = fetch_feed('https://open-neurosecurity.org/forum/index.php?action=.xml;type=rss2'); 
+#$rss = fetch_feed('https://open-neurosecurity.org/forum/index.php?action=.xml;type=rss2'); 
 $title = '2024 Retro Mix';
 $channel = 'AHNJournal';
 $url = "https://www.youtube.com/embed/videoseries?si=r8hFKhjoOMqE9vcA&amp;list=PL7Ndnn1jFxfvUyTnLYhJaexNtFUJiTqQZ";
@@ -25,19 +25,7 @@ $button_text = "Écouter sur YouTube";
     </div>
 
     </article>
-
 <section>
-<h3>Latest Forum Posts</h3>
-<ul class="default-list">
-<?php 
-$html = "";
-foreach($rss->get_items(0, 5) as $item){ 
-$html .= "<li>" . sprintf("<a href=\"%s\">%s</a>", $item->get_permalink(), $item->get_title()) . "</li>";
-}
-echo $html;
-?>
-</ul>
-</section>
 <section>
 <h3>Contributions récentes</h3>
 <?php
