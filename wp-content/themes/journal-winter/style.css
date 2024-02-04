@@ -1205,8 +1205,9 @@ button#likeBtn.aquablue {
 color:blue;
 }
 
-p#likes-count {
+span#count {
 font-size: 0.85rem;
+font-weight: 700;
 }
 
 /*img {
@@ -1409,7 +1410,8 @@ margin-bottom: 1em
 }
 
 .entry-footer {
-text-align:right
+text-align:right;
+font-size: 0.9rem;
 }
 
 .entry-excerpt {

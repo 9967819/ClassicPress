@@ -4,6 +4,7 @@
 #error_reporting(E_ALL);
 require_once dirname(__FILE__) . '/wp-load.php';
 require_once dirname(__FILE__) . '/wp-includes/post.php';
+require_once dirname(__FILE__) . '/wp-includes/pluggable.php';
 
 function update_post($data = array(), $options = array())
 {
@@ -95,6 +96,11 @@ if (! empty($_GET['id']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$json = add_vote_to_post($post_id, REDIS_CLIENT, $debug);
 	if ($json['code'] == 200){
+		# send email notification to admin ! 
+		$subject= 'User feedback report';
+		$client = $_SERVER['X_REAL_IP'];
+		$message = sprintf("Client %s likes this. (pageId: %s)", $client, $post_id);
+		wp_mail('ahnjournal@open-neurosecurity.org', $subject, $message)
 		header('Content-Type: application/json; charset=utf-8');
 		http_response_code(200);
 		echo json_encode($json);
