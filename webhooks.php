@@ -99,11 +99,13 @@ if (! empty($_GET['id']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 		# send email notification to admin ! 
 		$subject= 'User feedback report';
 		$client = $_SERVER['X_REAL_IP'];
-		$message = sprintf("Client %s likes this. (pageId: %s)", $client, $post_id);
-		wp_mail('ahnjournal@open-neurosecurity.org', $subject, $message)
+        $message = sprintf("Client %s likes this. (pageId: %s)", $client, $post_id);
+
 		header('Content-Type: application/json; charset=utf-8');
 		http_response_code(200);
-		echo json_encode($json);
+        echo json_encode($json);
+
+		mail('ahnjournal@open-neurosecurity.org', $subject, $message);
 	} else {
 		# Maximum 1 like per post allowed for each real IP addresses.
 		http_response_code(403);

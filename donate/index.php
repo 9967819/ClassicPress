@@ -29,27 +29,26 @@ $ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 ?>
 <div class="wrap">
 <div id="primary" class="content-area">
-<main id="main" class="site-main entry-content">
+<main id="main" class="site-main">
 <h2>Faire un don à Applied Human Neurosecurity Journal</h2>
 
 <div id="checkout" class="overlay1">
 <?php
 if ($screen == 1) {
   $html = <<<HTML
-  <p>Debug test mode: {$test_mode} ({$ssl_cipher})</p>
-  <p>Montant du don: {$donate_amount}$</p>
-  <label>Choisir un mode de paiement :</label>
-  <div id="checkout-google"></div>
-  <br>
-  <form id="paypal-btn" action="https://www.paypal.com/donate" method="post" target="_top">
-  <input type="hidden" name="hosted_button_id" value="RTU5SPUR6L6YG" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-  <img alt="" border="0" src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width="1" height="1" />
-  </form>
+  <!--<p>Debug mode: {$test_mode} ({$ssl_cipher})</p> -->
+  <div class="info">Montant du don: <strong>{$donate_amount}$</strong></div>
+  <h3>Choisir un mode de paiement :</h3>
+   <div id="checkout-google"></div>
+   <div id="checkout-stripe">
+    <button class="button btn-checkout-stripe">
+      <a href="https://buy.stripe.com/eVa16X44B54r7gk5kk">Stripe</a>
+    </button>
+   </div>
 HTML;
   echo $html;
 } else { 
-  echo "<p>Veuillez choisir le montant du don.</p>";
+  echo "<p class=\"info\">Veuillez choisir le montant du don.</p>";
   echo "<form action=\".\" method=\"post\">";
   echo "<input type=\"hidden\" name=\"s\" value=\"1\">";
   echo "<p><label for=\"amounts\">Montant : " . $donate_amount_btn . "</label>";
@@ -65,7 +64,7 @@ HTML;
 <script async defer src="https://pay.google.com/gp/p/js/pay.js"></script>
 <script src="/static/assets/google/google.js"></script>
 <script>
-const env = "TEST"; //TEST is for testing.. ^-^
+const env = "PRODUCTION"; //TEST is for testing.. ^-^
 const confirmBtn = document.getElementById('confirm-btn');
 window.addEventListener("load", (event) => {
 
@@ -88,7 +87,7 @@ window.addEventListener("load", (event) => {
 		}
       }).catch(function(err) {
       // show error in developer console for debugging
-      console.log('good morning smart');
+      console.log('tching tching monday forbb!');
       console.log(err);
       });
     } else {

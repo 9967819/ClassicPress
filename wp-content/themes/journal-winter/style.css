@@ -797,6 +797,12 @@ font-size:.875rem;
 line-height:1.6
 }
 
+div.info {
+  background-color: #ddd;
+  border:1px solid #888;
+  padding:0.5em;
+}
+
 .site-info .sep {
 margin:0 .5em;
 display:inline;
@@ -868,6 +874,23 @@ margin:0;
 padding:0
 }
 
+button.btn-checkout-stripe {
+  background:#000;
+  min-width: 240px;
+  height: 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  border:0;
+}
+button.btn-checkout-stripe:hover{
+  background:#3c4043;
+}
+button.btn-checkout-stripe a {
+  color: #fff;
+  font-weight:700;
+  cursor:pointer;
+}
 button.menu-label {
 	background: rgba(50, 50, 50, 0.55);
 	border-radius: 3px;
