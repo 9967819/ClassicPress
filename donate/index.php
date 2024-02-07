@@ -37,7 +37,7 @@ $ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 if ($screen == 1) {
   $html = <<<HTML
   <!--<p>Debug mode: {$test_mode} ({$ssl_cipher})</p> -->
-  <div class="info">Montant du don: <strong>{$donate_amount}$</strong></div>
+  <div class="info" id="dvalue" data-d-value="{$donate_amount}">Montant du don: <strong>{$donate_amount}$</strong></div>
   <h3>Choisir un mode de paiement :</h3>
    <div id="checkout-google"></div>
    <div id="checkout-stripe">
@@ -66,7 +66,12 @@ HTML;
 <script>
 const env = "PRODUCTION"; //TEST is for testing.. ^-^
 const confirmBtn = document.getElementById('confirm-btn');
+const dAmount = document.getElementById('dvalue').getAttribute('data-d-value');
 window.addEventListener("load", (event) => {
+
+    // update totalPrice using user-supplied numerical value 
+    paymentDataRequest.transactionInfo.totalPrice = dAmount;
+    //console.log('requested value: '+ dAmount);    
 
     if(isReadyToPayRequest){
 	    const paymentsClient = new google.payments.api.PaymentsClient({environment: env});
@@ -87,8 +92,7 @@ window.addEventListener("load", (event) => {
 		}
       }).catch(function(err) {
       // show error in developer console for debugging
-      console.log('tching tching monday forbb!');
-      console.log(err);
+      // console.log(err);
       });
     } else {
       console.log('problem with isReadyToPayRequest');

@@ -1,6 +1,6 @@
 /****
  *  google.js - simple Google Wallet client/endpoint in modern javascript
- *  Copyright 2023 Etienne Robillard <smart@open-neurosecurity.org>
+ *  Copyright 2024 Etienne Robillard <smart@open-neurosecurity.org>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -57,13 +57,16 @@ paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
 // TEST
 paymentDataRequest.transactionInfo = {
   totalPriceStatus: 'FINAL',
-  totalPrice: '20',
+  totalPrice: '0',
   currencyCode: 'CAD',
   countryCode: 'CA'
 };
 paymentDataRequest.merchantInfo = {
   merchantName: 'Applied Human Neurosecurity Journal',
-  merchantId: 'BCR2DN4TVGP73CRV'
+  //PRODUCTION
+  //merchantId: 'BCR2DN4TVGP73CRV'
+  //DEV!
+  merchantId: '12345678901234567890'
 };
 
 //const paymentOptions = Object.assign({}, BaseRequest);

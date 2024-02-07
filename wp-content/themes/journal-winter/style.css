@@ -933,7 +933,7 @@ display:flex;
 flex-direction:column;
 color:#000;
 min-height:12vh;
-width:80%;
+width: auto;
 padding: 1rem;
 margin: 1rem;
 box-shadow: 5px 5px 3px #555;
@@ -1420,8 +1420,9 @@ text-decoration:none
 .entry-content h3,h3.comment-reply-title {
 color:#ff068c;
 font-size:1.5rem;
-font-weight:600;
-text-align:left
+font-weight:700;
+text-align:left;
+text-shadow: 2px 2px hotpink;
 }
 
 .entry-title {
