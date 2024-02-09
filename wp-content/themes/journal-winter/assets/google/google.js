@@ -63,9 +63,9 @@ paymentDataRequest.transactionInfo = {
 };
 paymentDataRequest.merchantInfo = {
   merchantName: 'Applied Human Neurosecurity Journal',
-  //PRODUCTION
+  //PRODUCTION! 
   //merchantId: 'BCR2DN4TVGP73CRV'
-  //DEV!
+  //DEV! ^-^
   merchantId: '12345678901234567890'
 };
 

@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_ALL);
+#error_reporting(E_ALL);
 define('WP_USE_THEMES', true);
 require_once(dirname(__FILE__) . '/../wp-load.php');
 require_once(dirname(__FILE__) . '/../wp-includes/class-simplepie.php');
 get_header();
 # fetch the remote rss
 #$rss = fetch_feed('https://open-neurosecurity.org/forum/index.php?action=.xml;type=rss2'); 
-$title = '2024 Retro Mix';
+$title = 'Emancipator - Baralku (2017)';
 $channel = 'AHNJournal';
-$url = "https://www.youtube.com/embed/videoseries?si=r8hFKhjoOMqE9vcA&amp;list=PL7Ndnn1jFxfvUyTnLYhJaexNtFUJiTqQZ";
+$url = "https://www.youtube.com/embed/videoseries?si=wOOgufoK3Eoailo1&amp;list=OLAK5uy_m3HCuvBcOzSeyxv3_wKm7FP0qzO0M5CiI";
 $button_text = "Écouter sur YouTube";
 ?>
 <div class="wrap">
@@ -21,7 +21,7 @@ $button_text = "Écouter sur YouTube";
     <iframe width="560" height="315" src="<?php echo $url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     <div class="entry-footer">
-    <button class="button menu-label"><a href="https://www.youtube.com/channel/UC9lmMDVtBa6Hppy8Ehfpwpg"><?php echo $button_text ?></a></button>
+    <button class="button menu-label"><a href="https://www.youtube.com/"><?php echo $button_text ?></a></button>
     </div>
 
     </article>

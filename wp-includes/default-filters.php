@@ -266,7 +266,7 @@ add_action( 'wp_head', 'feed_links_extra', 3 );
 add_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 add_action( 'wp_head', 'locale_stylesheet' );
 add_action( 'publish_future_post', 'check_and_publish_future_post', 10, 1 );
-#add_action( 'wp_head', 'noindex', 1 );
+add_action( 'wp_head', 'noindex', 1 );
 #add_action( 'wp_head', 'print_emoji_detection_script', 7 );
 add_action( 'wp_head', 'wp_print_styles', 8 );
 add_action( 'wp_head', 'wp_print_head_scripts', 9 );
@@ -302,9 +302,9 @@ add_action( 'rss2_head', 'rss2_site_icon' );
 
 
 // WP Cron
-if ( ! defined( 'DOING_CRON' ) ) {
-	add_action( 'init', 'wp_cron' );
-}
+//if ( ! defined( 'DOING_CRON' ) ) {
+//	add_action( 'init', 'wp_cron' );
+//}
 
 add_action( 'do_feed_rdf', 'do_feed_rdf', 10, 1 );
 add_action( 'do_feed_rss', 'do_feed_rss', 10, 1 );
@@ -385,7 +385,7 @@ add_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 add_filter( 'default_option_link_manager_enabled', '__return_true' );
 
 // This option no longer exists; tell plugins we always support auto-embedding.
-// add_filter( 'pre_option_embed_autourls', '__return_true' );
+add_filter( 'pre_option_embed_autourls', '__return_true' );
 
 // Default settings for heartbeat
 add_filter( 'heartbeat_settings', 'wp_heartbeat_settings' );
@@ -515,12 +515,12 @@ add_filter( 'media_send_to_editor', 'image_media_send_to_editor', 10, 3 );
 #add_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 #add_action( 'wp_head', 'wp_oembed_add_host_js' );
 
-#add_action( 'embed_head', 'enqueue_embed_scripts', 1 );
-#add_action( 'embed_head', 'print_emoji_detection_script' );
-#add_action( 'embed_head', 'print_embed_styles' );
-#add_action( 'embed_head', 'wp_print_head_scripts', 20 );
-#add_action( 'embed_head', 'wp_print_styles', 20 );
-#add_action( 'embed_head', 'wp_no_robots' );
+add_action( 'embed_head', 'enqueue_embed_scripts', 1 );
+add_action( 'embed_head', 'print_emoji_detection_script' );
+add_action( 'embed_head', 'print_embed_styles' );
+add_action( 'embed_head', 'wp_print_head_scripts', 20 );
+add_action( 'embed_head', 'wp_print_styles', 20 );
+add_action( 'embed_head', 'wp_no_robots' );
 add_action( 'embed_head', 'rel_canonical' );
 #add_action( 'embed_head', 'locale_stylesheet', 30 );
 

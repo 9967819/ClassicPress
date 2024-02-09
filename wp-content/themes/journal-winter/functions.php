@@ -63,7 +63,8 @@ function twentyseventeen_setup() {
 			'quote',
 			'link',
 			'gallery',
-			'audio',
+            'audio',
+            'html5'
 		)
 	);
 

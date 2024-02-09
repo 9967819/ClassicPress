@@ -64,7 +64,7 @@ HTML;
 <script async defer src="https://pay.google.com/gp/p/js/pay.js"></script>
 <script src="/static/assets/google/google.js"></script>
 <script>
-const env = "PRODUCTION"; //TEST is for testing.. ^-^
+const env = "TEST"; //TEST is for testing.. ^-^
 const confirmBtn = document.getElementById('confirm-btn');
 const dAmount = document.getElementById('dvalue').getAttribute('data-d-value');
 window.addEventListener("load", (event) => {
