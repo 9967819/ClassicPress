@@ -16,16 +16,16 @@ $donate_amount_btn = <<<HTML
 </select>
 HTML;
 global $screen;
-$screen = 0;
+$screen = 1;
 $donate_amount = 0;
 $test_mode = true;
 if (! empty($_POST['s'])){
-  $screen = intval($_POST['s']);
+  #$screen = intval($_POST['s']);
   $donate_amount = intval($_POST['amounts']);
   $_SESSION['donate_amount'] = $donate_amount;
-  $_SESSION['test_mode'] = 1;
+  #$_SESSION['test_mode'] = 1;
 }
-$ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
+#$ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 ?>
 <div class="wrap">
 <div id="primary" class="content-area">
@@ -36,14 +36,14 @@ $ssl_cipher = $_SERVER['CLIENT_SSL_CIPHER'];
 <?php
 if ($screen == 1) {
   $html = <<<HTML
-  <!--<p>Debug mode: {$test_mode} ({$ssl_cipher})</p> -->
-  <div class="info" id="dvalue" data-d-value="{$donate_amount}">Montant du don: <strong>{$donate_amount}$</strong></div>
   <h3>Choisir un mode de paiement :</h3>
-   <div id="checkout-google"></div>
-   <div id="checkout-stripe">
+   <div id="checkout-btn">
     <button class="button btn-checkout-stripe">
       <a href="https://buy.stripe.com/eVa16X44B54r7gk5kk">Stripe</a>
-    </button>
+		</button>
+	  <button class="button btn-checkout-stripe">
+	    <a href="https://paypal.me/EtienneRobillard">PayPal</a>
+		</button>
    </div>
 HTML;
   echo $html;
@@ -60,45 +60,6 @@ HTML;
 </main>
 </div>
 </div>
-<!-- Google Wallet client/api -->
-<script async defer src="https://pay.google.com/gp/p/js/pay.js"></script>
-<script src="/static/assets/google/google.js"></script>
-<script>
-const env = "TEST"; //TEST is for testing.. ^-^
-const confirmBtn = document.getElementById('confirm-btn');
-const dAmount = document.getElementById('dvalue').getAttribute('data-d-value');
-window.addEventListener("load", (event) => {
-
-    // update totalPrice using user-supplied numerical value 
-    paymentDataRequest.transactionInfo.totalPrice = dAmount;
-    //console.log('requested value: '+ dAmount);    
-
-    if(isReadyToPayRequest){
-	    const paymentsClient = new google.payments.api.PaymentsClient({environment: env});
-	    paymentsClient.isReadyToPay(isReadyToPayRequest).then(function(response) {
-	    if (response.result) {
-			const googleBtn = paymentsClient.createButton({
-            onClick: () => {
-              paymentsClient.loadPaymentData(paymentDataRequest).then(function(paymentData){
-              // if using gateway tokenization, pass this token without modification
-              paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-            }).catch(function(err){
-              // show error in developer console for debugging
-              console.error('hmm problem :' + err);
-            });
-            },
-    		allowedPaymentMethods: []}); // same payment methods as for the loadPaymentData() API call
-			document.getElementById('checkout-google').appendChild(googleBtn);
-		}
-      }).catch(function(err) {
-      // show error in developer console for debugging
-      // console.log(err);
-      });
-    } else {
-      console.log('problem with isReadyToPayRequest');
-    }    
-});//add event listener
-</script>
 <?php
 get_footer();
 ?>
