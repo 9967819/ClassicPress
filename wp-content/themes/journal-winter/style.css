@@ -913,7 +913,7 @@ article button.menu-label a {
 article.video button.menu-label {
   background: rgba(150, 150, 150, 0.75);
   box-shadow: 2px outset #108df8;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   border-radius: 5px;
 }
@@ -949,22 +949,12 @@ width: 100%;
 article.video {
 background-color: #000;
 color: #fff;
-padding: 1rem;
-margin: 1rem;
+padding: 0 1em 1em 1em;
 font-weight: 600;
-font-size: 1.4rem;
+font-size: 1.25rem;
 box-shadow: 5px 5px 3px #555;
-width: 80%;
 }
 
-
-article.video i.red {color: red}
-
-.attachment-post-thumbnail {
-background-color:#000f;
-background-blend-mode:luminosity;
-opacity:.8
-}
 
 div.quote {
 height:auto;
@@ -977,7 +967,7 @@ color:#9289c0
 padding: 0.5em;
 text-shadow:4px 4px #000;
 color:#fff;
-font-size:0.85rem;
+font-size:0.9rem;
 width:auto;
 }
 
@@ -1417,14 +1407,9 @@ font-weight:700;
 text-decoration:none
 }
 
-.entry-content h3,h3.comment-reply-title {
-color:#ff068c;
-font-size:1.5rem;
+article.video .entry-content h3,h3.comment-reply-title {
 font-weight:600;
 text-align:left;
-}
-
-article.video h3 {
 color: #fff;
 }
 

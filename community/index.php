@@ -6,9 +6,11 @@ require_once(dirname(__FILE__) . '/../wp-includes/class-simplepie.php');
 get_header();
 # fetch the remote rss
 #$rss = fetch_feed('https://open-neurosecurity.org/forum/index.php?action=.xml;type=rss2'); 
-$title = 'Emancipator - Baralku (2017)';
+
+
+$title = 'Le boeuf musqué à la conquête du Nunavik';
 $channel = 'AHNJournal';
-$url = "https://www.youtube.com/embed/videoseries?si=wOOgufoK3Eoailo1&amp;list=OLAK5uy_m3HCuvBcOzSeyxv3_wKm7FP0qzO0M5CiI";
+$url = "https://www.youtube.com/embed/dA13jrXTlp0?si=bHtz6Oe21KevhPuW";
 $button_text = "Écouter sur YouTube";
 ?>
 <div class="wrap">
@@ -41,6 +43,22 @@ echo $HTML;
 echo "</ul>";
 ?>
 </section>
+<?php
+$pageId = '2065'; # hack
+$post = get_post($pageId); # hack
+$likes_count = $post->likes_count;
+$people = $likes_count > 1  ? "personnes aiment" : "personne aime";
+$footer = <<<FOOTER
+<div class="entry-footer">
+    <button class="button" id="likeBtn" data-article-id="{$pageId}">
+     <i class="fa-solid fa-heart"></i>
+    </button>
+    <p id="likes-count">{$likes_count} likes.</p>
+</div>
+<script src="/static/assets/journal/web.js"></script>
+FOOTER;
+echo $footer;
+?>
 </main>
 </div>
 </div>
