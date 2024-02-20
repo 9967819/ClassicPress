@@ -18,6 +18,7 @@
 const likeBtn = document.getElementById('likeBtn');
 let count = document.getElementById("likes-count");
 let counter = document.getElementById('count');
+let faceSmile = document.getElementById('face-smile');
 
 async function addVoteToPost(url) {
       let response = await fetch(url, {
@@ -27,14 +28,15 @@ async function addVoteToPost(url) {
 		.then((data) => {
 			//console.log(data);
 			if (data.code == 200) {
-				likeBtn.classList.add('active');
 				likeBtn.disabled = true;
-				counter.textContent = parseInt(data.count) + 1;
+                faceSmile.classList.remove('fa-face-smile');
+                faceSmile.classList.add('fa-face-laugh-wink');
+				counter.textContent = parseInt(data.count) + 1 + ' mentions '+ 'J\'aime enregistrées à ce jour.';
 			} else {
-				likeBtn.classList.add('aquablue');
-				count.classList.add('aquablue');
 				count.innerHTML = "";
-				count.textContent = 'Off-limit!';
+                faceSmile.classList.remove('fa-face-smile');
+                faceSmile.classList.add('fa-face-rolling-eyes');
+				count.textContent = 'Permission refusée.';
 			}
 		});
 }

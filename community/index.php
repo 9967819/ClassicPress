@@ -7,10 +7,14 @@ get_header();
 # fetch the remote rss
 #$rss = fetch_feed('https://open-neurosecurity.org/forum/index.php?action=.xml;type=rss2'); 
 
+$pageId = '2065'; # hack
+$post = get_post($pageId); # hack
+$likes_count = $post->likes_count;
+$people = $likes_count > 1  ? "personnes aiment" : "personne aime";
 
-$title = 'Le boeuf musqué à la conquête du Nunavik';
+$title = '2024 EDM Mix';
 $channel = 'AHNJournal';
-$url = "https://www.youtube.com/embed/dA13jrXTlp0?si=bHtz6Oe21KevhPuW";
+$url = "https://www.youtube.com/embed/videoseries?si=Wemkz1rh4Vp3CEjR&amp;list=PL7Ndnn1jFxfuu2Kmuk7wvaq5j_onbUXpf";
 $button_text = "Écouter sur YouTube";
 ?>
 <div class="wrap">
@@ -22,9 +26,12 @@ $button_text = "Écouter sur YouTube";
 
     <iframe width="560" height="315" src="<?php echo $url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    <div class="entry-footer">
+    <button class="button menu-label" id="likeBtn" data-article-id="<?php echo $pageId; ?>">
+     <i class="fa-solid fa-heart"></i>
+    </button>
     <button class="button menu-label"><a href="https://www.youtube.com/"><?php echo $button_text ?></a></button>
-    </div>
+
+    <p id="likes-count"><?php echo $likes_count ?></p>
 
     </article>
 <section>
@@ -43,25 +50,12 @@ echo $HTML;
 echo "</ul>";
 ?>
 </section>
-<?php
-$pageId = '2065'; # hack
-$post = get_post($pageId); # hack
-$likes_count = $post->likes_count;
-$people = $likes_count > 1  ? "personnes aiment" : "personne aime";
-$footer = <<<FOOTER
-<div class="entry-footer">
-    <button class="button" id="likeBtn" data-article-id="{$pageId}">
-     <i class="fa-solid fa-heart"></i>
-    </button>
-    <p id="likes-count">{$likes_count} likes.</p>
-</div>
-<script src="/static/assets/journal/web.js"></script>
-FOOTER;
-echo $footer;
-?>
+
 </main>
 </div>
 </div>
+
+<script src="/static/assets/journal/web.js"></script>
 <?php
 get_footer();
 ?>

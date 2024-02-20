@@ -1,7 +1,7 @@
 # if you want to add own robot rules, do it BEFORE the final rule matching *
 
-User-agent: *
-Crawl-delay: 60
+user-agent: *
+crawl-delay: 600
 # This has to match script url + cfg.url_prefix_action - it
 # saves lots of search engine load and traffic by disallowing crawlers
 # to request action related URLs.
@@ -9,10 +9,15 @@ Crawl-delay: 60
 # NOTE - in order to make this have any effect, you have to set
 #        url_prefix_action to "action", cf. HelpOnConfiguration
 
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-json/
-Disallow: /wp-includes/
-Disallow: /wp-login.php
-Sitemap: https://open-neurosecurity.org/sitemap.xml
-Sitemap: https://open-neurosecurity.org/wiki/sitemap-index-FNRP.xml
+disallow: /wp-admin/
+disallow: /wp-content/
+disallow: /wp-json/
+disallow: /wp-includes/
+disallow: /static/
+disallow: /*.txt
+disallow: /*.png
+disallow: /*.jpeg
+disallow: /*.css
+disallow: /*.js
+sitemap: https://open-neurosecurity.org/sitemap.xml
+sitemap: https://open-neurosecurity.org/wiki/sitemap-index-FNRP.xml
