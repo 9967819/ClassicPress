@@ -47,6 +47,7 @@ define('REDIS_CLIENT', $redis);
 # Default locale for wordpress site
 # define( 'WPLANG', 'fr' ); 
 
+define( 'siteurl', 'http://pamela' );
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the ClassicPress directory. */
