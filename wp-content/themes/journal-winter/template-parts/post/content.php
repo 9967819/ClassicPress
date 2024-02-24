@@ -16,19 +16,21 @@ $html = <<<HTML
 	{$content}
 	</div>
     <div class="entry-footer">
-      <h4>Données supplémentaires</h4>
+      <h3>Données supplémentaires</h3>
       <table id="article-metadata">
         <thead>
-        <tr><th>Auteur</th><th>Date de publication</th>
+        <tr><th>Auteur</th><th>Date de publication</th></tr>
         </thead>
         <tbody>
-            <tr><td>Robillard, Etienne</td><td>{$pubdate}</td></tr>
+            <tr><td>{$name}</td><td>{$pubdate}</td></tr>
         </tbody>
       </table>
       <button class="button" id="likeBtn" data-article-id="{$articleid}">
 	   <i id="face-smile" class="fa-solid fa-face-smile"></i>
 	  </button>
-	  <label id="likes-count" class=""><span id="count">{$likes_count}{$likes_plural}</label>
+		<label id="likes-count" class=""><span id="count">{$likes_count}{$likes_plural}</label>
+		 <p><strong>32 commentaires approuvés!</strong></p>
+     <p><a href="/webhooks.php?action=comment&postid={$articleid}">Envoyer un commentaire</a> | Imprimer</p>
     </div>
 </article>
 <script async src="/static/assets/journal/web.js"></script>
