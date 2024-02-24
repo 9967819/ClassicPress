@@ -10,9 +10,9 @@ wp_head();
 <meta name="description" content="La neurosécurité libre et ouverte pour tous.">
 <meta name="keywords" content="neurosecurity, neurosécurité, cyberdépendance, applied human neurosecurity journal, applied neurosecurity, free neurosecurity">
 <meta property="og:author" content="Applied Human Neurosecurity Journal">
-<meta property="og:image:url" content="https://open-neurosecurity.org/static/img/logo-ahnjournal-v2.png">
-<meta property="og:image:secure_url" content="https://open-neurosecurity.org/static/img/logo-ahnjournal-v2.png">
-<meta property="og:image:alt" content="site image">
+<meta property="og:image:url" content="https://open-neurosecurity.org/wp-content/uploads/2023/10/mlkquotewar.png">
+<meta property="og:image:secure_url" content="https://open-neurosecurity.org/wp-content/uploads/2023/10/mlkquotewar.png">
+<meta property="og:image:alt" content="Those who love peace must learn to organize as effectively as those who love war! -Martin Luther King Jr.">
 <script type="application/ld+json">
 {"@context":"https://schema.org",
 	"@type":"Periodical",
