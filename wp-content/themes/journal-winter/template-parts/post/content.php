@@ -9,6 +9,14 @@ $author = $post->post_author;
 $name = get_the_author_meta('display_name', $author);
 $articleid = get_the_ID();
 $pubdate = get_the_date();
+$sql = "SELECT * FROM `wp_comments` WHERE comment_post_ID=$articleid and comment_approved=1";
+$dsn = sprintf("mysql:host=%s;dbname=%s;charset=%s", '127.0.0.1', 'ahnjournal_frontend', 'utf8mb4');
+$dbh = new PDO($dsn, DB_USER, DB_PASSWORD) or die("snsfeoinwefe asdhns dsoawnd!!!\n");
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);	
+
+$comments = $dbh->query($sql)->fetchAll();
+$comment_count = count($comments);
+$comment_plural = ($comment_count > 1) ? " commentaires" : "commentaire";
 $html = <<<HTML
 <article class="full-text">
 	<h2 class="entry-title">{$title}</h2>
@@ -29,7 +37,7 @@ $html = <<<HTML
 	   <i id="face-smile" class="fa-solid fa-face-smile"></i>
 	  </button>
 		<label id="likes-count" class=""><span id="count">{$likes_count}{$likes_plural}</label>
-		 <p><strong>32 commentaires approuvés!</strong></p>
+		 <p><strong>{$comment_count} {$comment_plural}</strong></p>
      <p><a href="/webhooks.php?action=comment&postid={$articleid}">Envoyer un commentaire</a> | Imprimer</p>
     </div>
 </article>
