@@ -275,6 +275,13 @@ font-weight:400;
 font-size:0.9em;
 }
 
+article.video label { 
+color: #fff;
+}
+article.video .entry-footer {
+text-align: right;
+}
+
 fieldset {
 margin-bottom:1em
 }
@@ -781,7 +788,7 @@ article.video button.menu-label {
   background: rgba(150, 150, 150, 0.75);
   box-shadow: 2px outset #108df8;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 5px;
 }
 article.video button.menu-label a {

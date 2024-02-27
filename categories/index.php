@@ -7,10 +7,8 @@ get_header();
 ?>
 <div class="wrap">
 <div id="primary">
-
-	<main id="main" class="site-main archive">
-
-	<h2 class="page-title">Catégories des articles</h2>
+<article class="page">
+	<h2 class="page-title">Catégories</h2>
 <?php 
 	echo wp_list_categories(array(
 				'title_li'=>'', 
@@ -20,8 +18,8 @@ get_header();
 	<h3>Étiquettes les plus populaires</h3>
 	<div class="tag-cloud">
 		<?php echo wp_tag_cloud() ?>
-	</div>	
-	</main>
+    </div>
+</article>
 </div>
 </div>
 <?php
