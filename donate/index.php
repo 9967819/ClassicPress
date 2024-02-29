@@ -29,14 +29,14 @@ if (! empty($_POST['s'])){
 ?>
 <div class="wrap">
 <div id="primary" class="content-area">
-<main id="main" class="site-main">
+<article class="page">
 <h2>Faire un don à Applied Human Neurosecurity Journal</h2>
 
 <div id="checkout" class="overlay1">
 <?php
 if ($screen == 1) {
   $html = <<<HTML
-  <h3>Choisir un mode de paiement :</h3>
+  <h3>Choisir un partenaire de connexion :</h3>
    <div id="checkout-btn">
     <button class="button btn-checkout-stripe">
       <a href="https://buy.stripe.com/eVa16X44B54r7gk5kk">Stripe</a>
@@ -48,7 +48,7 @@ if ($screen == 1) {
 HTML;
   echo $html;
 } else { 
-  echo "<p class=\"info\">Veuillez choisir le montant du don.</p>";
+  echo "<label class=\"info\">Choisir un mode partenaire de connexion</label>";
   echo "<form action=\".\" method=\"post\">";
   echo "<input type=\"hidden\" name=\"s\" value=\"1\">";
   echo "<p><label for=\"amounts\">Montant : " . $donate_amount_btn . "</label>";
@@ -56,10 +56,10 @@ HTML;
   echo "</form>";
 } 
 ?>
+</article>
 </div>
-</main>
 </div>
-</div>
+
 <?php
 get_footer();
 ?>
