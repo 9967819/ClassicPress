@@ -806,7 +806,7 @@ article.post, article.video {
 display:flex;
 flex-direction:column;
 color:#000;
-min-height:12vh;
+min-height:10em;
 width: auto;
 padding: 0.5rem;
 margin: 1rem;
