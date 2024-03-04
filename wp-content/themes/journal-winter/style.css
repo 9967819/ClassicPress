@@ -272,7 +272,7 @@ outline:none
 label {
 color:#333;
 font-weight:400;
-font-size:0.9em;
+font-size:0.77em;
 }
 
 article.video label { 
@@ -280,6 +280,11 @@ color: #fff;
 }
 article.video .entry-footer {
 text-align: right;
+}
+article.video .overlay1 {
+    font-size: 0.9em;
+    background-color: rgba(255,255,255, 0.25);
+
 }
 
 fieldset {
@@ -683,6 +688,7 @@ div.info {
   background-color: #ddd;
   border:1px solid #888;
   padding:0.5em;
+  font-size: 0.9em;
 }
 
 .site-info .sep {
@@ -1088,8 +1094,6 @@ height:auto
 button#likeBtn {
 background:#222;
 color:#ff0631;
-border: 1px solid #ddd;
-border-radius: 5px;
 padding:8px;
 margin-top: 20px;
 }
@@ -1196,8 +1200,8 @@ border-top: 2px solid #888;
 }
 
 .grayscale {
-background-color:#000023bf;
-background-blend-mode:multiply
+background-color: rgba(0, 0, 0, 0.7); /* #000023bf; */
+background-blend-mode:multiply;
 }
 
 div.overlay1 {

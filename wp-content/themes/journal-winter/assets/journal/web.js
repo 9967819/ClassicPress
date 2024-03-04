@@ -31,7 +31,7 @@ async function addVoteToPost(url) {
 				likeBtn.disabled = true;
                 faceSmile.classList.remove('fa-face-smile');
                 faceSmile.classList.add('fa-face-laugh-wink');
-				counter.textContent = parseInt(data.count) + 1 + ' mentions '+ 'J\'aime enregistrées à ce jour.';
+				counter.textContent = parseInt(data.count) + 1 + ' mentions '+ 'J\'aime enregistrées!';
 			} else {
 				count.innerHTML = "";
                 faceSmile.classList.remove('fa-face-smile');

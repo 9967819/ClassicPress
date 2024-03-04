@@ -32,7 +32,7 @@ if (! empty($_POST['s'])){
 <article class="page">
 <h2>Faire un don à Applied Human Neurosecurity Journal</h2>
 
-<div id="checkout" class="overlay1">
+<div id="checkout">
 <?php
 if ($screen == 1) {
   $html = <<<HTML
@@ -45,6 +45,14 @@ if ($screen == 1) {
 	    <a href="https://paypal.me/EtienneRobillard">PayPal</a>
 		</button>
    </div>
+    <br>
+    <div class="info">
+    <h4>Mention légale</h4>
+Les paiements peuvent également être fait par virement électronique (<a href="https://www.interac.ca">Interac</a>) dans la plupart des banques au Canada. Tout don émis à notre journal est également déductible d'impôt. Conserver votre confirmation de transaction comme preuve pour obtenir une déduction sur vos impôts. Veuillez notez également que le bénéficiaire et personne physique recevant les fonds obtenues est Mr. Etienne Robillard. Mr. Robillard est le fondateur et rédacteur en chef actuel de Applied Human Neurosecurity Journal et il n'occupe aucune autre fonctions ou emploi avec un employeur au Québec ou ailleurs dans le monde à ce jour. Merci de soutenir Applied Human Neurosecurity Journal et l'avancement de la neurosécurité libre et ouverte.
+    </div>
+    <div class="entry-footer">
+        <label>Dernière mise-à-jour: <span class="date">Vendredi 1er mars 2024</span></label>
+    </div>
 HTML;
   echo $html;
 } else { 

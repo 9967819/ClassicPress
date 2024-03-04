@@ -9,44 +9,52 @@ $pageId = '2065'; # hack
 $post = get_post($pageId); # hack
 $likes_count = $post->likes_count;
 $likes_count_plural = $likes_count > 1 ? "s" : "";
-$people = $likes_count > 1  ? "personnes aiment" : "personne aime";
-
-$title = 'Röyksopp - Profound Mysteries I-III | Livestream 17.11.2022';
+$likes_plural = $likes_count > 1  ? " mentions J'aime" : " mention J'aime";
+$sponsors = array(
+    'YouTube'  => 'https://youtube.com', 
+    'Bandcamp' => 'https://bandcamp.com'
+);
+$title = 'Emancipator';
+$author_description = "Emancipator est un artiste vivant à Portland aux États-Unis. Sa musique est un mélange down-tempo et de sonorités électroniques hautement recherchés et très agréable à écouter préférablement avec votre chat.";   
+$youtubelink = "https://emancipator.bandcamp.com"; 
 $channel = 'AHNJournal';
-$url = "https://www.youtube.com/embed/FQ-bUB6lCuw?si=NzxEgI1ckDXni__C";
+$url = "https://www.youtube.com/embed/phTPiTz1SVQ?si=jUYhjUf5Y4z7v0j2";
 $button_text = "Écouter sur YouTube";
 ?>
 <div class="wrap">
 <div id="primary">
 <article class="video">
 	<h2 class="page-title">Musique</h2>
-    <h3>Piste audio du jour: <?php echo $title ?></h3>
-
+    <h3>Artiste du mois: <a href="<?php echo $youtubelink ?>"><?php echo $title ?></a></h3>
+    <div class="overlay"><?php echo $author_description ?></div>
+    <br>
     <iframe width="560" height="315" src="<?php echo $url; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <div class="entry-footer">
     <button class="button menu-label" id="likeBtn" data-article-id="<?php echo $pageId; ?>">
-    <i class="fa-solid fa-face-smile"></i>
-    </button>
-    <button class="button menu-label"><a href="https://www.youtube.com/"><?php echo $button_text ?></a></button>
-    <label id="likes-count"><?php echo $likes_count ?> mention<?php echo $likes_count_plural ?> J'aime.</label>
+    <i class="fa-solid fa-face-smile" id="face-smile"></i>
+    </button><br>
+   <label id="likes-count" class=""><span id="count"><?php echo "$likes_count" . "$likes_plural" ?></label>
     </div>
+    
 </article>
-<section>
+<article class="video">
+<h3>Contributions récentes</h3>
 <?php
-#<section>
-#<h3>Contributions récentes</h3>
-#<?php
-#$url = 'https://open-neurosecurity.org/wiki/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom';
-#$rss2 = fetch_feed($url);
-#foreach($rss2->get_items(0, 5) as $var2) {
-#echo "<ul class=\"default-list\">";
-#$HTML = <<<HTML
-#<li><a href="{$var2->get_permalink()}">{$var2->get_title()}</a></li>
-#HTML;
-#echo $HTML;
-#}
-#echo "</ul>";
+$url = 'https://open-neurosecurity.org/wiki/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom';
+$rss2 = fetch_feed($url);
+
+echo "<ul class=\"default-list\">";
+
+foreach($rss2->get_items(0, 5) as $var2) {
+    $HTML = <<<HTML
+        <li><a href="{$var2->get_permalink()}">{$var2->get_title()}</a></li>
+    HTML;
+    echo $HTML;
+}
+
+echo "</ul>";
 ?>
+</article>
 </div>
 </div>
 
