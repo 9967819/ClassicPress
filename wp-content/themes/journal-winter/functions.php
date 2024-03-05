@@ -442,6 +442,15 @@ function render_logo_image($image_id) {
 #    $content = force_balance_tags($content);
 #    return preg_replace('#<p></p>#i', '', $content);
 #}
+#
+# function for sorting posts using the lastmodified timestamp
+# credit: https://www.namehero.com/blog/how-to-sort-posts-by-the-last-modified-date
+function sort_by_modified( $wp_query, $order = 'DSC' ) {
+  $wp_query->set( 'orderby', 'modified' );
+	$wp_query->set( 'order', $order );
+}
+add_filter('pre_get_posts', 'sort_by_modified' );
+
 
 
 # SECURITY 
